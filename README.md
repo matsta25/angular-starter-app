@@ -1,5 +1,9 @@
 # NgxStarterTemplate
 
+[![Build Status](https://travis-ci.org/matsta25/ngx-starter-template.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-template)
+
+[DEMO](https://matsta25.github.io/ngx-starter-template)
+
 # TODO list
 
  *  [ ] project files structure
@@ -12,5 +16,3 @@
  *  [ ] multi env
  *  [ ] ngrx
  *  [ ] tslint
-
-https://matsta25.github.io/ngx-starter-template

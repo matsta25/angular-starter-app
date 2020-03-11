@@ -11,7 +11,7 @@ before_script:
 script:
   - ng lint
   - npm run test-headless
-  - ng build --prod --base-href https://matsta25.github.io/ngx-starter-template
+  - ng build --prod --base-href='https://matsta25.github.io/ngx-starter-template'
 deploy:
   provider: pages
   skip_cleanup: true
