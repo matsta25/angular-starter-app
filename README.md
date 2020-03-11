@@ -13,3 +13,4 @@
  *  [ ] ngrx
  *  [ ] tslint
 
+https://matsta25.github.io/ngx-starter-template
