@@ -21,6 +21,7 @@ import {CoreModule} from './core/core.module';
 
     // core & shared
     CoreModule,
+    // TODO: check if SharedModule is necessary here
     SharedModule,
 
     // app routing

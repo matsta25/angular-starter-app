@@ -16,3 +16,5 @@
  *  [ ] multi env
  *  [ ] ngrx
  *  [ ] tslint
+ *  [ ] localstorage
+ *  [ ] 
