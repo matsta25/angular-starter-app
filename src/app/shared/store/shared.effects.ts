@@ -3,11 +3,12 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {map, mapTo, switchMap} from 'rxjs/operators';
 import {fromEvent, merge, of} from 'rxjs';
 import {checkIsOnline, setIsOnline} from './shared.actions';
+import {NotificationService} from "../services/notification.service";
 
 @Injectable()
 export class SharedEffects {
 
-  constructor(private actions$: Actions) {
+  constructor(private actions$: Actions, private notificationService: NotificationService) {
   }
 
   checkIsOnline$ = createEffect(() =>
@@ -21,6 +22,7 @@ export class SharedEffects {
         );
       }),
       map(isOnline => {
+        this.showHideNotification(isOnline);
         return {
           isOnline,
           type: setIsOnline.type,
@@ -28,4 +30,12 @@ export class SharedEffects {
       })
     )
   );
+
+  private showHideNotification(isOnline: boolean) {
+    if (!isOnline) {
+      this.notificationService.openDanger('You are currently offline.', '');
+    } else {
+      this.notificationService.dismiss();
+    }
+  }
 }

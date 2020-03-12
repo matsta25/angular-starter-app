@@ -2,3 +2,15 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// TODO: add snackbar classes to appropriate scss file
+
+// TODO: add styling to button 'close' snackbar OR change close to icon 'x'
+
+.snackbar--success{
+  background: green;
+}
+
+.snackbar--danger{
+  background: red;
+}

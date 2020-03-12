@@ -9,7 +9,7 @@ import { PostsComponent } from './components/posts/posts.component';
   declarations: [PostsComponent],
   imports: [
     CommonModule,
-    PostsRoutingModule
+    PostsRoutingModule,
   ]
 })
 export class PostsModule { }

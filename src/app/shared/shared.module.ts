@@ -11,10 +11,9 @@ const importedExportedModules = [
     CommonModule,
     ...importedExportedModules
   ],
-  declarations: [],
   exports: [
     ...importedExportedModules
-  ]
+  ],
 })
 
 export class SharedModule {
