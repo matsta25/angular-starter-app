@@ -13,7 +13,7 @@
  *  [ ] bootstrap
  *  [x] lazy loading
  *  [ ] mock
- *  [ ] multi env
+ *  [x] multi env
  *  [ ] ngrx store
  *  [ ] tslint
  *  [ ] localstorage
