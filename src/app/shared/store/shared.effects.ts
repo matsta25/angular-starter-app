@@ -3,7 +3,7 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {map, mapTo, switchMap} from 'rxjs/operators';
 import {fromEvent, merge, of} from 'rxjs';
 import {checkIsOnline, setIsOnline} from './shared.actions';
-import {NotificationService} from "../services/notification.service";
+import {NotificationService} from '../services/notification.service';
 
 @Injectable()
 export class SharedEffects {

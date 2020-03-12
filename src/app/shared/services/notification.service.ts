@@ -18,7 +18,7 @@ export class NotificationService {
   public openSuccess(message, action = 'close', duration = this.defaultDuration) {
     this.zone.run(() =>
       this.snackBar.open(message, action, {
-        duration: duration,
+        duration,
         panelClass: ['snackbar--success']
       })
     );
@@ -27,7 +27,7 @@ export class NotificationService {
   public openDanger(message, action = 'close', duration = this.defaultDuration) {
     this.zone.run(() =>
       this.snackBar.open(message, action, {
-        duration: duration,
+        duration,
         panelClass: ['snackbar--danger']
       })
     );

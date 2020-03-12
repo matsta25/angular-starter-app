@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {Post} from '../models/post.model';
 import {selectPosts} from '../../store/posts.selectors';
 import {readPosts} from '../../store/posts.actions';
-import {NotificationService} from "../../../../shared/services/notification.service";
+import {NotificationService} from '../../../../shared/services/notification.service';
 
 @Component({
   selector: 'app-posts',
