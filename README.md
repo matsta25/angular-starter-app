@@ -8,13 +8,15 @@
 
  *  [ ] project files structure
  *  [ ] core module
- *  [ ] shared module
- *  [ ] angular material
+ *  [x] shared module
+ *  [x] angular material
  *  [ ] bootstrap
- *  [ ] lazy loading
+ *  [x] lazy loading
  *  [ ] mock
  *  [ ] multi env
- *  [ ] ngrx
+ *  [ ] ngrx store
  *  [ ] tslint
  *  [ ] localstorage
- *  [ ] 
+ *  [x] notification
+ *  [x] online notification
+ *  [x] 
