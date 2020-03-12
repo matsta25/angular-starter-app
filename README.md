@@ -19,4 +19,7 @@
  *  [ ] localstorage
  *  [x] notification
  *  [x] online notification
- *  [x] 
+ *  [ ] docker compose
+ *  [ ] docker file
+ *  [ ] proxy?
+ *  [ ] 

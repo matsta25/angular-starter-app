@@ -61,6 +61,22 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "one": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.one.ts"
+                }
+              ]
+            },
+            "two": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.two.ts"
+                }
+              ]
             }
           }
         },
@@ -72,6 +88,12 @@
           "configurations": {
             "production": {
               "browserTarget": "ngx-starter-template:build:production"
+            },
+            "one": {
+              "browserTarget": "ngx-starter-template:build:one"
+            },
+            "two": {
+              "browserTarget": "ngx-starter-template:build:two"
             }
           }
         },
