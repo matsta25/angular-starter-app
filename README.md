@@ -24,5 +24,5 @@
  *  [ ] docker file
  *  [ ] proxy?
  *  [ ] i18n?
- *  [ ] slim bar loading
+ *  [x] slim bar loading
  *  [x] custom snackbar with x icon
