@@ -28,3 +28,5 @@
  *  [ ] i18n?
  *  [x] slim bar loading
  *  [x] custom snackbar with x icon
+ *  [ ] shared NgRx isLoading err
+ 
