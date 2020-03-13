@@ -10,7 +10,7 @@
  *  [ ] core module
  *  [x] shared module
  *  [x] angular material
- *  [ ] bootstrap
+ *  [x] bootstrap
  *  [ ] scss file structure
  *  [x] lazy loading
  *  [ ] mock
@@ -25,4 +25,4 @@
  *  [ ] proxy?
  *  [ ] i18n?
  *  [ ] slim bar loading
- *  [ ] custom snackbar with x icon
+ *  [x] custom snackbar with x icon
