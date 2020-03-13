@@ -16,6 +16,8 @@
  *  [ ] mock
  *  [x] multi env
  *  [ ] ngrx store
+ *  [ ] ngrx entity
+ *  [ ] table pagination async
  *  [ ] tslint
  *  [ ] localstorage
  *  [x] notification
