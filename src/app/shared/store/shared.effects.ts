@@ -4,9 +4,12 @@ import {map, mapTo, switchMap} from 'rxjs/operators';
 import {fromEvent, merge, of} from 'rxjs';
 import {checkIsOnline, setIsOnline} from './shared.actions';
 import {NotificationService} from '../services/notification.service';
+import {MatSnackBarRef, SimpleSnackBar} from '@angular/material/snack-bar';
 
 @Injectable()
 export class SharedEffects {
+
+  ref: MatSnackBarRef<SimpleSnackBar> = null;
 
   constructor(private actions$: Actions, private notificationService: NotificationService) {
   }
@@ -33,9 +36,11 @@ export class SharedEffects {
 
   private showHideNotification(isOnline: boolean) {
     if (!isOnline) {
-      this.notificationService.openDanger('You are currently offline.', '');
+      this.ref = this.notificationService.showError('You are currently offline.');
     } else {
-      this.notificationService.dismiss();
+      if (this.ref) {
+        this.notificationService.dismiss(this.ref);
+      }
     }
   }
 }

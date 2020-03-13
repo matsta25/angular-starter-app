@@ -1,0 +1,11 @@
+<div class="notification">
+  <div class="notification__text">
+    {{ data.text }}
+  </div>
+
+  <div class="notification__action">
+    <button mat-icon-button (click)="snackBar.dismiss()" class="notification__action-button">
+      <mat-icon class="notification__action-icon">close</mat-icon>
+    </button>
+  </div>
+</div>

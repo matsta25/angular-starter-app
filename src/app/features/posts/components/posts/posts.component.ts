@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {PostsState} from '../../store/posts.state';
 import {Observable} from 'rxjs';
-import {Post} from '../models/post.model';
+import {Post} from '../../models/post.model';
 import {selectPosts} from '../../store/posts.selectors';
 import {readPosts} from '../../store/posts.actions';
 import {NotificationService} from '../../../../shared/services/notification.service';

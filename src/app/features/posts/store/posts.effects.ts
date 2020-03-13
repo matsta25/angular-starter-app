@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {PostsService} from '../components/services/posts.service';
+import {PostsService} from '../services/posts.service';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {readPosts, readPostsFail, readPostsSuccess} from './posts.actions';
 import {catchError, map, mergeMap} from 'rxjs/operators';
 import {HttpResponseModel} from '../../../shared/models/http-response-model.model';
-import {Post} from '../components/models/post.model';
+import {Post} from '../models/post.model';
 import {of} from 'rxjs';
 
 @Injectable()

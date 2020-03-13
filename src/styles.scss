@@ -1,16 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 // TODO: add snackbar classes to appropriate scss file
 
 // TODO: add styling to button 'close' snackbar OR change close to icon 'x'
 
-.snackbar--success{
-  background: green;
+// TODO: add variables
+$font-size-sm: 12px;
+$font-weight-bold: 700;
+$danger: red;
+$success: green;
+
+.app-snack-bar {
+  button {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, .45);
+  }
 }
 
-.snackbar--danger{
-  background: red;
+.app-snack-bar_error {
+  background-color: $danger;
+}
+
+.app-snack-bar_success {
+  background-color: $success;
 }
