@@ -11,6 +11,7 @@
  *  [x] shared module
  *  [x] angular material
  *  [ ] bootstrap
+ *  [ ] scss file structure
  *  [x] lazy loading
  *  [ ] mock
  *  [x] multi env
