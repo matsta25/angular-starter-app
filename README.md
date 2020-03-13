@@ -22,4 +22,6 @@
  *  [ ] docker compose
  *  [ ] docker file
  *  [ ] proxy?
- *  [ ] 
+ *  [ ] i18n?
+ *  [ ] slim bar loading
+ *  [ ] custom snackbar with x icon
