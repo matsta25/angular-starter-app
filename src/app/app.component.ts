@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store'
 import { SharedState } from './shared/store/shared.state'
 import { checkIsOnline } from './shared/store/shared.actions'
 import { selectIsOnline } from './shared/store/shared.selectors'
-import { showConsoleEasterEgg } from './core/console-easter-egg.function'
+import { showConsoleEasterEggImage, showConsoleEasterEggLogo } from './core/console-easter-egg.function'
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    showConsoleEasterEggLogo()
+    showConsoleEasterEggImage()
+
     this.isOnline$ = this.store.pipe(select(selectIsOnline))
-    showConsoleEasterEgg()
   }
 }

@@ -1,4 +1,4 @@
-export const showConsoleEasterEgg = () => {
+export const showConsoleEasterEggLogo = () => {
   console.log(`
               .':lxOXNNXOxl:'.
         ..;cdkKNMMMMWNNWMMMMNKkdc;..
@@ -20,4 +20,16 @@ export const showConsoleEasterEgg = () => {
 
            Angular Starter Template
   `)
+}
+
+export const showConsoleEasterEggImage = () => {
+  console.log(
+    '%c  ',
+    'background-image: url(\'' +
+    'https://media1.giphy.com/media/aFTt8wvDtqKCQ/giphy.gif?cid=790b76115b19b1f6ff88d1b502c8e0ec1df89abe54544fa4&rid=giphy.gif' +
+    '\');' +
+    'background-repeat: no-repeat;' +
+    'background-size: 441px 550px;' +
+    'font-size: 441px'
+  )
 }
