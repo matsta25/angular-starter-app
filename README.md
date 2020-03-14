@@ -30,3 +30,4 @@
  *  [x] custom snackbar with x icon
  *  [ ] ?shared NgRx isLoading/err - USELESS IF USING PROGRESSBAR
  *  [ ] font fix when offline
+ *  [x] console log easter egg
