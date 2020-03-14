@@ -1,6 +1,6 @@
-import {createReducer, on} from '@ngrx/store';
-import {initialPostsState} from './posts.state';
-import {readPosts, readPostsFail, readPostsSuccess} from './posts.actions';
+import { createReducer, on } from '@ngrx/store'
+import { initialPostsState } from './posts.state'
+import { readPosts, readPostsFail, readPostsSuccess } from './posts.actions'
 
 export const postsReducer = createReducer(
   initialPostsState,
@@ -15,4 +15,4 @@ export const postsReducer = createReducer(
   on(readPostsFail, (state) => ({
     ...state,
   }))
-);
+)

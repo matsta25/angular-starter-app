@@ -1,7 +1,7 @@
-import {Injectable, NgZone} from '@angular/core';
-import {MatSnackBar, MatSnackBarRef, SimpleSnackBar} from '@angular/material/snack-bar';
-import {NotificationComponent} from '../components/notification/notification.component';
-import {defaultSnackBarConfig, errorSnackBarConfig, successSnackBarConfig} from '../models/snackbar.model';
+import { Injectable, NgZone } from '@angular/core'
+import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar'
+import { NotificationComponent } from '../components/notification/notification.component'
+import { defaultSnackBarConfig, errorSnackBarConfig, successSnackBarConfig } from '../models/snackbar.model'
 
 @Injectable({
   providedIn: 'root'
@@ -12,45 +12,45 @@ export class NotificationService {
   }
 
   showInfo(message: string, duration: number = 2000): MatSnackBarRef<SimpleSnackBar> {
-    let ref;
+    let ref
 
     if (message) {
       this.zone.run(() => ref = this.snackBar.openFromComponent(NotificationComponent, {
         ...defaultSnackBarConfig, ...{duration},
         data: {text: message}
-      }));
+      }))
     }
 
-    return ref;
+    return ref
   }
 
   showSuccess(message: string, duration: number = 2000): MatSnackBarRef<SimpleSnackBar> {
-    let ref;
+    let ref
 
     if (message) {
       this.zone.run(() => ref = this.snackBar.openFromComponent(NotificationComponent, {
         ...successSnackBarConfig, ...{duration},
         data: {text: message}
-      }));
+      }))
     }
 
-    return ref;
+    return ref
   }
 
   showError(message: string, duration: number = 10000): MatSnackBarRef<SimpleSnackBar> {
-    let ref;
+    let ref
 
     if (message) {
       this.zone.run(() => ref = this.snackBar.openFromComponent(NotificationComponent, {
         ...errorSnackBarConfig, ...{duration},
         data: {text: message}
-      }));
+      }))
     }
 
-    return ref;
+    return ref
   }
 
   dismiss(snackBarRef: MatSnackBarRef<SimpleSnackBar>) {
-    return snackBarRef.dismiss();
+    return snackBarRef.dismiss()
   }
 }

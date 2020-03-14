@@ -18,7 +18,7 @@
  *  [x] ngrx store
  *  [ ] ngrx entity
  *  [ ] table pagination async
- *  [ ] tslint
+ *  [x] tslint
  *  [ ] localstorage
  *  [x] notification
  *  [x] online notification

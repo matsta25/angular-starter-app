@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
-import {select, Store} from '@ngrx/store';
-import {SharedState} from './shared/store/shared.state';
-import {checkIsOnline} from './shared/store/shared.actions';
-import {selectIsOnline} from './shared/store/shared.selectors';
+import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
+import { select, Store } from '@ngrx/store'
+import { SharedState } from './shared/store/shared.state'
+import { checkIsOnline } from './shared/store/shared.actions'
+import { selectIsOnline } from './shared/store/shared.selectors'
 
 @Component({
   selector: 'app-root',
@@ -12,13 +12,13 @@ import {selectIsOnline} from './shared/store/shared.selectors';
 })
 export class AppComponent implements OnInit {
 
-  isOnline$: Observable<boolean>;
+  isOnline$: Observable<boolean>
 
   constructor(private store: Store<SharedState>) {
-    this.store.dispatch(checkIsOnline());
+    this.store.dispatch(checkIsOnline())
   }
 
   ngOnInit(): void {
-    this.isOnline$ = this.store.pipe(select(selectIsOnline));
+    this.isOnline$ = this.store.pipe(select(selectIsOnline))
   }
 }

@@ -1,22 +1,22 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {environment} from '../../environments/environment';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { environment } from '../../environments/environment'
 
-import {SharedModule} from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module'
 
-import {HeaderComponent} from './components/header/header.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
-import {HomeComponent} from './components/home/home.component';
+import { HeaderComponent } from './components/header/header.component'
+import { FooterComponent } from './components/footer/footer.component'
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
+import { HomeComponent } from './components/home/home.component'
 
-import {StoreModule} from '@ngrx/store';
-import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 
-import {EffectsModule} from '@ngrx/effects';
-import {HttpClientModule} from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects'
+import { HttpClientModule } from '@angular/common/http'
 
-import {appReducers} from './app-store/app-store.reducers';
-import {appEffects} from './app-store/app-store.effects';
+import { appReducers } from './app-store/app-store.reducers'
+import { appEffects } from './app-store/app-store.effects'
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, PageNotFoundComponent, HomeComponent],

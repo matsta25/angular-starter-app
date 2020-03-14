@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router'
 
-import {PageNotFoundComponent} from './core/components/page-not-found/page-not-found.component';
-import {HomeComponent} from './core/components/home/home.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component'
+import { HomeComponent } from './core/components/home/home.component'
 
 
 const routes: Routes = [
@@ -19,7 +19,7 @@ const routes: Routes = [
     path: '**',
     component: PageNotFoundComponent,
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {

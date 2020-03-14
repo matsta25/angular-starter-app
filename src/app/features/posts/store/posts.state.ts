@@ -1,9 +1,9 @@
-import {Post} from '../models/post.model';
+import { Post } from '../models/post.model'
 
 export interface PostsState {
-  posts: Post[];
+  posts: Post[]
 }
 
 export const initialPostsState: PostsState = {
   posts: []
-};
+}

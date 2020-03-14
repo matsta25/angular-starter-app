@@ -1,6 +1,6 @@
-import {createReducer, on} from '@ngrx/store';
-import {initialSharedState} from './shared.state';
-import {checkIsOnline, setIsOnline} from './shared.actions';
+import { createReducer, on } from '@ngrx/store'
+import { initialSharedState } from './shared.state'
+import { checkIsOnline, setIsOnline } from './shared.actions'
 
 export const sharedReducer = createReducer(
   initialSharedState,
@@ -12,4 +12,4 @@ export const sharedReducer = createReducer(
     ...state,
     isOnline
   }))
-);
+)
