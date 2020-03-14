@@ -12,4 +12,5 @@ import { PostsComponent } from './components/posts/posts.component'
     PostsRoutingModule,
   ]
 })
-export class PostsModule { }
+export class PostsModule {
+}
