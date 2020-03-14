@@ -1,3 +1,8 @@
-<p>This is post page!</p>
-
-{{ posts$ | async | json }}
+<ul *ngIf="posts$ | async as posts">
+  <li *ngFor="let post of posts">
+    <div>
+      <h3>{{ post.title }}</h3>
+    </div>
+    <div>{{ post.paragraph }}</div>
+  </li>
+</ul>

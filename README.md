@@ -13,9 +13,9 @@
  *  [x] bootstrap
  *  [ ] scss file structure
  *  [x] lazy loading
- *  [ ] mock
+ *  [x] mock
  *  [x] multi env
- *  [ ] ngrx store
+ *  [x] ngrx store
  *  [ ] ngrx entity
  *  [ ] table pagination async
  *  [ ] tslint
@@ -28,5 +28,5 @@
  *  [ ] i18n?
  *  [x] slim bar loading
  *  [x] custom snackbar with x icon
- *  [ ] shared NgRx isLoading err
- 
+ *  [ ] ?shared NgRx isLoading/err - USELESS IF USING PROGRESSBAR
+ *  [ ] font fix when offline
