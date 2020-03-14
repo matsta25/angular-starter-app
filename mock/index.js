@@ -5,16 +5,13 @@ module.exports = () => {
 
   for (let i = 0; i < 10; i++) {
     data.posts.push({
+      userId: faker.random.uuid(),
       id: faker.random.uuid(),
       title: faker.name.title(),
-      paragraph: faker.lorem.paragraph()
+      body: faker.lorem.paragraph()
     })
   }
   return data
 };
 
 // api methods: https://github.com/Marak/faker.js#api-methods
-
-
-
-
