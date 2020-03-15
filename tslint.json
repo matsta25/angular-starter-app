@@ -52,7 +52,7 @@
       "timeEnd",
       "trace"
     ],
-    "no-empty": false,
+    "no-empty": true,
     "no-inferrable-types": [
       true,
       "ignore-params"
@@ -92,7 +92,8 @@
       true,
       "check-module",
       "check-decl"
-    ]
+    ],
+    "unnecessary-constructor": true
   },
   "rulesDirectory": [
     "codelyzer"

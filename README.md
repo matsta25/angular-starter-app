@@ -7,7 +7,7 @@
 # TODO list
 
  *  [ ] project files structure
- *  [ ] core module
+ *  [x] core module
  *  [x] shared module
  *  [x] angular material
  *  [x] bootstrap
@@ -19,7 +19,7 @@
  *  [ ] ngrx entity
  *  [ ] table pagination async
  *  [x] tslint
- *  [ ] localstorage
+ *  [x] localstorage
  *  [x] notification
  *  [x] online notification
  *  [ ] docker compose
@@ -31,3 +31,5 @@
  *  [ ] ?shared NgRx isLoading/err - USELESS IF USING PROGRESSBAR
  *  [ ] font fix when offline
  *  [x] console log easter egg
+ 
+ 
