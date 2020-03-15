@@ -1,8 +1,8 @@
 # NgxStarterTemplate
 
-[![Build Status](https://travis-ci.org/matsta25/ngx-starter-template.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-template){:target="_blank"}
+[![Build Status](https://travis-ci.org/matsta25/ngx-starter-template.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-template)
 
-[DEMO](https://matsta25.github.io/ngx-starter-template){:target="_blank"}
+[DEMO](https://matsta25.github.io/ngx-starter-template)
 
 # TODO list
 
