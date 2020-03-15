@@ -1,8 +1,11 @@
 # NgxStarterTemplate
 
+<!--- TODO: more badges --->
 [![Build Status](https://travis-ci.org/matsta25/ngx-starter-template.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-template)
 
-[DEMO](https://matsta25.github.io/ngx-starter-template)
+<!--- TODO: logo ---> 
+
+Checkout [DEMO](https://matsta25.github.io/ngx-starter-template)
 
 ##### Mock feature (json-server):
 1. Run:
