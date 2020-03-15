@@ -4,7 +4,7 @@
 
 [DEMO](https://matsta25.github.io/ngx-starter-template)
 
-##### Mock feature:
+##### Mock feature (json-server):
 1. Run:
 ```
     npm run mock
@@ -17,8 +17,12 @@ To add more fake data just edit mock/index.js :)
 
 ##### Docker feature:
 
-1. Using docker:
+1. Using docker-compose:
+```
+    docker-compose up --build
+```
 
+2. Alternatively using docker:
 build: 
 ```
     docker build -t ngx-starter-template-image .
@@ -29,15 +33,24 @@ run
     docker run --name ngx-starter-template-container -d -p 80:80 ngx-starter-template-image
 ```
 
-2. Alternatively using docker-compose
-
-```
-    docker-compose up --build
-```
-
 INFO:
 Site is available at http://localhost.
 Dockerfile is using nginx.conf.
+
+##### Multi environment conf feature:
+
+For env/developer one:
+```
+    npm run start:one
+```
+
+For env/developer two:
+```
+    npm run start:two
+```
+
+INFO:
+Package is available with 2 additional different environments e.g like developers. 
 
 #####  TODO list
 
@@ -63,10 +76,10 @@ Dockerfile is using nginx.conf.
  *  [x] docker file
  *  [x] slim bar loading
  *  [x] custom snackbar with x icon
- *  [ ] ?shared NgRx isLoading/err - ? USELESS IF USING PROGRESSBAR
- *  [ ] font fix when offline
  *  [x] console log easter egg
  
+ *  [ ] font fix when offline
+ *  [ ] ?shared NgRx isLoading/err - ? USELESS IF USING PROGRESSBAR
  *  [ ] ?group docker docker-compose nginx.conf files - into new dir?
  *  [ ] proxy?
  *  [ ] i18n?
