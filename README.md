@@ -10,10 +10,9 @@
     npm run mock
 ```
 
+INFO:
 API is available on http://localhost:3000/api/posts and http://localhost:3000/posts.
-
 API is serving data created with faker.js.
-
 To add more fake data just edit mock/index.js :)
 
 ##### Docker feature:
@@ -35,6 +34,10 @@ run
 ```
     docker-compose up --build
 ```
+
+INFO:
+Site is available at http://localhost.
+Dockerfile is using nginx.conf.
 
 #####  TODO list
 
@@ -64,9 +67,6 @@ run
  *  [ ] font fix when offline
  *  [x] console log easter egg
  
- 
  *  [ ] ?group docker docker-compose nginx.conf files - into new dir?
  *  [ ] proxy?
  *  [ ] i18n?
-
- 
