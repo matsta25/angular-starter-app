@@ -22,6 +22,7 @@ export const showConsoleEasterEggLogo = () => {
   `)
 }
 
+// easter egg with gif :)
 export const showConsoleEasterEggImage = () => {
   console.log(
     '%c  ',

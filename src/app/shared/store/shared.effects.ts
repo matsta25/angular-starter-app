@@ -36,7 +36,7 @@ export class SharedEffects {
 
   private showHideNotification(isOnline: boolean) {
     if (!isOnline) {
-      this.ref = this.notificationService.showError('You are currently offline.')
+      this.ref = this.notificationService.showError('You are currently offline.', 999999)
     } else {
       if (this.ref) {
         this.notificationService.dismiss(this.ref)

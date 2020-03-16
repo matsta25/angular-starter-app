@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { SharedState } from './shared/store/shared.state'
 import { checkIsOnline } from './shared/store/shared.actions'
-import { showConsoleEasterEggImage, showConsoleEasterEggLogo } from './core/console-easter-egg.function'
+import { showConsoleEasterEggLogo } from './core/console-easter-egg.function'
 
 @Component({
   selector: 'app-root',
@@ -11,13 +11,11 @@ import { showConsoleEasterEggImage, showConsoleEasterEggLogo } from './core/cons
 })
 export class AppComponent implements OnInit {
 
-
   constructor(private store: Store<SharedState>) {
     this.store.dispatch(checkIsOnline())
   }
 
   ngOnInit(): void {
     showConsoleEasterEggLogo()
-    showConsoleEasterEggImage()
   }
 }

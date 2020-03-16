@@ -1,1 +1,28 @@
-<p>This is home page!</p>
+<h3>Features lists:</h3>
+
+<hr>
+
+<h5>Notifications:</h5>
+<button mat-raised-button (click)="showSuccessNotification()" color="primary">Success</button>
+<button mat-raised-button (click)="showErrorNotification()" color="primary">Error</button>
+<button mat-raised-button (click)="showInfoNotification()" color="primary">Info</button>
+
+<hr>
+
+<h5>Local storage:</h5>
+<div>
+  exampleValue: {{ exampleValue }}
+</div>
+<button mat-raised-button (click)="setExampleValue()" color="primary">Set exampleValue</button>
+<button mat-raised-button (click)="getExampleValue()" color="primary">Get exampleValue</button>
+<button mat-raised-button (click)="delExampleValue()" color="primary">Del exampleValue</button>
+Press F5 to test it.
+
+<hr>
+
+<h5>Offline indicator:</h5>
+Disable your internet connection or go to 'Network' chrome developer tab, and set it to offline.
+
+<hr>
+
+
