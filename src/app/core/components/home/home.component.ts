@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { LocalStorageService } from '../../../shared/services/local-storage.service'
 import { LocalStorageKey } from '../../../shared/models/local-storage-key.model'
 import { NotificationService } from '../../../shared/services/notification.service'
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   public exampleValue: string
 
-  constructor(private localStorageService: LocalStorageService, private notificationService: NotificationService) {
+  constructor(private localStorageService: LocalStorageService, private notificationService: NotificationService, private http: HttpClient) {
   }
 
   ngOnInit(): void {
@@ -43,5 +44,18 @@ export class HomeComponent implements OnInit {
   delExampleValue() {
     this.localStorageService.del(LocalStorageKey.EXAMPLE_KEY)
     this.getExampleValue()
+  }
+
+  runClientSiteErr404() {
+    console.log('asd')
+    this.http.get('http://localhost:4200/error').subscribe()
+  }
+
+  runServerSiteErr401() {
+    this.http.get('http://getstatuscode.com/401').subscribe()
+  }
+
+  runServerSiteErr500() {
+    this.http.get('http://getstatuscode.com/500').subscribe()
   }
 }
