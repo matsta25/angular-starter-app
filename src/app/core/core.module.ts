@@ -18,10 +18,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { appReducers } from './app-store/app-store.reducers'
 import { appEffects } from './app-store/app-store.effects'
 
+import {RouterModule} from '@angular/router';
+
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, PageNotFoundComponent, HomeComponent],
   imports: [
     CommonModule,
+    RouterModule,
     HttpClientModule,
 
     // shared

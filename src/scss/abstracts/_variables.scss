@@ -191,6 +191,7 @@ $toolbar-font-weight: $font-weight-normal;
 $toolbar-font-size: $font-size-base;
 $toolbar-line-height: $line-height-base;
 $toolbar-font-family: $font-family-base;
+$toolbar-background-color: map-get($primary-palette, 50);
 
 
 // Page-header

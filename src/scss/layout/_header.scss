@@ -3,5 +3,13 @@
 // -----------------------------------------------------------------------------
 
 .app-toolbar {
-  background-color: rebeccapurple !important;
+  background-color: $toolbar-background-color !important;
+}
+
+.app-toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.app-toolbar-element {
+  padding: 0 14px !important;
 }
