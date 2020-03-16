@@ -84,7 +84,7 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] readme gif
  *  [ ] project tree
  *  [x] stackblitz 
- *  [ ] interceptor err notification 
+ *  [x] interceptor err notification 
  *  [ ] spinner when loading
  *  [ ] error service
  
