@@ -12,7 +12,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
-    "mock": "./node_modules/json-server/lib/cli/bin.js ./mock/index.js --routes ./mock/routes.json"
+    "mock": "json-server ./mock/index.js --routes ./mock/routes.json"
   },
   "private": true,
   "dependencies": {

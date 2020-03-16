@@ -6,6 +6,7 @@
 <!--- TODO: logo ---> 
 
 Checkout [DEMO](https://matsta25.github.io/ngx-starter-template)
+StackBlitz [HERE](https://stackblitz.com/github/matsta25/ngx-starter-template)
 
 ##### Mock feature (json-server):
 1. Run:
@@ -82,7 +83,7 @@ Package is available with 2 additional different environments e.g like developer
  *  [x] console log easter egg
  *  [ ] readme gif
  *  [ ] project tree
- *  [ ] stackblitz
+ *  [ ] stackblitz 
  
  *  [ ] font fix when offline
  *  [ ] ?shared NgRx isLoading/err - ? USELESS IF USING PROGRESSBAR
@@ -96,3 +97,4 @@ Package is available with 2 additional different environments e.g like developer
  - licence
  - contribution rules
  - color sh - https://asciinema.org/
+ - tslint , EOL

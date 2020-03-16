@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core'
-import { Observable } from 'rxjs'
-import { select, Store } from '@ngrx/store'
+import { Store } from '@ngrx/store'
 import { SharedState } from './shared/store/shared.state'
 import { checkIsOnline } from './shared/store/shared.actions'
-import { selectIsOnline } from './shared/store/shared.selectors'
 import { showConsoleEasterEggImage, showConsoleEasterEggLogo } from './core/console-easter-egg.function'
 
 @Component({
@@ -13,7 +11,6 @@ import { showConsoleEasterEggImage, showConsoleEasterEggLogo } from './core/cons
 })
 export class AppComponent implements OnInit {
 
-  isOnline$: Observable<boolean>
 
   constructor(private store: Store<SharedState>) {
     this.store.dispatch(checkIsOnline())
@@ -22,7 +19,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     showConsoleEasterEggLogo()
     showConsoleEasterEggImage()
-
-    this.isOnline$ = this.store.pipe(select(selectIsOnline))
   }
 }
