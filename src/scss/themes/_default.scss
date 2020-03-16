@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// Default theme
+// -----------------------------------------------------------------------------
+
+@import '~@angular/material/theming';
+
+$typography-config: mat-typography-config(
+  $font-family: $font-family-base,
+  $body-1: mat-typography-level($font-size-base, $line-height-base, $font-weight-normal),
+  $body-2: mat-typography-level($font-size-base, $line-height-base, $font-weight-bold),
+  $headline: mat-typography-level($h1-font-size, $headings-line-height, $headings-font-weight),
+  $title: mat-typography-level($h2-font-size, $headings-line-height, $headings-font-weight),
+  $subheading-2: mat-typography-level($h3-font-size, $headings-line-height, $headings-font-weight),
+  $subheading-1: mat-typography-level($h4-font-size, $headings-line-height, $headings-font-weight),
+  $button: mat-typography-level($font-size-base, $font-size-base, $font-weight-normal)
+);
+// common styles for Angular Material
+@include mat-core($typography-config);
+// theme object
+$app-theme: mat-light-theme($color-primary, $color-accent, $color-warn);
+// theme styles for core
+@include angular-material-theme($app-theme);
+

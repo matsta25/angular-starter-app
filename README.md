@@ -58,12 +58,12 @@ Package is available with 2 additional different environments e.g like developer
 
 #####  TODO list
 
- *  [ ] project files structure
+ *  [x] project files structure
  *  [x] core module
  *  [x] shared module
  *  [x] angular material
  *  [x] bootstrap
- *  [ ] scss file structure
+ *  [x] scss file structure
  *  [x] lazy loading
  *  [x] mock
  *  [x] multi env
@@ -83,7 +83,10 @@ Package is available with 2 additional different environments e.g like developer
  *  [x] console log easter egg
  *  [ ] readme gif
  *  [ ] project tree
- *  [ ] stackblitz 
+ *  [x] stackblitz 
+ *  [ ] interceptor err notification 
+ *  [ ] spinner
+ *  [ ] error service
  
  *  [ ] font fix when offline
  *  [ ] ?shared NgRx isLoading/err - ? USELESS IF USING PROGRESSBAR
@@ -91,6 +94,7 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] proxy?
  *  [ ] i18n?
  *  [ ] PWA?
+ 
  
  - select color template - https://colorsinspo.com/
  - contribution nice table
