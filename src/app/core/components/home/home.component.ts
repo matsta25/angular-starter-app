@@ -13,7 +13,11 @@ export class HomeComponent implements OnInit {
 
   public exampleValue: string
 
-  constructor(private localStorageService: LocalStorageService, private notificationService: NotificationService, private http: HttpClient) {
+  constructor(
+    private localStorageService: LocalStorageService,
+    private notificationService: NotificationService,
+    private http: HttpClient
+  ) {
   }
 
   ngOnInit(): void {
