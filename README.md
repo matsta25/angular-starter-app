@@ -89,6 +89,7 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] ?group docker docker-compose nginx.conf files - into new dir?
  *  [ ] proxy?
  *  [ ] i18n?
+ *  [ ] PWA?
  
  - select color template - https://colorsinspo.com/
  - contribution nice table
