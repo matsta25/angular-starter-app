@@ -31,7 +31,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
           }
           this.notificationService.showError(errorMessage)
           // TODO: complete ngx-progress
-          return throwError(errorMessage);
+          return throwError(errorMessage)
         })
       )
   }
