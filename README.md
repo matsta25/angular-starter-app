@@ -80,9 +80,18 @@ Package is available with 2 additional different environments e.g like developer
  *  [x] slim bar loading
  *  [x] custom snackbar with x icon
  *  [x] console log easter egg
+ *  [ ] readme gif
+ *  [ ] project tree
+ *  [ ] stackblitz
  
  *  [ ] font fix when offline
  *  [ ] ?shared NgRx isLoading/err - ? USELESS IF USING PROGRESSBAR
  *  [ ] ?group docker docker-compose nginx.conf files - into new dir?
  *  [ ] proxy?
  *  [ ] i18n?
+ 
+ - select color template - https://colorsinspo.com/
+ - contribution nice table
+ - licence
+ - contribution rules
+ - color sh - https://asciinema.org/
