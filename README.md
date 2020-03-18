@@ -1,6 +1,5 @@
 # NgxStarterApp
 
-<!--- TODO: more badges --->
 [![Build Status](https://travis-ci.org/matsta25/ngx-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-app)
 [![CodeFactor](https://www.codefactor.io/repository/github/matsta25/ngx-starter-app/badge)](https://www.codefactor.io/repository/github/matsta25/ngx-starter-app)
 
@@ -90,15 +89,14 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] project tree
 
  
- *  [ ] spinner when loading
  *  [ ] ?font fix when offline
+ *  [ ] ?spinner when loading
  *  [ ] ?shared NgRx isLoading/err - ? USELESS IF USING PROGRESSBAR
  *  [ ] ?group docker docker-compose nginx.conf files - into new dir?
  *  [ ] i18n?
  *  [ ] PWA?
  *  [ ] ?ngrx entity - TO MUCH 'blech'
  *  [ ] ?table pagination async
- 
  
  - select color template - https://colorsinspo.com/
  - contribution nice table
