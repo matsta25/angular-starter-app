@@ -105,3 +105,15 @@ Package is available with 2 additional different environments e.g like developer
  - contribution rules
  - color sh - https://asciinema.org/
  - tslint , EOL
+
+PROJECT NAME:
+
+ngx-start-app
+
+ngx-starter-project
+
+*ngx-starter-app
+
+angular-starter-app
+
+angular-starter-project
