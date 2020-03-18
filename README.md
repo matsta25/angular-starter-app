@@ -2,6 +2,7 @@
 
 <!--- TODO: more badges --->
 [![Build Status](https://travis-ci.org/matsta25/ngx-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-app)
+[![CodeFactor](https://www.codefactor.io/repository/github/matsta25/ngx-starter-app/badge)](https://www.codefactor.io/repository/github/matsta25/ngx-starter-app)
 
 <!--- TODO: logo ---> 
 
