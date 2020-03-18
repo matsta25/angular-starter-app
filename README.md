@@ -97,7 +97,7 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] i18n?
  *  [ ] PWA?
  *  [ ] ?ngrx entity - TO MUCH 'blech'
- *  [ ] t?able pagination async
+ *  [ ] ?table pagination async
  
  
  - select color template - https://colorsinspo.com/
