@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./features/posts/posts.module').then(m => m.PostsModule)
   },
   {
-    path: 'books',
-    loadChildren: () => import('./features/books/books.module').then(m => m.BooksModule)
-  },
-  {
     path: '**',
     component: PageNotFoundComponent,
   }
