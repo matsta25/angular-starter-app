@@ -87,6 +87,10 @@ Package is available with 2 additional different environments e.g like developer
  *  [x] interceptor err notification 
  *  [ ] spinner when loading
  *  [ ] error service
+ *  [ ] .editorconfig
+ *  [ ] .github/issue_template
+ *  [ ] .github/pull_request_template
+ *  [ ] 
  
  *  [ ] font fix when offline
  *  [ ] ?shared NgRx isLoading/err - ? USELESS IF USING PROGRESSBAR
