@@ -4,7 +4,7 @@ import { Action, createReducer, on } from '@ngrx/store'
 import { readBooks, readBooksSuccess } from './books.actions'
 
 export interface BooksState extends EntityState<Book> {
-  selectedBookId: number | null;
+  selectedBookId: number | null
 }
 
 export const booksAdapter: EntityAdapter<Book> = createEntityAdapter<Book>({
@@ -19,7 +19,7 @@ export const initialBooksState: BooksState = booksAdapter.getInitialState({
 const reducer = createReducer(
   initialBooksState,
   on(readBooks, (state) => ({...state})),
-  on(readBooksSuccess, (state, {books}) => booksAdapter.addAll(books, state)),
+  on(readBooksSuccess, (state, {books}) => booksAdapter.setAll(books, state)),
 )
 
 export function booksReducer(state: BooksState | undefined, action: Action) {

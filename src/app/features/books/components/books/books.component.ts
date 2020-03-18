@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import { Book } from '../../models/book.module'
