@@ -1,7 +1,10 @@
 const faker = require('faker');
 
 module.exports = () => {
-  const data = {posts: []};
+  const data = {
+    posts: [],
+    books: []
+  };
 
   for (let i = 0; i < 10; i++) {
     data.posts.push({
@@ -11,6 +14,14 @@ module.exports = () => {
       body: faker.lorem.paragraph()
     })
   }
+
+  for (let i = 0; i < 10; i++) {
+    data.books.push({
+      id: i,
+      title: faker.name.title()
+    })
+  }
+
   return data
 };
 

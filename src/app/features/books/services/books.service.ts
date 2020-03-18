@@ -5,11 +5,12 @@ import { environment } from '../../../../environments/environment'
 @Injectable({
   providedIn: 'root'
 })
-export class PostsService {
+export class BooksService {
+
   constructor(private http: HttpClient) {
   }
 
-  public readPosts() {
-    return this.http.get(`${environment.baseUrl}/posts`)
+  public readBooks() {
+    return this.http.get(`${environment.baseUrl}/books`)
   }
 }

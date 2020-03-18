@@ -88,8 +88,8 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] spinner when loading
  *  [ ] error service
  *  [x] .editorconfig
- *  [ ] .github/issue_template
- *  [ ] .github/pull_request_template
+ *  [x] .github/issue_template
+ *  [x] .github/pull_request_template
  *  [x] proxy
 
  
