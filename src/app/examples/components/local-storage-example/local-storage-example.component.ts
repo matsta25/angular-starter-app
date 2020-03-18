@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { LocalStorageService } from '../../../shared/services/local-storage.service'
 import { LocalStorageKey } from '../../../shared/models/local-storage-key.model'
 
