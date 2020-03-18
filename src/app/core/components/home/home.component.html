@@ -1,31 +1,20 @@
+<!--
+    // FIXME: delete code below if PRODUCTION
+-->
+
 <h3>Features lists:</h3>
 
-<hr>
-
-<h5>Notifications:</h5>
-<button mat-raised-button (click)="showSuccessNotification()" color="primary">Success</button>
-<button mat-raised-button (click)="showErrorNotification()" color="primary">Error</button>
-<button mat-raised-button (click)="showInfoNotification()" color="primary">Info</button>
+<app-notification-example></app-notification-example>
 
 <hr>
 
-<h5>Local storage:</h5>
-<div>
-  exampleValue: {{ exampleValue }}
-</div>
-<button mat-raised-button (click)="setExampleValue()" color="primary">Set exampleValue</button>
-<button mat-raised-button (click)="delExampleValue()" color="primary">Del exampleValue</button>
-Press F5 to test it.
+<app-local-storage-example></app-local-storage-example>
 
 <hr>
 
-<h5>Offline indicator:</h5>
-Disable your internet connection or go to 'Network' chrome developer tab, and set it to offline.
+<app-offline-example></app-offline-example>
 
 <hr>
-<h5>Http error handler:</h5>
-<button mat-raised-button (click)="runClientSiteErr404()" color="primary">Run client side err - 404</button>
-<button mat-raised-button (click)="runServerSiteErr401()" color="primary">Run server side err - 401</button>
-<button mat-raised-button (click)="runServerSiteErr500()" color="primary">Run server side err - 500</button>
 
+<app-error-handler-example></app-error-handler-example>
 

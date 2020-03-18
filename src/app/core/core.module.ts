@@ -19,6 +19,7 @@ import { appReducers } from './app-store/app-store.reducers'
 import { appEffects } from './app-store/app-store.effects'
 
 import { RouterModule } from '@angular/router'
+import { ExamplesModule } from '../examples/examples.module'
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, PageNotFoundComponent, HomeComponent],
@@ -33,7 +34,10 @@ import { RouterModule } from '@angular/router'
     //  ngrx
     StoreModule.forRoot(appReducers, {}),
     EffectsModule.forRoot(appEffects),
-    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production})
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+
+    // FIXME: delete code below if PRODUCTION
+    ExamplesModule
   ],
   providers: [],
   exports: [

@@ -70,8 +70,6 @@ Package is available with 2 additional different environments e.g like developer
  *  [x] ngrx store
  *  [x] ngrx effects
  *  [x] ngrx devtools
- *  [ ] ngrx entity
- *  [ ] table pagination async
  *  [x] tslint
  *  [x] localstorage
  *  [x] notification
@@ -81,23 +79,24 @@ Package is available with 2 additional different environments e.g like developer
  *  [x] slim bar loading
  *  [x] custom snackbar with x icon
  *  [x] console log easter egg
- *  [ ] readme gif
- *  [ ] project tree
  *  [x] stackblitz 
  *  [x] interceptor err notification 
- *  [ ] spinner when loading
- *  [ ] error service
  *  [x] .editorconfig
  *  [x] .github/issue_template
  *  [x] .github/pull_request_template
  *  [x] proxy
+ *  [ ] readme gif
+ *  [ ] project tree
 
  
+ *  [ ] spinner when loading
  *  [ ] ?font fix when offline
  *  [ ] ?shared NgRx isLoading/err - ? USELESS IF USING PROGRESSBAR
  *  [ ] ?group docker docker-compose nginx.conf files - into new dir?
  *  [ ] i18n?
  *  [ ] PWA?
+ *  [ ] ?ngrx entity - TO MUCH 'blech'
+ *  [ ] t?able pagination async
  
  
  - select color template - https://colorsinspo.com/
