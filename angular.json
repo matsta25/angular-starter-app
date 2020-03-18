@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-starter-template": {
+    "ngx-starter-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-starter-template",
+            "outputPath": "dist/ngx-starter-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -82,25 +82,25 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-starter-template:build",
+            "browserTarget": "ngx-starter-app:build",
             "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-starter-template:build:production"
+              "browserTarget": "ngx-starter-app:build:production"
             },
             "one": {
-              "browserTarget": "ngx-starter-template:build:one"
+              "browserTarget": "ngx-starter-app:build:one"
             },
             "two": {
-              "browserTarget": "ngx-starter-template:build:two"
+              "browserTarget": "ngx-starter-app:build:two"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-starter-template:build"
+            "browserTarget": "ngx-starter-app:build"
           }
         },
         "test": {
@@ -137,18 +137,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-starter-template:serve"
+            "devServerTarget": "ngx-starter-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-starter-template:serve:production"
+              "devServerTarget": "ngx-starter-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ngx-starter-template",
+  "defaultProject": "ngx-starter-app",
   "cli": {
     "analytics": false
   }

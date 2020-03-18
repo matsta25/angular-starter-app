@@ -1,7 +1,7 @@
 version: '3.6'
 
 services:
-  ngx-starter-template:
+  ngx-starter-app:
     build: .
     ports:
       - 80:80

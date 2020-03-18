@@ -1,12 +1,12 @@
-# NgxStarterTemplate
+# NgxStarterApp
 
 <!--- TODO: more badges --->
-[![Build Status](https://travis-ci.org/matsta25/ngx-starter-template.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-template)
+[![Build Status](https://travis-ci.org/matsta25/ngx-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-app)
 
 <!--- TODO: logo ---> 
 
-Checkout [DEMO](https://matsta25.github.io/ngx-starter-template)
-StackBlitz [HERE](https://stackblitz.com/github/matsta25/ngx-starter-template)
+Checkout [DEMO](https://matsta25.github.io/ngx-starter-app)
+StackBlitz [HERE](https://stackblitz.com/github/matsta25/ngx-starter-app)
 
 ##### Mock feature (json-server):
 1. Run:
@@ -29,12 +29,12 @@ To add more fake data just edit mock/index.js :)
 2. Alternatively using docker:
 build: 
 ```
-    docker build -t ngx-starter-template-image .
+    docker build -t ngx-starter-app-image .
 ```
 
 run
 ```
-    docker run --name ngx-starter-template-container -d -p 80:80 ngx-starter-template-image
+    docker run --name ngx-starter-app-container -d -p 80:80 ngx-starter-app-image
 ```
 
 INFO:
