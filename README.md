@@ -1,13 +1,10 @@
-<div align="center">
+![Angular Starter App](https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true){width="800" height="600" style="display: block; margin: 0 auto"}
 
-  <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true" alt="angular-starter-app" width="226">
-  <h5>Angular Starter App</h5>
-  <br>
-    <div>
-    [![Build Status](https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/angular-starter-app)
-    [![CodeFactor](https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge)](https://www.codefactor.io/repository/github/matsta25/angular-starter-app)
-    </div>
-</div>
+Angular Starter App
+
+[![Build Status](https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/angular-starter-app)
+[![CodeFactor](https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge)](https://www.codefactor.io/repository/github/matsta25/angular-starter-app)
+
 
 Checkout [DEMO](https://matsta25.github.io/angular-starter-app)
 StackBlitz [HERE](https://stackblitz.com/github/matsta25/angular-starter-app)
