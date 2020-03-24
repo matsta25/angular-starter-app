@@ -5,13 +5,46 @@
     <br>
     <a href="https://travis-ci.org/github/matsta25/angular-starter-app"><img src="https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master" alt="TravisCi Build Status"/></a>
     <a href="https://www.codefactor.io/repository/github/matsta25/angular-starter-app"><img src="https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge" alt="CodeFactor" /></a>
+    <a href="https://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT badge"/></a>
 </p>
 
-### Live Demo
+## Live Demo
 
 Live demo is available -  :fire: [HERE](https://matsta25.github.io/angular-starter-app) :fire: !
 
 StackBlitz is available -  :fire: [HERE](https://stackblitz.com/github/matsta25/angular-starter-app) :fire: !
+
+
+## Features
+
+-   **App structure** — todo.
+
+-   **Offline notification** — Notification that shows when your app is offline.
+
+
+## Documentation
+
+Ready to get started? [Read installation instructions](todo).
+
+
+## Contributing
+
+Want to file a bug, contribute some code, or improve documentation? Excellent!
+
+Read up on guidelines for [contributing](https://github.com/matsta25/angular-starter-app/blob/master/CONTRIBUTING.md).
+
+#$ Contributors
+
+This project exists thanks to all these people.
+
+todo table of contributors
+
+## License
+
+Everything in this repository is [licensed under the MIT License][license] unless otherwise specified.
+
+Copyright (c) 2016 – 2020 [Mateusz Stanczak]
+
 
 ##### Mock feature (json-server):
 1. Run:
