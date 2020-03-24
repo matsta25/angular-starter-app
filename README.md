@@ -2,10 +2,8 @@
     <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true" alt="Angular Starter App">
     <br>
     <span style="font-size: x-large; ">Angular Starter App</span>
+    <a href="https://travis-ci.org/github/matsta25/angular-starter-app"><img src="https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master" alt="TravisCi Build Status"/></a>
 </p>
-
-[![Build Status](https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/angular-starter-app)
-[![CodeFactor](https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge)](https://www.codefactor.io/repository/github/matsta25/angular-starter-app)
 
 
 Checkout [DEMO](https://matsta25.github.io/angular-starter-app)
