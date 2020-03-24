@@ -1,9 +1,7 @@
-
-<p align="center">
+<span style="display:block;text-align:center">
     ![Angular Starter App](https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true)
-    #Angular Starter App
-</p>
-
+    Angular Starter App
+</span>
 
 [![Build Status](https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/angular-starter-app)
 [![CodeFactor](https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge)](https://www.codefactor.io/repository/github/matsta25/angular-starter-app)
