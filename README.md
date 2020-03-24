@@ -87,6 +87,8 @@ Package is available with 2 additional different environments e.g like developer
  *  [x] proxy
  *  [ ] readme gif
  *  [ ] project tree
+ *  [ ] root component for reature module
+ *  [ ] docs
 
  
  *  [ ] ?font fix when offline
