@@ -6,9 +6,10 @@
     <a href="https://travis-ci.org/github/matsta25/angular-starter-app"><img src="https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master" alt="TravisCi Build Status"/></a>
 </p>
 
+# Live Demo
 
-Checkout [DEMO](https://matsta25.github.io/angular-starter-app)
-StackBlitz [HERE](https://stackblitz.com/github/matsta25/angular-starter-app)
+Live demo is available -  :fire: [HERE](https://matsta25.github.io/angular-starter-app) :fire: !
+StackBlitz is available -  :fire: [HERE](https://stackblitz.com/github/matsta25/angular-starter-app) :fire: !
 
 ##### Mock feature (json-server):
 1. Run:
