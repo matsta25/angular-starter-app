@@ -14,7 +14,6 @@ export class ErrorHandlerExampleComponent {
   }
 
   runClientSiteErr404() {
-    console.log('asd')
     this.http.get('http://localhost:4200/error').subscribe()
   }
 
