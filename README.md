@@ -102,7 +102,11 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] ?ngrx entity - TO MUCH 'blech'
  *  [ ] ?table pagination async
  
- - select color template - https://colorsinspo.com/
+ - select color template - https://colorsinspo.com/:
+ gray - #40514e
+ blue - #2f89fc
+ green - #30e3ca
+ white - #f5f5f5
  - contribution nice table
  - licence
  - contribution rules
