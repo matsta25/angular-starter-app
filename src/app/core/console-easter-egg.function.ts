@@ -18,7 +18,7 @@ export const showConsoleEasterEggLogo = () => {
            .,lkXWMMMMMMMMMMWXkl,.
                .:d0NMMMMN0d:.
 
-           Angular Starter Template
+            Angular Starter App
   `)
 }
 
