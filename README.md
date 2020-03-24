@@ -1,4 +1,4 @@
-<p>
+<p align="center">
     <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true" alt="Angular Starter App">
     <span style="font-size: larger;">Angular Starter App</span>
 </p>
