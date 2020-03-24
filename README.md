@@ -1,12 +1,12 @@
-# NgxStarterApp
+# AngularStarterApp
 
-[![Build Status](https://travis-ci.org/matsta25/ngx-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-app)
+[![Build Status](https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/angular-starter-app)
 [![CodeFactor](https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge)](https://www.codefactor.io/repository/github/matsta25/angular-starter-app)
 
 <!--- TODO: logo ---> 
 
-Checkout [DEMO](https://matsta25.github.io/ngx-starter-app)
-StackBlitz [HERE](https://stackblitz.com/github/matsta25/ngx-starter-app)
+Checkout [DEMO](https://matsta25.github.io/angular-starter-app)
+StackBlitz [HERE](https://stackblitz.com/github/matsta25/angular-starter-app)
 
 ##### Mock feature (json-server):
 1. Run:
@@ -29,12 +29,12 @@ To add more fake data just edit mock/index.js :)
 2. Alternatively using docker:
 build: 
 ```
-    docker build -t ngx-starter-app-image .
+    docker build -t angular-starter-app-image .
 ```
 
 run
 ```
-    docker run --name ngx-starter-app-container -d -p 80:80 ngx-starter-app-image
+    docker run --name angular-starter-app-container -d -p 80:80 angular-starter-app-image
 ```
 
 INFO:
@@ -108,15 +108,3 @@ Package is available with 2 additional different environments e.g like developer
  - contribution rules
  - color sh - https://asciinema.org/
  - tslint , EOL
-
-PROJECT NAME:
-
-ngx-start-app
-
-ngx-starter-project
-
-*ngx-starter-app
-
-angular-starter-app
-
-angular-starter-project

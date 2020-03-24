@@ -11,5 +11,5 @@ COPY . .
 RUN npm run build:prod
 
 FROM nginx:1.13.12-alpine
-COPY --from=build /usr/src/app/dist/ngx-starter-app /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/angular-starter-app /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
