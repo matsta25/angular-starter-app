@@ -89,6 +89,7 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] project tree
  *  [ ] root component for reature module
  *  [ ] docs
+ *  [ ] github corner
 
  
  *  [ ] ?font fix when offline
