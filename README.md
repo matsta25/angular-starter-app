@@ -1,7 +1,8 @@
 <p align="center">
     <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true" alt="Angular Starter App">
     <br>
-    <span style="font-size: x-large; ">Angular Starter App</span>
+    <span style="font-size: x-large;">Angular Starter App</span>
+    <br>
     <a href="https://travis-ci.org/github/matsta25/angular-starter-app"><img src="https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master" alt="TravisCi Build Status"/></a>
 </p>
 
