@@ -1,7 +1,7 @@
 # NgxStarterApp
 
 [![Build Status](https://travis-ci.org/matsta25/ngx-starter-app.svg?branch=master)](https://travis-ci.org/matsta25/ngx-starter-app)
-[![CodeFactor](https://www.codefactor.io/repository/github/matsta25/ngx-starter-app/badge)](https://www.codefactor.io/repository/github/matsta25/ngx-starter-app)
+[![CodeFactor](https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge)](https://www.codefactor.io/repository/github/matsta25/angular-starter-app)
 
 <!--- TODO: logo ---> 
 
@@ -85,11 +85,12 @@ Package is available with 2 additional different environments e.g like developer
  *  [x] .github/issue_template
  *  [x] .github/pull_request_template
  *  [x] proxy
+ *  [ ] root component for feature module
+ 
+ *  [x] github corner
+ *  [ ] docs
  *  [ ] readme gif
  *  [ ] project tree
- *  [ ] root component for reature module
- *  [ ] docs
- *  [ ] github corner
 
  
  *  [ ] ?font fix when offline
