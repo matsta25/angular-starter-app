@@ -9,6 +9,7 @@
 # Live Demo
 
 Live demo is available -  :fire: [HERE](https://matsta25.github.io/angular-starter-app) :fire: !
+
 StackBlitz is available -  :fire: [HERE](https://stackblitz.com/github/matsta25/angular-starter-app) :fire: !
 
 ##### Mock feature (json-server):
