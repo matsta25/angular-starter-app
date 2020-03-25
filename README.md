@@ -42,7 +42,7 @@ todo table of contributors
 
 Everything in this repository is [licensed under the MIT License][license] unless otherwise specified.
 
-Copyright (c) 2016 – 2020 [Mateusz Stanczak]
+Copyright (c) 2020 [Mateusz Stanczak]
 
 [license]: https://github.com/matsta25/angular-starter-app/blob/master/LICENSE
 [Mateusz Stanczak]: https://github.com/matsta25
