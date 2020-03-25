@@ -24,8 +24,7 @@ StackBlitz is available -  :fire: [HERE](https://stackblitz.com/github/matsta25/
 
 ## Documentation
 
-Ready to get started? [Read installation instructions](todo).
-
+Official documentation is available - TODO
 
 ## Contributing
 
