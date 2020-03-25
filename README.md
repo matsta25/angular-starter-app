@@ -48,6 +48,8 @@ Copyright (c) 2016 – 2020 [Mateusz Stanczak]
 [license]: https://github.com/matsta25/angular-starter-app/blob/master/LICENSE
 [Mateusz Stanczak]: https://github.com/matsta25
 
+<!---
+
 ##### Mock feature (json-server):
 1. Run:
 ```
@@ -152,3 +154,4 @@ Package is available with 2 additional different environments e.g like developer
  - contribution rules
  - color sh - https://asciinema.org/
  - tslint , EOL
+-->
