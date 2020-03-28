@@ -40,7 +40,7 @@ Using this starter you will save a lot of hours and this will make sure that you
    - Configured tslint rules
    - Docker and docker-compose templates
    - Proxy
-   - etc...
+   - etc.
 
 ## Live Demo
 
@@ -58,7 +58,7 @@ Want to file a bug, contribute some code, or improve documentation? Excellent!
 
 Read up on guidelines for [CONTRIBUTING](https://github.com/matsta25/angular-starter-app/blob/master/CONTRIBUTING.md).
 
-##  :muscle: Contributors
+## Contributors :muscle: 
 
 This project exists thanks to all these people:
 
