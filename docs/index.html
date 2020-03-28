@@ -14,8 +14,15 @@
     window.$docsify = {
       name: 'Angular Starter App',
       repo: 'https://github.com/matsta25/angular-starter-app',
-      logo: 'https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo-sm.svg?sanitize=true',
-      themeColor: '#2F89FC'
+      logo: '/_media/logo-sm.svg',
+      loadSidebar: true,
+      themeColor: '#2F89FC',
+      homepage: 'https://raw.githubusercontent.com/matsta25/angular-starter-app/master/README.md',
+      search: {
+        paths: 'auto',
+        placeholder: 'Search',
+        noData: 'No Results.'
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
