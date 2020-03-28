@@ -1,0 +1,13 @@
+# ci only for gitlab to publish docs on gitlab pages
+
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r docs/ .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

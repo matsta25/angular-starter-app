@@ -12,7 +12,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
-    "mock": "json-server ./mock/index.js --routes ./mock/routes.json"
+    "mock": "json-server ./mock/index.js --routes ./mock/routes.json",
+    "docs:start": "./node_modules/docsify-cli/bin/docsify serve docs --port 3001"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +46,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "docsify-cli": "^4.4.0",
     "faker": "^4.1.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
