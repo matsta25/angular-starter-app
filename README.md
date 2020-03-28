@@ -52,6 +52,10 @@ App demo is available -  :fire: [HERE](https://matsta25.github.io/angular-starte
 
 Check out official documentation - :fire: [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :fire: !
 
+<!---
+## Examples
+--->
+
 ## Contributing
 
 Want to file a bug, contribute some code, or improve documentation? Excellent!
