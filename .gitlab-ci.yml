@@ -1,6 +1,6 @@
 # ci only for gitlab to publish docs on gitlab pages
 
-pages:
+docs:
   stage: deploy
   script:
     - mkdir .public

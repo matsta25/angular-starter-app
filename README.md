@@ -9,6 +9,9 @@
 </p>
 
 ## Live Demo
+[![docs](https://gitlab.com/matsta25/angular-starter-app/badges/master/pipeline.svg?job=docs)](https://gitlab.com/matsta25/angular-starter-app/-/commits/master)
+
+![coverage](https://gitlab.com/gitlab-org/gitlab-foss/badges/master/coverage.svg?job=coverage)
 
 Live demo is available -  :fire: [HERE](https://matsta25.github.io/angular-starter-app) :fire: !
 
