@@ -2,7 +2,7 @@
     <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true" alt="Angular Starter App" height="350px">
 </p>
     
-<h2>Angular Starter App</h2>
+<h2 align="center">Angular Starter App</h2>
 
 <p align="center">
     <a href="https://travis-ci.org/github/matsta25/angular-starter-app"><img src="https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master" alt="TravisCi Build Status"/></a>
@@ -15,35 +15,56 @@
     <a href="https://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT badge"/></a>
 </p>
 
-## Live Demo
+Angular Starter App is real word boilerplate to speedup your development. 
+Just focus on your main features and dont waist your time on setting up whole necessary angular environment.
 
-Live demo is available -  :fire: [HERE](https://matsta25.github.io/angular-starter-app) :fire: !
+> If you are interested of contributing, go to [CONTRIBUTING](https://github.com/matsta25/angular-starter-app/blob/master/CONTRIBUTING.md) to make this project more awesome! :sunglasses:
 
-StackBlitz is available -  :fire: [HERE](https://stackblitz.com/github/matsta25/angular-starter-app) :fire: !
+## Why Angular Starter App
 
+Using this starter you will save a lot of hours and this will make sure that you are creating your app following the best practise. 
 
 ## Features
 
--   **App structure** — todo.
+   - Highly scalable folder structure (core & shared module)
+   - Installed and plugged ngrx (store, effects, devtools), Angular Material and Bootstrap
+   - Lazy loading feature
+   - Notifications 
+   - Scss file structure (Sass 7-1 Pattern)
+   - Offline indicator
+   - Http err handing
+   - Mock api (json-server)
+   - Loading bar
+   - Localstorage
+   - Multi env. files
+   - Configured tslint rules
+   - Docker and docker-compose templates
+   - Proxy
+   - etc...
 
--   **Offline notification** — Notification that shows when your app is offline.
+## Live Demo
 
+StackBlitz is available -  :fire: [HERE](https://stackblitz.com/github/matsta25/angular-starter-app) :fire: !
 
-## Documentation
+App demo is available -  :fire: [HERE](https://matsta25.github.io/angular-starter-app) :fire: !
 
-Official documentation is available -  :fire: [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :fire: !
+## Getting Started
+
+Check out official documentation - :fire: [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :fire: !
 
 ## Contributing
 
 Want to file a bug, contribute some code, or improve documentation? Excellent!
 
-Read up on guidelines for [contributing](https://github.com/matsta25/angular-starter-app/blob/master/CONTRIBUTING.md).
+Read up on guidelines for [CONTRIBUTING](https://github.com/matsta25/angular-starter-app/blob/master/CONTRIBUTING.md).
 
 ## Contributors
 
-This project exists thanks to all these people.
+This project exists thanks to all these people:
 
-todo table of contributors
+[//]: contributor-faces
+
+<a href="https://github.com/matsta25"><img src="https://avatars2.githubusercontent.com/u/32844571?v=4" title="matsta25" width="80" height="80"></a>
 
 ## License
 
