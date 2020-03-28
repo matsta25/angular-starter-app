@@ -1,14 +1,16 @@
 <p align="center">
     <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true" alt="Angular Starter App" height="350px">
-    <br>
-    <span style="font-size: x-large;">Angular Starter App</span>
-    <br>
+</p>
+    
+<h2>Angular Starter App</h2>
+
+<p align="center">
     <a href="https://travis-ci.org/github/matsta25/angular-starter-app"><img src="https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master" alt="TravisCi Build Status"/></a>
     <a href="https://www.codefactor.io/repository/github/matsta25/angular-starter-app"><img src="https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge" alt="CodeFactor" /></a>
-<!---
-    add custom badge below: 'pipeline' => 'docs'
-    https://medium.com/@iffi33/adding-custom-badges-to-gitlab-a9af8e3f3569
---->
+    <!---
+        add custom badge below: 'pipeline' => 'docs'
+        https://medium.com/@iffi33/adding-custom-badges-to-gitlab-a9af8e3f3569
+    --->
     <a href="https://gitlab.com/matsta25/angular-starter-app/-/commits/master"><img alt="pipeline status" src="https://gitlab.com/matsta25/angular-starter-app/badges/master/pipeline.svg?job=docs" /></a>
     <a href="https://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT badge"/></a>
 </p>
