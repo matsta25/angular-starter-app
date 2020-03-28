@@ -3,8 +3,11 @@
 docs:
   stage: deploy
   script:
-    - mkdir .public
+    - ls -all
+    - rm -rf public
+    - mkdir public
     - cp -r docs/. public
+    - ls -all
   artifacts:
     paths:
       - public
