@@ -29,7 +29,7 @@ StackBlitz is available -  :fire: [HERE](https://stackblitz.com/github/matsta25/
 
 ## Documentation
 
-Official documentation is available -  :fire: [HERE](https://matsta25.gitlab.io/angular-starter-app/) :fire: !
+Official documentation is available -  :fire: [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :fire: !
 
 ## Contributing
 
