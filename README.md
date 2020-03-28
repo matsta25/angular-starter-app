@@ -5,13 +5,14 @@
     <br>
     <a href="https://travis-ci.org/github/matsta25/angular-starter-app"><img src="https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master" alt="TravisCi Build Status"/></a>
     <a href="https://www.codefactor.io/repository/github/matsta25/angular-starter-app"><img src="https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge" alt="CodeFactor" /></a>
+<!---
+    add custom badge below: 'pipeline' => 'docs'
+--->
+    <a href="https://gitlab.com/matsta25/angular-starter-app/-/commits/master"><img alt="pipeline status" src="https://gitlab.com/matsta25/angular-starter-app/badges/master/pipeline.svg?job=docs" /></a>
     <a href="https://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT badge"/></a>
 </p>
 
 ## Live Demo
-[![docs](https://gitlab.com/matsta25/angular-starter-app/badges/master/pipeline.svg?job=docs)](https://gitlab.com/matsta25/angular-starter-app/-/commits/master)
-
-![coverage](https://gitlab.com/gitlab-org/gitlab-foss/badges/master/coverage.svg?job=coverage)
 
 Live demo is available -  :fire: [HERE](https://matsta25.github.io/angular-starter-app) :fire: !
 
@@ -27,7 +28,7 @@ StackBlitz is available -  :fire: [HERE](https://stackblitz.com/github/matsta25/
 
 ## Documentation
 
-Official documentation is available - TODO
+Official documentation is available -  :fire: [HERE](https://matsta25.gitlab.io/angular-starter-app/) :fire: !
 
 ## Contributing
 
