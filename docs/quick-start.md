@@ -2,8 +2,8 @@
 
 ## Installation
 
-_Note that you must have node (and npm) installed._
+Clone repository
 
 ```bash
-npm install @pollyjs/core -D
+git clone https://github.com/matsta25/angular-starter-app.git
 ```
