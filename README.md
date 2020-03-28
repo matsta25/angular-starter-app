@@ -58,7 +58,7 @@ Want to file a bug, contribute some code, or improve documentation? Excellent!
 
 Read up on guidelines for [CONTRIBUTING](https://github.com/matsta25/angular-starter-app/blob/master/CONTRIBUTING.md).
 
-## Contributors
+##  :muscle: Contributors
 
 This project exists thanks to all these people:
 
