@@ -1,3 +1,5 @@
+<h1> project under maintenance</h1>
+
 <p align="center">
     <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true" alt="Angular Starter App" height="350px">
 </p>
@@ -16,7 +18,7 @@
 </p>
 
 Angular Starter App is real word boilerplate to speedup your development. 
-Just focus on your main features and dont waist your time on setting up whole necessary angular environment.
+Just focus on your main features and dont waist your time on setting up the whole necessary angular environment.
 
 > If you are interested of contributing, go to [CONTRIBUTING](https://github.com/matsta25/angular-starter-app/blob/master/CONTRIBUTING.md) to make this project more awesome! :sunglasses:
 
