@@ -15,7 +15,7 @@ has_not_arg() {
 }
 
 has_arg() {
-  find ./ -type f -exec sed -i "s/$old_app_name/$new_app_name/g" {} + &&
+  find ./ -not -path "./node_modules/*" -type f -exec sed -i "s/$old_app_name/$new_app_name/g" {} + &&
     echo "# $new_app_name" >README.md &&
     echo &&
     echo "Project successfully cleaned from $old_app_name to $new_app_name." &&
