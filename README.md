@@ -8,7 +8,7 @@
     <a href="https://travis-ci.org/github/matsta25/angular-starter-app"><img src="https://travis-ci.org/matsta25/angular-starter-app.svg?branch=master" alt="TravisCi Build Status"/></a>
     <a href="https://www.codefactor.io/repository/github/matsta25/angular-starter-app"><img src="https://www.codefactor.io/repository/github/matsta25/angular-starter-app/badge" alt="CodeFactor" /></a>
     <!---
-        add custom badge below: 'pipeline' => 'docs'
+        TODO: add custom badge below: 'pipeline' => 'docs'
         https://medium.com/@iffi33/adding-custom-badges-to-gitlab-a9af8e3f3569
     --->
     <a href="https://gitlab.com/matsta25/angular-starter-app/-/commits/master"><img alt="pipeline status" src="https://gitlab.com/matsta25/angular-starter-app/badges/master/pipeline.svg?job=docs" /></a>
@@ -53,7 +53,7 @@ App demo is available - [HERE](https://matsta25.github.io/angular-starter-app) :
 Check out official documentation - [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :scroll: !
 
 <!---
-## Examples
+    TODO: add ## Examples
 --->
 
 ## Contributing

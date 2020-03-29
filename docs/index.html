@@ -12,6 +12,9 @@
 </head>
 <body>
   <div id="app"></div>
+  <!--
+   // TODO: fix auto close sidebar on mobiles
+   -->
   <script>
     window.$docsify = {
       name: 'Angular Starter App',
@@ -25,12 +28,13 @@
         placeholder: 'Search',
         noData: 'No Results.'
       },
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
       subMaxLevel: 3,
       auto2top: true,
       maxLevel: 4,
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
-      }
+      autoHeader: false
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
