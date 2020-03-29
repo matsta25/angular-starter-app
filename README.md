@@ -44,13 +44,13 @@ Using this starter you will save a lot of hours :stopwatch: and this will make s
 
 ## Live Demo
 
-StackBlitz is available -  :fire: [HERE](https://stackblitz.com/github/matsta25/angular-starter-app) :fire: !
+StackBlitz is available - [HERE](https://stackblitz.com/github/matsta25/angular-starter-app) :fire: !
 
-App demo is available -  :fire: [HERE](https://matsta25.github.io/angular-starter-app) :fire: !
+App demo is available - [HERE](https://matsta25.github.io/angular-starter-app) :fire: !
 
 ## Getting Started
 
-Check out official documentation - :fire: [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :fire: !
+Check out official documentation - [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :scroll: !
 
 <!---
 ## Examples
