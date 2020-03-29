@@ -2,8 +2,8 @@
 
 ##### Description
 
-To mock api [json-server](https://github.com/typicode/json-server) has been used.
-Also [faker](https://github.com/Marak/faker.js) is used to seed fake data. 
+To mock api [json-server](https://github.com/typicode/json-server) has been used,
+also [faker](https://github.com/Marak/faker.js) to seed fake data. 
 To get more faker methods checkout [api-methods](https://github.com/Marak/faker.js#api-methods)
 
 ##### Usage
@@ -48,4 +48,4 @@ module.exports = () => {
 };
 ``` 
 
-Then new endpoint is available on http://localhost:3000/books.
+Then after rerun ```npm run mock``` new endpoint is available on http://localhost:3000/books.

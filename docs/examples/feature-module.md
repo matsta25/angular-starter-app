@@ -3,8 +3,7 @@
 ##### Description
 
 This project has lazy loaded 'posts' feature.
-It is an example how to structure your features.
-It gives you template for ngrx store, models, services, module and routing. 
+It is an example how to structure your features and gives you a boilerplate for ngrx store, models, services, module and routing. 
 
 ##### Usage
 

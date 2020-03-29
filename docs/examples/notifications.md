@@ -2,7 +2,7 @@
 
 ##### Description
 
-Project notifications are create with [Angular Material Snackbar](https://material.angular.io/components/snack-bar/overview).
+Project notifications has been created with [Angular Material Snackbar](https://material.angular.io/components/snack-bar/overview).
 
 ##### Usage
 

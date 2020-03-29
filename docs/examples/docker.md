@@ -22,4 +22,4 @@ OR using Dockerfile, do build and run:
     docker run --name your-app-name-container -d -p 80:80 your-app-name-image
 ```
 
-After that your app is available at http://localhost.
+After that your app should be available at http://localhost.

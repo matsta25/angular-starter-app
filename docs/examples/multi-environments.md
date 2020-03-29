@@ -3,7 +3,7 @@
 ##### Description
 
 In this project we have additional **`environment.one.ts`**, and **`environment.two.ts`**, 
-that can help different developers to use others environments files.
+for example that can help different developers to use others environments files.
 
 ##### Usage
  

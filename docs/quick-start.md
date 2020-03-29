@@ -21,17 +21,17 @@ next launch the application:
 npm run start
 ```
 
-and in a new terminal tab launch mock Api:
+and in a new terminal tab launch mock api:
 
 ```bash
 npm run mock
 ```
 
-Now app should be available on http://localhost:4200 and mock Api on http://localhost:3000/posts.
+Now the app should be available on http://localhost:4200 and mock api on http://localhost:3000/posts.
 
 ## Rename project files
 
-Next step is to change all 'angular-starter-app' to 'your-app-name'.
+Next step is to change all 'angular-starter-app' strings to 'your-app-name' and so on...
 For that you can use script or do it manually.
 
 ### Using script  {docsify-ignore}
@@ -44,7 +44,7 @@ Just type:
 
 ### Do it manually {docsify-ignore}
 
-Lets do that using commands below, make sure to replace 'your-app-name':
+Lets do that manually using commands below, make sure to replace 'your-app-name':
 
 ```bash
 find ./ -not -path "./node_modules/*" -type f -exec sed -i "s/angular-starter-app/your-app-name/g" {} + &&
@@ -58,4 +58,4 @@ echo "This is home page!" > src/app/core/components/home/home.component.html &&
 rm ./cleanup.sh
 ```
 
-After that, you are have clean app and ready to developing! :rocket:
+After that, you are have fresh and clean app which is ready for developing your features! :rocket:

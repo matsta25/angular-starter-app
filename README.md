@@ -40,7 +40,7 @@ Using this starter you will save a lot of hours and this will make sure that you
    - Localstorage
    - Multi env. files
    - Configured tslint rules
-   - Docker and docker-compose templates
+   - Docker and docker-compose
    - Proxy
    - etc.
 
