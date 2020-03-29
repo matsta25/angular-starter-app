@@ -20,8 +20,4 @@ export class ErrorHandlerExampleComponent {
   runServerSiteErr401() {
     this.http.get('http://getstatuscode.com/401').subscribe()
   }
-
-  runServerSiteErr500() {
-    this.http.get('http://getstatuscode.com/500').subscribe()
-  }
 }

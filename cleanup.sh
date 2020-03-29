@@ -3,6 +3,8 @@
 
 ### This script will rename your angular project. ~matsta25
 
+# TODO: check for Windows env.
+
 set -o nounset
 set -o errexit
 

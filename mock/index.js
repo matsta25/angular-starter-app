@@ -2,8 +2,7 @@ const faker = require('faker');
 
 module.exports = () => {
   const data = {
-    posts: [],
-    books: []
+    posts: []
   };
 
   for (let i = 0; i < 10; i++) {
@@ -12,13 +11,6 @@ module.exports = () => {
       id: faker.random.uuid(),
       title: faker.name.title(),
       body: faker.lorem.paragraph()
-    })
-  }
-
-  for (let i = 0; i < 10; i++) {
-    data.books.push({
-      id: i,
-      title: faker.name.title()
     })
   }
 
