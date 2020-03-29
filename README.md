@@ -20,9 +20,9 @@ Just focus on your main features and dont waist your time on setting up whole ne
 
 > If you are interested of contributing, go to [CONTRIBUTING](https://github.com/matsta25/angular-starter-app/blob/master/CONTRIBUTING.md) to make this project more awesome! :sunglasses:
 
-## Why Angular Starter App
+## Why Angular Starter App?
 
-Using this starter you will save a lot of hours and this will make sure that you are creating your app following the best practise. 
+Using this starter you will save a lot of hours ⏱:clock1: and this will make sure that you are creating your app following the best practise. 
 
 ## Features
 
