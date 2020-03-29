@@ -7,9 +7,10 @@ old_app_name="angular-starter-app"
 new_app_name=$1
 
 has_not_arg() {
-  echo "No arguments supplied."
-  echo "Usage eg.:"
+  echo "No arguments supplied. Usage eg.:"
+  echo
   echo "./cleanup.sh your-app-name"
+  echo
   exit 1
 }
 
