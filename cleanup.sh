@@ -25,7 +25,7 @@ has_arg() {
     echo "Removing .gitlab-ci.yml..." && rm .gitlab-ci.yml &&
     echo "Removing .travis.yml..." && rm .travis.yml &&
     echo "Removing examples directory..." && rm -rf ./src/app/examples &&
-    echo "Removing examples usage in core.module.ts..." && rm sed "/ExamplesModule/d" -i ./src/app/core/core.module.ts &&
+    echo "Removing examples usage in core.module.ts..." && sed "/ExamplesModule/d" -i ./src/app/core/core.module.ts &&
     echo "Overwriting home.component.ts file.." && echo "This is home page!" > src/app/core/components/home/home.component.html &&
     echo "Removing this file.." && rm ./cleanup.sh &&
     echo &&
