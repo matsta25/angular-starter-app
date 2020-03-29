@@ -40,8 +40,6 @@ For that you can use script or do it manually step by step.
 ./cleanup.sh your-app-name
 ```
 
-
-
 ### Manually
 Lets do that using this command:
 
