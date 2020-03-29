@@ -34,7 +34,7 @@ Now app should be available on http://localhost:4200 and mock Api on http://loca
 Next step is to change all 'angular-starter-app' to 'your-app-name'.
 For that you can use script or do it manually.
 
-### Using script
+### Using script  {docsify-ignore}
 
 Just type:
 
@@ -42,7 +42,7 @@ Just type:
 ./cleanup.sh your-app-name
 ```
 
-### Do it manually
+### Do it manually {docsify-ignore}
 
 Lets do that using commands below, make sure to replace 'your-app-name':
 
