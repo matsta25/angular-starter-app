@@ -2,7 +2,8 @@ const faker = require('faker');
 
 module.exports = () => {
   const data = {
-    posts: []
+    posts: [],
+    err: []
   };
 
   for (let i = 0; i < 10; i++) {

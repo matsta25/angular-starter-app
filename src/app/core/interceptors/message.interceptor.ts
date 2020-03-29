@@ -7,9 +7,9 @@ import {
 } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs'
 import { ErrorService } from '../services/error.service'
-import { NotificationService } from '../services/notification.service'
+import { NotificationService } from '../../shared/services/notification.service'
 import { catchError, tap } from 'rxjs/operators'
-import { HttpResponseModel } from '../models/http-response-model.model'
+import { HttpResponseModel } from '../../shared/models/http-response-model.model'
 
 @Injectable()
 export class MessageInterceptor implements HttpInterceptor {
@@ -23,7 +23,7 @@ export class MessageInterceptor implements HttpInterceptor {
         if (event instanceof HttpResponse) {
           const responseData: HttpResponseModel<any> = event.body
 
-          if (responseData && responseData.message) {
+          if (responseData && responseData.message && !event.url.includes('api/err')) {
             this.notificationService.showSuccess(responseData.message)
           }
         }

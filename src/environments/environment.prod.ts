@@ -2,5 +2,5 @@
 
 export const environment = {
   production: true,
-  baseUrl: 'https://jsonplaceholder.typicode.com'
-};
+  baseUrl: 'https://https://my-json-server.typicode.com/matsta25/angular-starter-app'
+}

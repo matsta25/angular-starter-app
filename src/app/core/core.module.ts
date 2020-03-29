@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core'
+import { ErrorHandler, NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { environment } from '../../environments/environment'
 
@@ -20,6 +20,8 @@ import { appEffects } from './app-store/app-store.effects'
 
 import { RouterModule } from '@angular/router'
 import { ExamplesModule } from '../examples/examples.module'
+import { ErrorHandlerService } from './services/error-handler.service'
+import { httpInterceptorProviders } from './interceptors'
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, PageNotFoundComponent, HomeComponent],
@@ -39,7 +41,13 @@ import { ExamplesModule } from '../examples/examples.module'
     // FIXME: delete code below if PRODUCTION
     ExamplesModule
   ],
-  providers: [],
+  providers: [
+    ...httpInterceptorProviders,
+    {
+      provide: ErrorHandler,
+      useClass: ErrorHandlerService
+    }
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
