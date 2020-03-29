@@ -23,12 +23,8 @@ has_arg() {
     exit 0
 }
 
-main() {
-  if [ "$#" -eq "0" ]; then
-    has_not_arg
-  else
-    has_arg
-  fi
-}
-
-main
+if [ "$#" -eq "0" ]; then
+  has_not_arg
+else
+  has_arg
+fi
