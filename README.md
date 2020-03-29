@@ -82,55 +82,6 @@ Copyright (c) 2020 [Mateusz Stanczak]
 [Mateusz Stanczak]: https://github.com/matsta25
 
 <!---
-
-##### Mock feature (json-server):
-1. Run:
-```
-    npm run mock
-```
-
-INFO:
-API is available on http://localhost:3000/api/posts and http://localhost:3000/posts.
-API is serving data created with faker.js.
-To add more fake data just edit mock/index.js :)
-
-##### Docker feature:
-
-1. Using docker-compose:
-```
-    docker-compose up --build
-```
-
-2. Alternatively using docker:
-build: 
-```
-    docker build -t angular-starter-app-image .
-```
-
-run
-```
-    docker run --name angular-starter-app-container -d -p 80:80 angular-starter-app-image
-```
-
-INFO:
-Site is available at http://localhost.
-Dockerfile is using nginx.conf.
-
-##### Multi environment conf feature:
-
-For env/developer one:
-```
-    npm run start:one
-```
-
-For env/developer two:
-```
-    npm run start:two
-```
-
-INFO:
-Package is available with 2 additional different environments e.g like developers. 
-
 #####  TODO list
 
  *  [x] project files structure
@@ -163,10 +114,10 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] root component for feature module
  
  *  [x] github corner
- *  [ ] docs
- *  [ ] readme gif
- *  [ ] project tree
+ *  [x] docs
+ *  [x] project tree
 
+ *  [ ] readme gif
  
  *  [ ] ?font fix when offline
  *  [ ] ?spinner when loading
@@ -177,14 +128,10 @@ Package is available with 2 additional different environments e.g like developer
  *  [ ] ?ngrx entity - TO MUCH 'blech'
  *  [ ] ?table pagination async
  
- - select color template - https://colorsinspo.com/:
  gray - #40514e
  blue - #2f89fc
  green - #30e3ca
  white - #f5f5f5
- - contribution nice table
- - licence
  - contribution rules
- - color sh - https://asciinema.org/
  - tslint , EOL
 -->

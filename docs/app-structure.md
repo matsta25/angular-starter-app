@@ -1,4 +1,6 @@
-# App tree
+# App structure
+
+## App directory tree {docsify-ignore}
 
 ```bash
 ├── mock
