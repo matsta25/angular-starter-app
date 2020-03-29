@@ -6,7 +6,7 @@
 set -o nounset
 set -o errexit
 
-old_app_name="asd"
+old_app_name="angular-starter-app"
 new_app_name=$1
 
 has_not_arg() {
@@ -18,7 +18,7 @@ has_not_arg() {
 }
 
 has_arg() {
-  echo "Finding and replacing from $old_app_name to $new_app_name..." &&
+  echo "Finding and replacing strings from $old_app_name to $new_app_name..." &&
     find ./ -not -path "./node_modules/*" -type f -exec sed -i "s/$old_app_name/$new_app_name/g" {} + &&
     echo "Overwriting README.md file..." && echo "# $new_app_name" >README.md &&
     echo "Removing docs directory..." && rm -rf ./docs &&
