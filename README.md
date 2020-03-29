@@ -22,7 +22,7 @@ Just focus on your main features and dont waist your time on setting up whole ne
 
 ## Why Angular Starter App?
 
-Using this starter you will save a lot of hours :stopwatch: and this will make sure that you are creating your app following the best practise. 
+Using this starter you will save a lot of hours and this will make sure that you are creating your app following the best practise. 
 
 ## Features
 
