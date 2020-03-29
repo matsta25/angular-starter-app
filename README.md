@@ -112,10 +112,14 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [x] .github/pull_request_template
  *  [x] proxy
  *  [ ] root component for feature module
+ *  [ ] form example
+ *  [ ] crud with ngrx
  
  *  [x] github corner
  *  [x] docs
  *  [x] project tree
+
+
 
  *  [ ] readme gif
  
