@@ -115,6 +115,8 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [ ] form example
  *  [ ] crud with ngrx
  
+ *  [ ] add deleting db.json
+ 
  *  [x] github corner
  *  [x] docs
  *  [x] project tree
