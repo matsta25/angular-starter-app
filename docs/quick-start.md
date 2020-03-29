@@ -32,9 +32,11 @@ Now app should be available on http://localhost:4200 and mock Api on http://loca
 ## Rename project files
 
 Next step is to change all 'angular-starter-app' to 'your-app-name'.
-For that you can use script or do it manually step by step.
+For that you can use script or do it manually.
 
 ### Using script
+
+Just type:
 
 ```bash
 ./cleanup.sh your-app-name
@@ -42,14 +44,18 @@ For that you can use script or do it manually step by step.
 
 ### Do it manually
 
-Lets do that using this command:
+Lets do that using commands below, make sure to replace 'your-app-name':
 
 ```bash
-find . -type f -exec sed -i 's/angular-starter-app/your-app-name/g' {} +
+find ./ -not -path "./node_modules/*" -type f -exec sed -i "s/angular-starter-app/your-app-name/g" {} + &&
+echo "# your-app-name" >README.md &&
+rm -rf ./docs &&
+rm .gitlab-ci.yml &&
+rm .travis.yml &&
+rm -rf ./src/app/examples &&
+sed "/ExamplesModule/d" -i ./src/app/core/core.module.ts &&
+echo "This is home page!" > src/app/core/components/home/home.component.html &&
+rm ./cleanup.sh
 ```
 
-clear README.md:
-
-```bash
-echo "# your-app-name" > README.md
-```
+After that, you are have clean app and ready to developing! :rocket:
