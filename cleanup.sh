@@ -9,7 +9,8 @@ if [ "$#" -eq  "0" ]
    echo "./cleanup.sh your-app-name"
    exit 1
 else
-  find . -type f -exec sed -i "s/angular-starter-app/$1/g" {} + &&
-  echo "# your-app-name" > README.md
+  find ./ -type f -exec sed -i "s/angular-starter-app/$1/g" {} + &&
+  echo "# your-app-name" > README.md &&
+#  rm -rf ./docs
   exit 0
 fi
