@@ -1,16 +1,31 @@
 #!/bin/bash
+# shellcheck disable=SC2120
 
 ### This script will rename your angular project.
 
-if [ "$#" -eq  "0" ]
- then
-   echo "No arguments supplied."
-   echo "Type:"
-   echo "./cleanup.sh your-app-name"
-   exit 1
-else
-  find ./ -type f -exec sed -i "s/angular-starter-app/$1/g" {} + &&
-  echo "# your-app-name" > README.md &&
-#  rm -rf ./docs
+old_app_name="angular-starter-app"
+new_app_name=$1
+
+has_not_arg() {
+  echo "No arguments supplied."
+  echo "Usage eg.:"
+  echo "./cleanup.sh your-app-name"
+  exit 1
+}
+
+has_arg() {
+  find ./ -type f -exec sed -i "s/$old_app_name/$new_app_name/g" {} + &&
+    echo "# $new_app_name" >README.md &&
+    echo "Project successfully cleaned from $old_app_name to $new_app_name."
   exit 0
-fi
+}
+
+main() {
+  if [ "$#" -eq "0" ]; then
+    has_not_arg
+  else
+    has_arg
+  fi
+}
+
+main
