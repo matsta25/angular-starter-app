@@ -23,7 +23,7 @@ export class MessageInterceptor implements HttpInterceptor {
         if (event instanceof HttpResponse) {
           const responseData: HttpResponseModel<any> = event.body
 
-          if (responseData && responseData.message && !event.url.includes('/err-log')) {
+          if (responseData && responseData.message && !event.url.includes('/err-logger')) {
             this.notificationService.showSuccess(responseData.message)
           }
         }

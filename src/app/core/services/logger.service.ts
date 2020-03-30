@@ -15,7 +15,7 @@ export class LoggerService {
     const errMessage: ErrMessage = this.createErrMessage(error)
 
     // TODO: check if send data through ngrx is needed
-    this.http.post(`${environment.baseUrl}/err`, errMessage).subscribe()
+    this.http.post(`${environment.baseUrl}/err-logger`, errMessage).subscribe()
   }
 
   private createErrMessage(error: any): ErrMessage {

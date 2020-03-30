@@ -3,7 +3,7 @@ const faker = require('faker');
 module.exports = () => {
   const data = {
     posts: [],
-    err: []
+    'err-logger': []
   };
 
   for (let i = 0; i < 10; i++) {
