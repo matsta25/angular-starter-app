@@ -27,4 +27,3 @@ export const updatePostFail = createAction('[Posts] Update Post Fail')
 export const deletePost = createAction('[Posts] Delete Post', props<{ id: string }>())
 export const deletePostSuccess = createAction('[Posts] Delete Post Success')
 export const deletePostFail = createAction('[Posts] Delete Post Fail')
-

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { PostsService } from '../services/posts.service'
-import { Actions, createEffect, ofType } from '@ngrx/effects'
+import { Actions, createEffect, Effect, ofType } from '@ngrx/effects'
 import {
   createPost,
   createPostFail,
@@ -11,15 +11,16 @@ import {
   readPostsSuccess,
   readPostSuccess, updatePost, updatePostFail, updatePostSuccess
 } from './posts.actions'
-import { catchError, map, mergeMap } from 'rxjs/operators'
+import { catchError, map, mergeMap, tap } from 'rxjs/operators'
 import { HttpResponseModel } from '../../../shared/models/http-response-model.model'
 import { Post } from '../models/post.model'
 import { of } from 'rxjs'
+import { Router } from '@angular/router'
 
 @Injectable()
 export class PostsEffects {
 
-  constructor(private postsService: PostsService, private actions$: Actions) {
+  constructor(private postsService: PostsService, private actions$: Actions, private router: Router) {
   }
 
   // CRUD
@@ -42,7 +43,7 @@ export class PostsEffects {
 
   readPosts$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(readPosts.type),
+      ofType(readPosts.type, deletePostSuccess.type),
       mergeMap(() => this.postsService.readPosts().pipe(
         map((response: HttpResponseModel<Post[]>) => (
           {
@@ -80,7 +81,8 @@ export class PostsEffects {
           {
             post: response,
             type: updatePostSuccess.type,
-          })),
+          })
+        ),
         catchError(() => of({
           type: updatePostFail.type
         }))
@@ -102,5 +104,11 @@ export class PostsEffects {
         }))
       ))
     )
+  )
+
+  @Effect({dispatch: false})
+  navigate$ = this.actions$.pipe(
+    ofType(createPostSuccess.type, updatePostSuccess.type),
+    tap(() => this.router.navigate(['/', 'posts']))
   )
 }

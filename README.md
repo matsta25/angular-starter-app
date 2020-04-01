@@ -111,13 +111,13 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [x] .github/issue_template
  *  [x] .github/pull_request_template
  *  [x] proxy
- *  [ ] root component for feature module
- *  [ ] form example
- *  [ ] crud with ngrx
+ *  [x] root component for feature module
+ *  [x] form example
+ *  [x] crud with ngrx
  *  [ ] add private/public everywhere
  *  [ ] del scss pattern
- *  [ ] update list after delete
- *  [ ] redirect when update/add new post
+ *  [x] update list after delete
+ *  [x] redirect when update/add new post
  *  [ ] add styling 
  *  [ ] add form validation
  *  [ ] add notification when add or update(backend message)
