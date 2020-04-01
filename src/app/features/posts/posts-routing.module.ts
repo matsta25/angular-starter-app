@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { PostsComponent } from './components/posts/posts.component'
 import { PostsListComponent } from './components/posts-list/posts-list.component'
+import { PostCreateComponent } from './components/post-create/post-create.component'
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
       {
         path: 'list',
         component: PostsListComponent
+      },
+      {
+        path: 'create',
+        component: PostCreateComponent
       }
     ]
   }

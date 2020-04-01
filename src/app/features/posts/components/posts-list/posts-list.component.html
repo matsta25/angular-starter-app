@@ -2,6 +2,14 @@ localStorageKeyExampleValue: {{ localStorageKeyExampleValue }}
 
 <hr>
 
+<h1>Posts List</h1>
+
+<div>
+  <button mat-raised-button [routerLink]="['/','posts','create']">Add</button>
+</div>
+
+<br>
+
 <ul *ngIf="posts$ | async as posts">
   <li *ngFor="let post of posts">
     <div>

@@ -114,6 +114,8 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [ ] root component for feature module
  *  [ ] form example
  *  [ ] crud with ngrx
+ *  [ ] add private/public everywhere
+ *  [ ] del scss pattern
  
  *  [ ] add deleting db.json
  
