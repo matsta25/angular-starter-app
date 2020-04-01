@@ -128,6 +128,7 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [x] docs
  *  [x] project tree
 
+ *  [ ] husky
 
 
  *  [ ] readme gif
