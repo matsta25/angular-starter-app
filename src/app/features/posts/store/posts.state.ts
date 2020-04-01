@@ -1,9 +1,11 @@
 import { Post } from '../models/post.model'
 
 export interface PostsState {
-  posts: Post[]
+  posts: Post[],
+  post: Post
 }
 
 export const initialPostsState: PostsState = {
-  posts: []
+  posts: [],
+  post: null
 }

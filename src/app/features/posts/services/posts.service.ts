@@ -17,4 +17,16 @@ export class PostsService {
   public readPosts() {
     return this.http.get(`${environment.baseUrl}/posts`)
   }
+
+  public readPost(id: string) {
+    return this.http.get(`${environment.baseUrl}/posts/${id}`)
+  }
+
+  public updatePost(post: Post) {
+    return this.http.put(`${environment.baseUrl}/posts/${post.id}`, post)
+  }
+
+  public deletePost(id: string) {
+    return this.http.delete(`${environment.baseUrl}/posts/${id}`)
+  }
 }

@@ -1,7 +1,16 @@
 import { Injectable } from '@angular/core'
 import { PostsService } from '../services/posts.service'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
-import { createPost, createPostFail, createPostSuccess, readPosts, readPostsFail, readPostsSuccess } from './posts.actions'
+import {
+  createPost,
+  createPostFail,
+  createPostSuccess, deletePost, deletePostSuccess,
+  readPost, readPostFail,
+  readPosts,
+  readPostsFail,
+  readPostsSuccess,
+  readPostSuccess, updatePost, updatePostFail, updatePostSuccess
+} from './posts.actions'
 import { catchError, map, mergeMap } from 'rxjs/operators'
 import { HttpResponseModel } from '../../../shared/models/http-response-model.model'
 import { Post } from '../models/post.model'
@@ -42,6 +51,54 @@ export class PostsEffects {
           })),
         catchError(() => of({
           type: readPostsFail.type
+        }))
+      ))
+    )
+  )
+
+  readPost$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(readPost.type),
+      mergeMap(({id}) => this.postsService.readPost(id).pipe(
+        map((response: HttpResponseModel<Post>) => (
+          {
+            post: response,
+            type: readPostSuccess.type,
+          })),
+        catchError(() => of({
+          type: readPostFail.type
+        }))
+      ))
+    )
+  )
+
+  updatePost$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updatePost.type),
+      mergeMap(({post}) => this.postsService.updatePost(post).pipe(
+        map((response: HttpResponseModel<Post>) => (
+          {
+            post: response,
+            type: updatePostSuccess.type,
+          })),
+        catchError(() => of({
+          type: updatePostFail.type
+        }))
+      ))
+    )
+  )
+
+  deletePost$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deletePost.type),
+      mergeMap(({id}) => this.postsService.deletePost(id).pipe(
+        map((response: HttpResponseModel<Post>) => (
+          {
+            post: response,
+            type: deletePostSuccess.type,
+          })),
+        catchError(() => of({
+          type: deletePost.type
         }))
       ))
     )

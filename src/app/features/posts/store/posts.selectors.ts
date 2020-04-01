@@ -7,3 +7,8 @@ export const selectPosts = createSelector(
   selectPostsState,
   (state: PostsState) => state.posts
 )
+
+export const selectPost = createSelector(
+  selectPostsState,
+  (state: PostsState) => state.post
+)

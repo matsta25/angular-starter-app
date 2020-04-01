@@ -7,6 +7,9 @@ localStorageKeyExampleValue: {{ localStorageKeyExampleValue }}
 <div>
   <button mat-raised-button [routerLink]="['/','posts','create']">Add</button>
 </div>
+<div>
+  <button mat-raised-button (click)="onRefresh()">Refresh</button>
+</div>
 
 <br>
 
@@ -17,5 +20,7 @@ localStorageKeyExampleValue: {{ localStorageKeyExampleValue }}
     </div>
     <div>{{ post.body }}</div>
     <p>{{ post.userId }}</p>
+    <button mat-raised-button (click)="onPostDelete(post.id)">Delete</button>
+    <button mat-raised-button [routerLink]="['/','posts', post.id]">Update</button>
   </li>
 </ul>

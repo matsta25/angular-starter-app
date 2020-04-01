@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { PostsComponent } from './components/posts/posts.component'
 import { PostsListComponent } from './components/posts-list/posts-list.component'
 import { PostCreateComponent } from './components/post-create/post-create.component'
+import { PostUpdateComponent } from './components/post-update/post-update.component'
 
 const routes: Routes = [
   {
@@ -16,12 +17,16 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
+        path: 'create',
+        component: PostCreateComponent
+      },
+      {
         path: 'list',
         component: PostsListComponent
       },
       {
-        path: 'create',
-        component: PostCreateComponent
+        path: ':id',
+        component: PostUpdateComponent
       }
     ]
   }

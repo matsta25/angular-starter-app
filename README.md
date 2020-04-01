@@ -116,6 +116,11 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [ ] crud with ngrx
  *  [ ] add private/public everywhere
  *  [ ] del scss pattern
+ *  [ ] update list after delete
+ *  [ ] redirect when update/add new post
+ *  [ ] add styling 
+ *  [ ] add form validation
+ *  [ ] add notification when add or update(backend message)
  
  *  [ ] add deleting db.json
  
