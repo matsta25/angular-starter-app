@@ -130,7 +130,7 @@ Copyright (c) 2020 [Mateusz Stanczak]
 
  *  [ ] husky
 
-
+ *  [ ] href to logo
  *  [ ] readme gif
  
  *  [ ] ?font fix when offline
