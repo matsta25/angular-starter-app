@@ -55,13 +55,11 @@ App demo is available - [HERE](https://matsta25.github.io/angular-starter-app) :
 
 <p align="center">
     <a href="https://matsta25.gitlab.io/angular-starter-app/docs/">
-        <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/demo-getting-started.svg?sanitize=true" alt="Angular Starter App">
+        <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/quick-start-demo.svg?sanitize=true" alt="Angular Starter App">
     </a>
 </p>
-    
-<h2 align="center">Angular Starter App</h2>
 
-Check out official documentation - [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :scroll: !
+Check out documentation - [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :scroll: !
 
 ## Contributing
 
@@ -127,7 +125,7 @@ Copyright (c) 2020 [Mateusz Stanczak]
  
  *  [ ] clean.sh add -> rm docs:start from package.json and docs dir 
  *  [ ] clean.sh add -> add deleting db.json
- *  [ ] clean.sh add -> add demo-getting-started.svg
+ *  [ ] clean.sh add -> add quick-start-demo.svg
   
  *  [x] github corner
  *  [x] docs
