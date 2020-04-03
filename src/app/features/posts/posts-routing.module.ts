@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { Routes, RouterModule } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router'
 
 import { PostsComponent } from './components/posts/posts.component'
 import { PostsListComponent } from './components/posts-list/posts-list.component'

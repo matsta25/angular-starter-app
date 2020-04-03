@@ -20,15 +20,15 @@ export class PostCreateComponent implements OnInit {
     this.postCreateForm = this.createPostCreateFormGroup()
   }
 
+  onPostFormSubmit() {
+    const post: Post = this.postCreateForm.value
+    this.store.dispatch(createPost({post}))
+  }
+
   private createPostCreateFormGroup() {
     return this.fb.group({
       title: '',
       body: ''
     })
-  }
-
-  onPostFormSubmit() {
-    const post: Post = this.postCreateForm.value
-    this.store.dispatch(createPost({post}))
   }
 }
