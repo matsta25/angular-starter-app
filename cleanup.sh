@@ -24,13 +24,14 @@ has_arg() {
     find ./ -not -path "./node_modules/*" -type f -exec sed -i "s/$old_app_name/$new_app_name/g" {} + &&
     echo "Overwriting README.md file..." && echo "# $new_app_name" >README.md &&
     echo "Removing docs directory..." && rm -rf ./docs &&
-    echo "Removing .gitlab-ci.yml..." && rm .gitlab-ci.yml &&
-    echo "Removing .travis.yml..." && rm .travis.yml &&
-    echo "Removing quick-start-demo.svg..." && rm quick-start-demo.svg &&
-    echo "Removing db.json..." && rm db.json &&
+    echo "Removing docs usage in package.json..." && sed "/docs/d" -i ./package.json &&
+    echo "Removing .gitlab-ci.yml..." && rm ./.gitlab-ci.yml &&
+    echo "Removing .travis.yml..." && rm ./.travis.yml &&
+    echo "Removing quick-start-demo.svg..." && rm ./quick-start-demo.svg &&
+    echo "Removing db.json..." && rm ./db.json &&
     echo "Removing examples directory..." && rm -rf ./src/app/examples &&
     echo "Removing examples usage in core.module.ts..." && sed "/ExamplesModule/d" -i ./src/app/core/core.module.ts &&
-    echo "Overwriting home.component.ts file.." && echo "This is home page!" > src/app/core/components/home/home.component.html &&
+    echo "Overwriting home.component.ts file.." && echo "This is home page!" > ./src/app/core/components/home/home.component.html &&
     echo "Removing this cleanup script..." && rm ./cleanup.sh &&
     echo &&
     echo "Project successfully cleaned from $old_app_name to $new_app_name." &&

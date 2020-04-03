@@ -131,17 +131,16 @@ TODO TO MVP:
 
  *  [ ] add basic styling with good practise (MARCIN TO NAJLEPSZY FRONTENDOWIEC JAKIEGO ZNAM I NA 100% ZROBI MI TO ZADANKO XD )
  *  [ ] add more description to docs, like err handler, when err is displayed etc 
- *  [ ] clean.sh add -> rm docs:start from package.json and docs dir 
+ *  [x] clean.sh add -> rm docs:start from package.json and docs dir 
  *  [x] clean.sh add -> add deleting db.json
  *  [x] clean.sh add -> add quick-start-demo.svg
- *  [ ] add private/public everywhere + structure code blocks
+ *  [x] add private/public everywhere + structure code blocks
 
 AT THE END:
 
  *  [ ] add file tree on readme & update tree in docs
  *  [ ] update docs clean manually section from clean.sh
  *  [ ] remove 'project under maintenance'
-
 
 I DONT KNOW:
 
