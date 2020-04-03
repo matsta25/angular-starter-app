@@ -54,7 +54,7 @@ App demo is available - [HERE](https://matsta25.github.io/angular-starter-app) :
 ## Getting Started
 
 <p align="center">
-    <a href="https://matsta25.gitlab.io/angular-starter-app/docs/">
+    <a href="https://matsta25.gitlab.io/angular-starter-app/docs/#/quick-start">
         <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/quick-start-demo.svg?sanitize=true" alt="Angular Starter App">
     </a>
     <sup>* dont forget to run mock using **`npm run mock`** in another bash tab.</sup>
@@ -117,25 +117,35 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [x] root component for feature module
  *  [x] form example
  *  [x] crud with ngrx
- *  [ ] add private/public everywhere
  *  [x] update list after delete
  *  [x] redirect when update/add new post
- *  [ ] add styling 
- *  [ ] add form validation
- *  [ ] add notification when add or update(backend message)
- 
- *  [ ] clean.sh add -> rm docs:start from package.json and docs dir 
- *  [ ] clean.sh add -> add deleting db.json
- *  [ ] clean.sh add -> add quick-start-demo.svg
   
  *  [x] github corner
  *  [x] docs
  *  [x] project tree
 
  *  [x] href to logo
- *  [ ] readme gif/ascii bash
- *  [ ] file tree on readme
- 
+ *  [x] readme gif/ascii bash
+
+TODO TO MVP:
+
+ *  [ ] add basic styling with good practise (MARCIN TO NAJLEPSZY FRONTENDOWIEC JAKIEGO ZNAM I NA 100% ZROBI MI TO ZADANKO XD )
+ *  [ ] add more description to docs, like err handler, when err is displayed etc 
+ *  [ ] clean.sh add -> rm docs:start from package.json and docs dir 
+ *  [x] clean.sh add -> add deleting db.json
+ *  [x] clean.sh add -> add quick-start-demo.svg
+ *  [ ] add private/public everywhere + structure code blocks
+
+AT THE END:
+
+ *  [ ] add file tree on readme & update tree in docs
+ *  [ ] update docs clean manually section from clean.sh
+
+
+I DONT KNOW:
+
+ *  [ ] ?add form validation
+ *  [ ] ?add notification when add or update(backend message)
  
  *  [ ] ?font fix when offline
  *  [ ] ?spinner when loading
@@ -144,6 +154,7 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [ ] i18n?
  *  [ ] PWA?
  *  [ ] ?ngrx entity - TO MUCH 'blech'
+
  
  gray - #40514e
  blue - #2f89fc
