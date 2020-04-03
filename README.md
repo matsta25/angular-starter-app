@@ -1,7 +1,9 @@
 <h1> project under maintenance</h1>
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true" alt="Angular Starter App" height="350px">
+    <a href="https://matsta25.gitlab.io/angular-starter-app/docs/">
+        <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/src/assets/logo.svg?sanitize=true" alt="Angular Starter App" height="350px">
+    </a>
 </p>
     
 <h2 align="center">Angular Starter App</h2>
@@ -32,7 +34,6 @@ Using this starter you will save a lot of hours and this will make sure that you
    - Installed and plugged ngrx (store, effects, devtools), Angular Material and Bootstrap
    - Lazy loading feature
    - Notifications 
-   - Scss file structure (Sass 7-1 Pattern)
    - Offline indicator
    - Http err handing
    - Mock api (json-server)
@@ -52,11 +53,15 @@ App demo is available - [HERE](https://matsta25.github.io/angular-starter-app) :
 
 ## Getting Started
 
-Check out official documentation - [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :scroll: !
+<p align="center">
+    <a href="https://matsta25.gitlab.io/angular-starter-app/docs/">
+        <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/demo-getting-started.svg?sanitize=true" alt="Angular Starter App">
+    </a>
+</p>
+    
+<h2 align="center">Angular Starter App</h2>
 
-<!---
-    TODO: add ## Examples
---->
+Check out official documentation - [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :scroll: !
 
 ## Contributing
 
@@ -89,7 +94,6 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [x] shared module
  *  [x] angular material
  *  [x] bootstrap
- *  [x] scss file structure
  *  [x] lazy loading
  *  [x] mock
  *  [x] multi env
@@ -115,23 +119,24 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [x] form example
  *  [x] crud with ngrx
  *  [ ] add private/public everywhere
- *  [ ] del scss pattern
  *  [x] update list after delete
  *  [x] redirect when update/add new post
  *  [ ] add styling 
  *  [ ] add form validation
  *  [ ] add notification when add or update(backend message)
  
- *  [ ] add deleting db.json
- 
+ *  [ ] clean.sh add -> rm docs:start from package.json and docs dir 
+ *  [ ] clean.sh add -> add deleting db.json
+ *  [ ] clean.sh add -> add demo-getting-started.svg
+  
  *  [x] github corner
  *  [x] docs
  *  [x] project tree
 
- *  [ ] husky
-
- *  [ ] href to logo
- *  [ ] readme gif
+ *  [x] href to logo
+ *  [ ] readme gif/ascii bash
+ *  [ ] file tree on readme
+ 
  
  *  [ ] ?font fix when offline
  *  [ ] ?spinner when loading
@@ -140,12 +145,9 @@ Copyright (c) 2020 [Mateusz Stanczak]
  *  [ ] i18n?
  *  [ ] PWA?
  *  [ ] ?ngrx entity - TO MUCH 'blech'
- *  [ ] ?table pagination async
  
  gray - #40514e
  blue - #2f89fc
  green - #30e3ca
  white - #f5f5f5
- - contribution rules
- - tslint , EOL
 -->

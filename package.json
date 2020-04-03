@@ -12,8 +12,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
-    "mock": "json-server ./mock/index.js --routes ./mock/routes.json",
-    "docs:start": "./node_modules/docsify-cli/bin/docsify serve docs --port 3001"
+    "docs:start": "./node_modules/docsify-cli/bin/docsify serve docs --port 3001",
+    "mock": "json-server ./mock/index.js --routes ./mock/routes.json"
   },
   "private": true,
   "dependencies": {
