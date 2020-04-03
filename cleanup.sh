@@ -33,6 +33,7 @@ has_arg() {
     echo "Removing examples usage in core.module.ts..." && sed "/ExamplesModule/d" -i ./src/app/core/core.module.ts &&
     echo "Overwriting home.component.ts file.." && echo "This is home page!" > ./src/app/core/components/home/home.component.html &&
     echo "Removing .github/*..." && rm -rf ./.github &&
+    echo "Removing .CONTRIBUTING.md..." && rm -rf ./CONTRIBUTING.md &&
     echo "Removing this cleanup script..." && rm ./cleanup.sh &&
     echo &&
     echo "Project successfully cleaned from $old_app_name to $new_app_name." &&

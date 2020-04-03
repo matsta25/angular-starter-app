@@ -138,8 +138,7 @@ TODO TO MVP:
 
 AT THE END:
 
- *  [ ] add file tree on readme & update tree in docs
- *  [ ] update docs clean manually section from clean.sh
+ *  [ ] update tree in docs & add file tree on readme 
  *  [ ] remove 'project under maintenance'
 
 I DONT KNOW:
