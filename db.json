@@ -61,7 +61,7 @@
       "body": "Consectetur voluptas optio eos quos mollitia quidem. Eos recusandae voluptas dolores est mollitia est numquam nulla. Aperiam eligendi autem et voluptatem in laborum distinctio eius."
     }
   ],
-  "err-logger": [
+  "err-logs": [
     {
       "date": "2020-03-30T14:37:30.224Z",
       "type": "HTTP ERR",
