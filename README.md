@@ -135,7 +135,7 @@ TODO TO MVP:
  *  [x] clean.sh add -> add deleting db.json
  *  [x] clean.sh add -> add quick-start-demo.svg
  *  [x] add private/public everywhere + structure code blocks
-
+ * [ ] add comment to all files that it will be deleted 
 AT THE END:
 
  *  [ ] update tree in docs & add file tree on readme 
