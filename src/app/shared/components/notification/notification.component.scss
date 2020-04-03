@@ -1,0 +1,20 @@
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification__action {
+  flex-shrink: 0;
+  margin: -8px -8px -8px 8px;
+}
+
+.notification__action-button {
+  height: 24px;
+  width: 24px;
+  line-height: 1;
+}
+
+.notification__action-icon {
+  font-size: 16px;
+}
