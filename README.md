@@ -57,6 +57,7 @@ App demo is available - [HERE](https://matsta25.github.io/angular-starter-app) :
     <a href="https://matsta25.gitlab.io/angular-starter-app/docs/">
         <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/quick-start-demo.svg?sanitize=true" alt="Angular Starter App">
     </a>
+    <sup>* dont forget to run mock using **`npm run mock`** in another bash tab.</sup>
 </p>
 
 Check out documentation - [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :scroll: !
