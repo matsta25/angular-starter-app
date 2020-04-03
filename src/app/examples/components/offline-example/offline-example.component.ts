@@ -1,3 +1,7 @@
+/*
+  This will be deleted after execute ./cleanup.sh script.
+*/
+
 import { Component } from '@angular/core'
 
 @Component({

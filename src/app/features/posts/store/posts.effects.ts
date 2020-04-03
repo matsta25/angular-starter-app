@@ -4,12 +4,19 @@ import { Actions, createEffect, Effect, ofType } from '@ngrx/effects'
 import {
   createPost,
   createPostFail,
-  createPostSuccess, deletePost, deletePostSuccess,
-  readPost, readPostFail,
+  createPostSuccess,
+  deletePost,
+  deletePostFail,
+  deletePostSuccess,
+  readPost,
+  readPostFail,
   readPosts,
   readPostsFail,
   readPostsSuccess,
-  readPostSuccess, updatePost, updatePostFail, updatePostSuccess
+  readPostSuccess,
+  updatePost,
+  updatePostFail,
+  updatePostSuccess
 } from './posts.actions'
 import { catchError, map, mergeMap, tap } from 'rxjs/operators'
 import { HttpResponseModel } from '../../../shared/models/http-response-model.model'
@@ -100,7 +107,7 @@ export class PostsEffects {
             type: deletePostSuccess.type,
           })),
         catchError(() => of({
-          type: deletePost.type
+          type: deletePostFail.type
         }))
       ))
     )

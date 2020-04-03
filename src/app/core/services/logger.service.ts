@@ -13,8 +13,6 @@ export class LoggerService {
 
   public logError(error: any) {
     const errMessage: ErrMessage = this.createErrMessage(error)
-
-    // TODO: check if send data through ngrx is needed
     this.http.post(`${environment.baseUrl}/err-logs`, errMessage).subscribe()
   }
 

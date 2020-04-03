@@ -140,6 +140,7 @@ AT THE END:
 
  *  [ ] add file tree on readme & update tree in docs
  *  [ ] update docs clean manually section from clean.sh
+ *  [ ] remove 'project under maintenance'
 
 
 I DONT KNOW:

@@ -9,15 +9,15 @@ export class LocalStorageService {
   // IMPORTANT: do not store sensitive data in local storage,
   // to store data like JWT token use cookies instead!
 
-  set(key: LocalStorageKey, data: any): void {
+  public set(key: LocalStorageKey, data: any): void {
     localStorage.setItem(key, JSON.stringify(data))
   }
 
-  get(key: string) {
+  public get(key: string): void {
     return JSON.parse(localStorage.getItem(key))
   }
 
-  del(key: string) {
+  public del(key: string): void {
     localStorage.removeItem(key)
   }
 }

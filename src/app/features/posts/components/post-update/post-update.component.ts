@@ -16,14 +16,14 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 export class PostUpdateComponent implements OnInit, OnDestroy {
 
   public postUpdateForm: FormGroup
+  public post$: Observable<Post>
   private subscriptions: Subscription = new Subscription()
-  post$: Observable<Post>
 
   constructor(private route: ActivatedRoute, private store: Store<PostsState>, private fb: FormBuilder) {
     this.post$ = this.store.pipe(select(selectPost))
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.subscriptions.add(this.route.params.subscribe(params => {
       const id = params.id
       this.store.dispatch(readPost({id}))
@@ -40,7 +40,7 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
     )
   }
 
-  createPostUpdateFormGroup() {
+  private createPostUpdateFormGroup(): FormGroup {
     return this.fb.group({
       id: '',
       title: '',
@@ -48,7 +48,7 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
     })
   }
 
-  private patchPostUpdateFormGroup(post: Post) {
+  private patchPostUpdateFormGroup(post: Post): void {
     this.postUpdateForm.patchValue({
       id: post.id,
       title: post.title,
@@ -56,12 +56,12 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
     })
   }
 
-  onPostUpdateFormSubmit() {
+  public onPostUpdateFormSubmit(): void {
     const post: Post = this.postUpdateForm.value
     this.store.dispatch(updatePost({post}))
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.subscriptions.unsubscribe()
   }
 }

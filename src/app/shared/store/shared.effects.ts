@@ -9,7 +9,7 @@ import { MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar'
 @Injectable()
 export class SharedEffects {
 
-  ref: MatSnackBarRef<SimpleSnackBar> = null
+  public ref: MatSnackBarRef<SimpleSnackBar> = null
 
   constructor(private actions$: Actions, private notificationService: NotificationService) {
   }
@@ -34,7 +34,7 @@ export class SharedEffects {
     )
   )
 
-  private showHideNotification(isOnline: boolean) {
+  private showHideNotification(isOnline: boolean): void {
     if (!isOnline) {
       this.ref = this.notificationService.showError('You are currently offline.', 999999)
     } else {

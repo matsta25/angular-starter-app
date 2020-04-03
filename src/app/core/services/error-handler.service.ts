@@ -1,5 +1,6 @@
 import { ErrorHandler, Injectable } from '@angular/core'
 import { LoggerService } from './logger.service'
+import { environment } from '../../../environments/environment'
 
 @Injectable()
 export class ErrorHandlerService extends ErrorHandler {
@@ -7,10 +8,10 @@ export class ErrorHandlerService extends ErrorHandler {
     super()
   }
 
-  handleError(error: any) {
-    // if (environment.production) {
+  public handleError(error: any) {
+    if (environment.production) {
     this.loggerService.logError(error)
-    // }
+    }
 
     super.handleError(error)
   }

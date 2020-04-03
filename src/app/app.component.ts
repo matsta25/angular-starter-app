@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     this.store.dispatch(checkIsOnline())
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     showConsoleEasterEggLogo()
   }
 }

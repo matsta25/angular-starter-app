@@ -17,7 +17,6 @@ export class MessageInterceptor implements HttpInterceptor {
       tap((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
           const responseData: HttpResponseModel<any> = event.body
-
           if (responseData && responseData.message && !event.url.includes('/err-logs')) {
             this.notificationService.showSuccess(responseData.message)
           }

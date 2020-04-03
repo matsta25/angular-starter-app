@@ -16,16 +16,16 @@ export class PostCreateComponent implements OnInit {
   constructor(private fb: FormBuilder, private store: Store<PostsState>) {
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.postCreateForm = this.createPostCreateFormGroup()
   }
 
-  onPostFormSubmit() {
+  public onPostFormSubmit(): void {
     const post: Post = this.postCreateForm.value
     this.store.dispatch(createPost({post}))
   }
 
-  private createPostCreateFormGroup() {
+  private createPostCreateFormGroup(): FormGroup {
     return this.fb.group({
       title: '',
       body: ''

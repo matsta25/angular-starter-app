@@ -15,23 +15,23 @@ import { LocalStorageKey } from '../../../../shared/models/local-storage-key.mod
 })
 export class PostsListComponent implements OnInit {
 
-  posts$: Observable<Post[]>
-  localStorageKeyExampleValue: string
+  public posts$: Observable<Post[]>
+  public localStorageKeyExampleValue: string
 
   constructor(private store: Store<PostsState>, private localStorageService: LocalStorageService) {
     store.dispatch(readPosts())
     this.posts$ = this.store.pipe(select(selectPosts))
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.localStorageKeyExampleValue = this.localStorageService.get(LocalStorageKey.EXAMPLE_KEY)
   }
 
-  onPostDelete(id: string) {
+  public onPostDelete(id: string): void {
     this.store.dispatch(deletePost({id}))
   }
 
-  onRefresh() {
+  public onRefresh(): void {
     this.store.dispatch(readPosts())
   }
 }

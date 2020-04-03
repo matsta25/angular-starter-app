@@ -38,7 +38,7 @@ import { httpInterceptorProviders } from './interceptors'
     EffectsModule.forRoot(appEffects),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
 
-    // FIXME: delete code below if PRODUCTION
+    // Below 'ExamplesModule' be deleted after execute ./cleanup.sh script.
     ExamplesModule
   ],
   providers: [

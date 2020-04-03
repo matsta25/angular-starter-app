@@ -11,7 +11,7 @@ export class NotificationService {
   constructor(public snackBar: MatSnackBar, private zone: NgZone) {
   }
 
-  showInfo(message: string, duration: number = 2000): MatSnackBarRef<SimpleSnackBar> {
+  public showInfo(message: string, duration: number = 2000): MatSnackBarRef<SimpleSnackBar> {
     let ref
 
     if (message) {
@@ -24,7 +24,7 @@ export class NotificationService {
     return ref
   }
 
-  showSuccess(message: string, duration: number = 2000): MatSnackBarRef<SimpleSnackBar> {
+  public showSuccess(message: string, duration: number = 2000): MatSnackBarRef<SimpleSnackBar> {
     let ref
 
     if (message) {
@@ -37,7 +37,7 @@ export class NotificationService {
     return ref
   }
 
-  showError(message: string, duration: number = 10000): MatSnackBarRef<SimpleSnackBar> {
+  public showError(message: string, duration: number = 10000): MatSnackBarRef<SimpleSnackBar> {
     let ref
 
     if (message) {
@@ -50,7 +50,7 @@ export class NotificationService {
     return ref
   }
 
-  dismiss(snackBarRef: MatSnackBarRef<SimpleSnackBar>) {
+  public dismiss(snackBarRef: MatSnackBarRef<SimpleSnackBar>): void {
     return snackBarRef.dismiss()
   }
 }

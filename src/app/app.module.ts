@@ -30,7 +30,6 @@ import { NgProgressHttpModule } from 'ngx-progressbar/http'
 
     // core & shared
     CoreModule,
-    // TODO: check if SharedModule is necessary here
     SharedModule,
 
     // app routing
