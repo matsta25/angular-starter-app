@@ -3,7 +3,7 @@
 */
 
 import { Component } from '@angular/core'
-import { NotificationService } from '../../../shared/services/notification.service'
+import { NotificationService } from '../../../../shared/services/notification.service'
 
 @Component({
   selector: 'app-notification-example',

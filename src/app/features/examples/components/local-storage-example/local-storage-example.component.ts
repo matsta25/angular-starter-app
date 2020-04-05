@@ -3,8 +3,8 @@
 */
 
 import { Component, OnInit } from '@angular/core'
-import { LocalStorageService } from '../../../shared/services/local-storage.service'
-import { LocalStorageKey } from '../../../shared/models/local-storage-key.model'
+import { LocalStorageService } from '../../../../shared/services/local-storage.service'
+import { LocalStorageKey } from '../../../../shared/models/local-storage-key.model'
 
 @Component({
   selector: 'app-local-storage-example',

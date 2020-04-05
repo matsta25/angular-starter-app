@@ -1,8 +1,9 @@
 <mat-toolbar class="app-toolbar">
-  angular-starter-app
+  <a class="app-toolbar-element" [routerLink]="['/']">angular-starter-app</a>
 
   <span class="app-toolbar-spacer"></span>
 
-  <a class="app-toolbar-element" [routerLink]="['/']">Home</a>
+
+  <a class="app-toolbar-element" [routerLink]="['/','examples']">Examples</a>
   <a class="app-toolbar-element" [routerLink]="['/','posts']">Posts</a>
 </mat-toolbar>
