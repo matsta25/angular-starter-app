@@ -1,0 +1,15 @@
+@-webkit-keyframes NAME-YOUR-ANIMATION {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loader-example {
+  -webkit-animation: NAME-YOUR-ANIMATION 1s infinite; /* Safari 4+ */
+  -moz-animation:    NAME-YOUR-ANIMATION 1s infinite; /* Fx 5+ */
+  -o-animation:      NAME-YOUR-ANIMATION 1s infinite; /* Opera 12+ */
+  animation:         NAME-YOUR-ANIMATION 1s infinite; /* IE 10+, Fx 29+ */
+}

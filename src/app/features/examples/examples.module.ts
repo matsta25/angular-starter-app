@@ -11,7 +11,8 @@ import { ErrorHandlerExampleComponent } from './components/error-handler-example
 import { OfflineExampleComponent } from './components/offline-example/offline-example.component'
 import { ExamplesListComponent } from './components/examples-list/examples-list.component'
 import { ExamplesComponent } from './examples.component'
-import { ExamplesRoutingModule } from './examples-routing.module'
+import { ExamplesRoutingModule } from './examples-routing.module';
+import { LoadingExampleComponent } from './components/loading-example/loading-example.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ExamplesRoutingModule } from './examples-routing.module'
     LocalStorageExampleComponent,
     ErrorHandlerExampleComponent,
     OfflineExampleComponent,
-    ExamplesListComponent
+    ExamplesListComponent,
+    LoadingExampleComponent
   ],
   imports: [
     CommonModule,
