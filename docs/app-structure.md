@@ -23,7 +23,6 @@
 │   │   │   │   ├── header
 │   │   │   │   ├── home
 │   │   │   │   └── page-not-found
-│   │   │   ├── console-easter-egg.function.ts
 │   │   │   └── core.module.ts
 │   │   ├── features
 │   │   │   └── posts
