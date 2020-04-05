@@ -136,6 +136,8 @@ TODO TO MVP:
  *  [x] clean.sh add -> add quick-start-demo.svg
  *  [x] add private/public everywhere + structure code blocks
  *  [ ] add comment to all files that it will be deleted 
+ *  [ ] add backend that is working? herokuapp
+ *  [ ] add cichy380 to contributors
  
 AT THE END:
 
