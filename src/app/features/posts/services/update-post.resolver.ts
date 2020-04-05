@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router'
-import { readPost } from '../store/posts.actions'
+import { readPost, readPostSuccess } from '../store/posts.actions'
 import { PostsState } from '../store/posts.state'
 import { select, Store } from '@ngrx/store'
 import { selectLoading } from '../../../shared/store/shared.selectors'
@@ -19,14 +19,11 @@ export class UpdatePostResolver implements Resolve<boolean> {
   resolve(route: ActivatedRouteSnapshot): Observable<boolean> {
     const id = route.params.id
 
+    this.store.dispatch(readPost({id}))
+
     if (id) {
       return this.store.pipe(
         select(selectPost),
-        tap(loaded => {
-          if (!loaded) {
-            this.store.dispatch(readPost({id}))
-          }
-        }),
         // @ts-ignore
         filter(loaded => loaded),
         first()
