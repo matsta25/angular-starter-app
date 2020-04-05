@@ -75,6 +75,7 @@ This project exists thanks to all these people :muscle: :
 [//]: contributor-faces
 
 <a href="https://github.com/matsta25"><img src="https://avatars2.githubusercontent.com/u/32844571?v=4" title="matsta25" width="80" height="80"></a>
+<a href="https://github.com/cichy380"><img src="https://avatars2.githubusercontent.com/u/5628124?&v=4" title="cichy380" width="80" height="80"></a>
 
 ## License
 
@@ -84,82 +85,3 @@ Copyright (c) 2020 [Mateusz Stanczak]
 
 [license]: https://github.com/matsta25/angular-starter-app/blob/master/LICENSE
 [Mateusz Stanczak]: https://github.com/matsta25
-
-<!---
-#####  TODO list
-
- *  [x] project files structure
- *  [x] core module
- *  [x] shared module
- *  [x] angular material
- *  [x] bootstrap
- *  [x] lazy loading
- *  [x] mock
- *  [x] multi env
- *  [x] ngrx store
- *  [x] ngrx effects
- *  [x] ngrx devtools
- *  [x] tslint
- *  [x] localstorage
- *  [x] notification
- *  [x] online notification
- *  [x] docker compose
- *  [x] docker file
- *  [x] slim bar loading
- *  [x] custom snackbar with x icon
- *  [x] console log easter egg
- *  [x] stackblitz 
- *  [x] interceptor err notification 
- *  [x] .editorconfig
- *  [x] .github/issue_template
- *  [x] .github/pull_request_template
- *  [x] proxy
- *  [x] root component for feature module
- *  [x] form example
- *  [x] crud with ngrx
- *  [x] update list after delete
- *  [x] redirect when update/add new post
-  
- *  [x] github corner
- *  [x] docs
- *  [x] project tree
-
- *  [x] href to logo
- *  [x] readme gif/ascii bash
-
-TODO TO MVP:
-
- *  [ ] add basic styling with good practise (MARCIN TO NAJLEPSZY FRONTENDOWIEC JAKIEGO ZNAM I NA 100% ZROBI MI TO ZADANKO XD )
- *  [ ] add more description to docs, like err handler, when err is displayed etc 
- *  [x] clean.sh add -> rm docs:start from package.json and docs dir 
- *  [x] clean.sh add -> add deleting db.json
- *  [x] clean.sh add -> add quick-start-demo.svg
- *  [x] add private/public everywhere + structure code blocks
- *  [ ] add comment to all files that it will be deleted 
- *  [ ] add backend that is working? herokuapp
- *  [ ] add cichy380 to contributors
- 
-AT THE END:
-
- *  [ ] update tree in docs & add file tree on readme 
- *  [ ] remove 'project under maintenance'
-
-I DONT KNOW:
-
- *  [ ] ?add form validation
- *  [ ] ?add notification when add or update(backend message)
- 
- *  [ ] ?font fix when offline
- *  [ ] ?spinner when loading
- *  [ ] ?shared NgRx isLoading/err - ? USELESS IF USING PROGRESSBAR
- *  [ ] ?group docker docker-compose nginx.conf files - into new dir?
- *  [ ] i18n?
- *  [ ] PWA?
- *  [ ] ?ngrx entity - TO MUCH 'blech'
-
- 
- gray - #40514e
- blue - #2f89fc
- green - #30e3ca
- white - #f5f5f5
--->
