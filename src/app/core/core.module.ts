@@ -52,8 +52,7 @@ import { httpInterceptorProviders } from './interceptors'
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-  ],
-  bootstrap: []
+  ]
 })
 
 export class CoreModule {
