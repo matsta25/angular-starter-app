@@ -1,28 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-
-import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component'
+import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
-import { SharedModule } from './shared/shared.module'
-import { CoreModule } from './core/core.module'
 import { NgProgressModule } from 'ngx-progressbar'
 import { NgProgressHttpModule } from 'ngx-progressbar/http'
+import { AppRoutingModule } from './app-routing.module'
+import { CoreModule } from './core/core.module'
+import { SharedModule } from './shared/shared.module'
+
+import { AppComponent } from './app.component'
+import { HomeComponent } from './core/components/home/home.component'
+import { HeaderComponent } from './core/components/header/header.component'
+import { FooterComponent } from './core/components/footer/footer.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     // angular
     BrowserModule,
 
     // ngProgess
-    NgProgressModule.withConfig({
-      spinner: false,
-      color: 'red'
-    }),
+    NgProgressModule.withConfig({spinner: false}),
     NgProgressHttpModule,
 
     // material design
@@ -38,5 +40,6 @@ import { NgProgressHttpModule } from 'ngx-progressbar/http'
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }
