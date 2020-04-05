@@ -24,11 +24,6 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    this.subscriptions.add(this.route.params.subscribe(params => {
-      const id = params.id
-      this.store.dispatch(readPost({id}))
-    }))
-
     this.postUpdateForm = this.createPostUpdateFormGroup()
 
     this.subscriptions.add(
