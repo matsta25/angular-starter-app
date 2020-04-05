@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { MaterialModule } from './material.module'
 
 import { NotificationComponent } from './components/notification/notification.component'
+import { sharedInterceptorProviders } from './interceptors'
 
 @NgModule({
   imports: [
@@ -15,7 +16,9 @@ import { NotificationComponent } from './components/notification/notification.co
   entryComponents: [
     NotificationComponent,
   ],
-  providers: [],
+  providers: [
+    ...sharedInterceptorProviders
+  ],
   exports: [
     MaterialModule,
   ],

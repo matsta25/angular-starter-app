@@ -7,3 +7,8 @@ export const selectIsOnline = createSelector(
   selectSharedState,
   (state: SharedState) => state.isOnline
 )
+
+export const selectLoading = createSelector(
+  selectSharedState,
+  (state: SharedState) => state.loading.length > 0
+)
