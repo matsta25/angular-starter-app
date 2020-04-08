@@ -1,0 +1,21 @@
+<h1>To-do list</h1>
+
+<form (ngSubmit)="onSubmit()" class="mx-4 mb-2">
+  <mat-form-field class="w-100">
+    <mat-label>New To-do item</mat-label>
+    <input matInput type="text" [(ngModel)]="newTodoName" name="name">
+    <button mat-button *ngIf="newTodoName" matSuffix mat-icon-button aria-label="Submit">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+
+<mat-list role="list" class="todos p-0 mx-4">
+  <mat-list-item role="listitem" class="todos__item" *ngFor="let todo of todos$ | async">
+    <mat-checkbox [checked]="todo.done" (change)="onChange(todo, $event.checked)">{{ todo.name }}</mat-checkbox>
+
+    <button mat-icon-button aria-label="Delete to-do item" color="warn" class="todos__btn" (click)="onDelete(todo)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>

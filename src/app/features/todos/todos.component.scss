@@ -1,0 +1,15 @@
+.todos {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todos__item {
+  & + & {
+    border-top: 1px solid #ccc;
+  }
+}
+
+.todos__btn {
+  margin-right: -12px;
+  margin-left: auto;
+}
