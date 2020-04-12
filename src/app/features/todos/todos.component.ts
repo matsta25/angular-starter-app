@@ -4,7 +4,7 @@ import { Observable } from 'rxjs'
 import { TodosState } from './store/todos.state'
 import { createTodosItem, deleteTodosItem, readTodos, updateTodosItem } from './store/todos.actions'
 import { selectTodos } from './store/todos.selectors'
-import { Todo } from './todo'
+import { Todo } from './models/todo'
 
 @Component({
   selector: 'app-todos',

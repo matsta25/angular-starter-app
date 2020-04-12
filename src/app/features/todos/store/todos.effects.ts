@@ -11,8 +11,8 @@ import {
   updateTodosItemSuccess
 } from './todos.actions'
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators'
-import { Todo } from '../todo'
 import { of } from 'rxjs'
+import { Todo } from '../models/todo'
 
 @Injectable()
 export class TodosEffects {

@@ -6,6 +6,12 @@ body {
   height: 100%;
 }
 
+// ngx-progress-bar
+
+.ng-bar {
+  background: map-get($app-primary, 900);;
+  background: linear-gradient(to right, map-get($app-primary, 900), map-get($app-primary, 500));
+}
 
 // Links
 
@@ -19,3 +25,4 @@ a {
     text-decoration: $link-hover-decoration;
   }
 }
+
