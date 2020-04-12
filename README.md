@@ -57,10 +57,92 @@ App demo is available - [HERE](https://matsta25.github.io/angular-starter-app) :
     <a href="https://matsta25.gitlab.io/angular-starter-app/docs/#/quick-start">
         <img src="https://raw.githubusercontent.com/matsta25/angular-starter-app/master/quick-start-demo.svg?sanitize=true" alt="Angular Starter App">
     </a>
-    <sup>* dont forget to run mock using **`npm run mock`** in another bash tab.</sup>
+    <sup>* dont forget to run mock using `npm run mock` in another bash tab.</sup>
 </p>
 
 Check out documentation - [HERE](https://matsta25.gitlab.io/angular-starter-app/docs/) :scroll: !
+
+## App structure
+
+
+```bash
+├── mock
+│   ├── index.js
+│   └── routes.json
+├── src
+│   ├── app
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   ├── app-routing.module.ts
+│   │   ├── core
+│   │   │   ├── app-store
+│   │   │   │   ├── app-store.effects.ts
+│   │   │   │   ├── app-store.reducers.ts
+│   │   │   │   └── app-store.state.ts
+│   │   │   ├── components
+│   │   │   │   ├── footer
+│   │   │   │   ├── header
+│   │   │   │   ├── home
+│   │   │   │   └── page-not-found
+│   │   │   └── core.module.ts
+│   │   ├── features
+│   │   │   └── posts
+│   │   │       ├── components
+│   │   │       │   └── posts
+│   │   │       │       ├── posts.component.html
+│   │   │       │       ├── posts.component.scss
+│   │   │       │       └── posts.component.ts
+│   │   │       ├── models
+│   │   │       │   └── post.model.ts
+│   │   │       ├── posts.module.ts
+│   │   │       ├── posts-routing.module.ts
+│   │   │       ├── services
+│   │   │       │   └── posts.service.ts
+│   │   │       └── store
+│   │   │           ├── posts.actions.ts
+│   │   │           ├── posts.effects.ts
+│   │   │           ├── posts.reducer.ts
+│   │   │           ├── posts.selectors.ts
+│   │   │           └── posts.state.ts
+│   │   └── shared
+│   │       ├── components
+│   │       │   └── notification
+│   │       ├── interceptors
+│   │       │   ├── index.ts
+│   │       │   └── message.interceptor.ts
+│   │       ├── material.module.ts
+│   │       ├── models
+│   │       │   ├── http-response-model.model.ts
+│   │       │   ├── local-storage-key.model.ts
+│   │       │   └── snackbar.model.ts
+│   │       ├── services
+│   │       │   ├── error-handler.service.ts
+│   │       │   ├── error.service.ts
+│   │       │   ├── local-storage.service.ts
+│   │       │   ├── logger.service.ts
+│   │       │   └── notification.service.ts
+│   │       ├── shared.module.ts
+│   │       └── store
+│   │           ├── shared.actions.ts
+│   │           ├── shared.effects.ts
+│   │           ├── shared.reducer.ts
+│   │           ├── shared.selectors.ts
+│   │           └── shared.state.ts
+│   ├── environments
+│   │   ├── environment.one.ts
+│   │   ├── environment.prod.ts
+│   │   ├── environment.ts
+│   │   └── environment.two.ts
+│   ├── styles.scss
+│   └── test.ts
+├── docker-compose.yml
+├── Dockerfile
+├── nginx.conf
+├── proxy.conf.json
+└── tslint.json
+```
 
 ## Contributing
 
