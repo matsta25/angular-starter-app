@@ -4,7 +4,6 @@
 
 /* You can add global styles to this file, and also import other style files */
 
-
 /*
 
   basic colors:
@@ -14,19 +13,8 @@
    white - #f5f5f5
 
 */
-html, body {
-  height: 100%;
-}
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-
-// TODO: add snackbar classes to appropriate scss file
-
-// TODO: add variables
+// TODO: move snack bar somewhere else and make it work as it is in this file :)
 
 $font-size-sm: 12px;
 $font-weight-bold: 700;
@@ -50,6 +38,3 @@ $success: green;
   background-color: $success;
 }
 
-label {
-  margin-bottom: 0;
-}

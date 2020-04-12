@@ -1,10 +1,15 @@
 // Basic styles
 
-
 html,
 body {
   height: 100%;
 }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 
 // ngx-progress-bar
 
@@ -13,7 +18,7 @@ body {
   background: linear-gradient(to right, map-get($app-primary, 900), map-get($app-primary, 500));
 }
 
-// Links
+// links
 
 a {
   color: $link-color;
@@ -26,3 +31,5 @@ a {
   }
 }
 
+
+// and so on...
