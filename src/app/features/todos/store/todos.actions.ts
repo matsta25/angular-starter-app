@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store'
-import { Todo } from '../todo'
 import { Update } from '@ngrx/entity'
+import { Todo } from '../models/todo'
 
 export const createTodosItem = createAction('[Todos/API] Add Item', props<{ todo: Partial<Todo> }>())
 export const createTodosItemSuccess = createAction('[Todos/API] Add Item Success', props<{ todo: Todo }>())
