@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Observable, Subscription } from 'rxjs'
 import { PostsState } from '../../store/posts.state'
 import { select, Store } from '@ngrx/store'
-import { readPost, updatePost } from '../../store/posts.actions'
+import { updatePost } from '../../store/posts.actions'
 import { Post } from '../../models/post.model'
 import { selectPost } from '../../store/posts.selectors'
 import { FormBuilder, FormGroup } from '@angular/forms'
@@ -16,7 +16,7 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 export class PostUpdateComponent implements OnInit, OnDestroy {
 
   public postUpdateForm: FormGroup
-  public post$: Observable<Post>
+  private post$: Observable<Post>
   private subscriptions: Subscription = new Subscription()
 
   constructor(private route: ActivatedRoute, private store: Store<PostsState>, private fb: FormBuilder) {

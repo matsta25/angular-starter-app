@@ -4,14 +4,16 @@ import { MaterialModule } from './material.module'
 
 import { NotificationComponent } from './components/notification/notification.component'
 import { sharedInterceptorProviders } from './interceptors'
+import { BackButtonDirective } from './directives/back-button.directive'
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
+    MaterialModule
   ],
   declarations: [
     NotificationComponent,
+    BackButtonDirective
   ],
   entryComponents: [
     NotificationComponent,
@@ -21,6 +23,7 @@ import { sharedInterceptorProviders } from './interceptors'
   ],
   exports: [
     MaterialModule,
+    BackButtonDirective
   ],
 })
 
