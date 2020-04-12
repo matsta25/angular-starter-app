@@ -31,7 +31,6 @@
     "@ngrx/entity": "^9.0.0",
     "@ngrx/store": "^9.0.0",
     "@ngrx/store-devtools": "^9.0.0",
-    "bootstrap": "^4.4.1",
     "ngx-progressbar": "^6.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

@@ -1,0 +1,40 @@
+// all application-wide Sass variables
+
+$font-family-base: 'Roboto, "Helvetica Neue", sans-serif';
+$font-size-base: 14px;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+$line-height-base: 20px;
+$line-height-large: 24px;
+
+$input-line-height: 1.125;
+
+$h1-font-size: 24px;
+$h1-font-weight: 400;
+$h1-line-height: 32px;
+$h2-font-size: 20px;
+$h2-font-weight: 500;
+$h2-line-height: 32px;
+$h3-font-size: 16px;
+$h3-font-weight: 400;
+$h3-line-height: 28px;
+$h4-font-size: 15px;
+$h4-font-weight: 400;
+$h4-line-height: 24px;
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+@import '~@angular/material/theming';
+
+$app-primary: mat-palette($mat-blue);
+$app-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$app-warn:    mat-palette($mat-red);
+
+
+$link-color: map-get($app-primary, 500);
+$link-decoration: underline;
+$link-hover-color: map-get($app-primary, 700);
+$link-hover-decoration: underline;
