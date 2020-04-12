@@ -5,7 +5,7 @@ import { createTodosItemSuccess, deleteTodosItem, readTodosSuccess, updateTodosI
 const reducer = createReducer(
   initialTodosState,
   on(createTodosItemSuccess, (state, { todo }) => todosAdapter.addOne(todo, state)),
-  on(readTodosSuccess, (state, { todos }) => todosAdapter.addAll(todos, state)),
+  on(readTodosSuccess, (state, { todos }) => todosAdapter.setAll(todos, state)),
   on(updateTodosItem, (state, { updateTodo }) => todosAdapter.updateOne(updateTodo, state)),
   on(deleteTodosItem, (state, { todoId }) => todosAdapter.removeOne(todoId, state)),
 )
