@@ -6,20 +6,10 @@ body {
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: $body-bg; // As a best practice, apply a default `background-color`.
 }
 
-
-// ngx-progress-bar
-
-.ng-bar {
-  background: map-get($app-primary, 900);;
-  background: linear-gradient(to right, map-get($app-primary, 900), map-get($app-primary, 500));
-}
-
-// links
-
+// Links
 a {
   color: $link-color;
   text-decoration: $link-decoration;
@@ -30,6 +20,3 @@ a {
     text-decoration: $link-hover-decoration;
   }
 }
-
-
-// and so on...
