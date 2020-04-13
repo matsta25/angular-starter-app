@@ -6,6 +6,7 @@ body {
 }
 
 body {
+  margin: 0; // Remove the margin in all browsers.
   background-color: $body-bg; // As a best practice, apply a default `background-color`.
 }
 
