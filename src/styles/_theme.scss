@@ -5,13 +5,14 @@
 
 $typography-config: mat-typography-config(
   $font-family: $font-family-base,
+  $display-1: mat-typography-level($display1-font-size, $display1-line-height, $display1-font-weight),
   $headline: mat-typography-level($h1-font-size, $h1-line-height, $h1-font-weight),
   $title: mat-typography-level($h2-font-size, $h2-line-height, $h2-font-weight),
   $subheading-2: mat-typography-level($h3-font-size, $h3-line-height, $h3-font-weight),
   $subheading-1: mat-typography-level($h4-font-size, $h4-line-height, $h4-font-weight),
   $body-2: mat-typography-level($font-size-base, $line-height-large, $font-weight-bold),
   $body-1: mat-typography-level($font-size-base, $line-height-base, $font-weight-normal),
-  $button: mat-typography-level($font-size-base, $font-size-base, $font-weight-normal),
+  $button: mat-typography-level($font-size-base, 1, $button-font-weight),
   $input: mat-typography-level(inherit, $input-line-height, $font-weight-normal),
 );
 

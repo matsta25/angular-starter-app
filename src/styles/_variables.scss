@@ -9,11 +9,13 @@ $line-height-large: 24px;
 
 $input-line-height: 1.125;
 
+$button-font-weight: 500;
+
 $h1-font-size: 24px;
 $h1-font-weight: 400;
 $h1-line-height: 32px;
 $h2-font-size: 20px;
-$h2-font-weight: 500;
+$h2-font-weight: 600;
 $h2-line-height: 32px;
 $h3-font-size: 16px;
 $h3-font-weight: 400;
@@ -21,6 +23,10 @@ $h3-line-height: 28px;
 $h4-font-size: 15px;
 $h4-font-weight: 400;
 $h4-line-height: 24px;
+
+$display1-font-size: 34px;
+$display1-font-weight: 400;
+$display1-line-height: 40px;
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -38,3 +44,5 @@ $link-color: map-get($app-primary, 500);
 $link-decoration: underline;
 $link-hover-color: map-get($app-primary, 700);
 $link-hover-decoration: underline;
+
+$body-bg: map-get($mat-gray, 50);
