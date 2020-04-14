@@ -1,0 +1,31 @@
+// Layout styles
+// stylesheets for the main parts of the site
+
+
+// grid
+
+$gutter: 30px;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter / 2;
+  margin-left: -$gutter / 2;
+}
+
+.col {
+  position: relative;
+  width: 100%;
+  padding-right: $gutter / 2;
+  padding-left: $gutter / 2;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+
+// main content
+
+.app-content {
+  padding: 40px;
+}
