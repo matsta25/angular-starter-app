@@ -1,22 +1,32 @@
-<h1>Posts List</h1>
+<main>
+  <header class="mat-toolbar-single-row page-header">
+    <button mat-icon-button aria-label="Back to homepage" class="page-header__btn-back">
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
 
-<div>
-  <button mat-raised-button [routerLink]="['/','posts','create']">Add</button>
-</div>
-<div>
-  <button mat-raised-button (click)="onRefresh()">Refresh</button>
-</div>
+    <h1 class="mat-headline">Posts List</h1>
+  </header>
 
-<br>
-
-<ul *ngIf="posts$ | async as posts">
-  <li *ngFor="let post of posts">
+  <div class="app-content">
     <div>
-      <h3>{{ post.title }}</h3>
+      <button mat-raised-button [routerLink]="['/','posts','create']">Add</button>
     </div>
-    <div>{{ post.body }}</div>
-    <p>{{ post.userId }}</p>
-    <button mat-raised-button (click)="onPostDelete(post.id)">Delete</button>
-    <button mat-raised-button [routerLink]="['/','posts', post.id]">Update</button>
-  </li>
-</ul>
+    <div>
+      <button mat-raised-button (click)="onRefresh()">Refresh</button>
+    </div>
+
+    <br>
+
+    <ul *ngIf="posts$ | async as posts">
+      <li *ngFor="let post of posts">
+        <div>
+          <h3>{{ post.title }}</h3>
+        </div>
+        <div>{{ post.body }}</div>
+        <p>{{ post.userId }}</p>
+        <button mat-raised-button (click)="onPostDelete(post.id)">Delete</button>
+        <button mat-raised-button [routerLink]="['/','posts', post.id]">Update</button>
+      </li>
+    </ul>
+  </div>
+</main>
