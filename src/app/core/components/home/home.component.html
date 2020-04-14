@@ -1,91 +1,93 @@
-<section class="home-highlight">
-  <h1 class="mat-display-1 home-display">Welcome to angular-starter-app!</h1>
-  <img src="assets/logo.svg" alt="">
-</section>
+<main class="app-content">
+  <section class="home-highlight">
+    <h1 class="mat-display-1 home-display">Welcome to angular-starter-app!</h1>
+    <img src="assets/logo.svg" alt="">
+  </section>
 
-<section class="home-modules">
-  <header class="home-modules__header">
-    <p>
-      Angular Starter App is real word boilerplate to speedup your development.
-      Just focus on your main features and dont waist your time on setting up the whole necessary angular environment.
-      Using this starter you will save a lot of hours and this will make sure that you are creating your app following
-      the best practise
-    </p>
-  </header>
+  <section class="home-modules">
+    <header class="home-modules__header">
+      <p>
+        Angular Starter App is real word boilerplate to speedup your development.
+        Just focus on your main features and dont waist your time on setting up the whole necessary angular environment.
+        Using this starter you will save a lot of hours and this will make sure that you are creating your app following
+        the best practise
+      </p>
+    </header>
 
-  <div class="row">
-    <div class="col">
-      <mat-card class="home-card">
-        <mat-card-header>
-          <div mat-card-avatar class="home-card__header-image">
-            <mat-icon color="accent" aria-hidden="false" aria-label="Example Module" class="home-card__header-icon">
-              star_border
-            </mat-icon>
-          </div>
-          <mat-card-title>Examples</mat-card-title>
-          <mat-card-subtitle>feature module</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            This feature shows basic usage of notifications, local storage, offline indicator, http error handler
-            and loading interceptor.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button color="primary" [routerLink]="['/', 'examples']">Check it out!</button>
-        </mat-card-actions>
-      </mat-card>
+    <div class="row">
+      <div class="col">
+        <mat-card class="home-card">
+          <mat-card-header>
+            <div mat-card-avatar class="home-card__header-image">
+              <mat-icon color="accent" aria-hidden="false" aria-label="Example Module" class="home-card__header-icon">
+                star_border
+              </mat-icon>
+            </div>
+            <mat-card-title>Examples</mat-card-title>
+            <mat-card-subtitle>feature module</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              This feature shows basic usage of notifications, local storage, offline indicator, http error handler
+              and loading interceptor.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" [routerLink]="['/', 'examples']">Check it out!</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+      <div class="col">
+        <mat-card class="home-card">
+          <mat-card-header>
+            <div mat-card-avatar class="home-card__header-image">
+              <mat-icon  color="accent" aria-hidden="false" aria-label="Posts Module" class="home-card__header-icon">
+                notes
+              </mat-icon>
+            </div>
+            <mat-card-title>Posts</mat-card-title>
+            <mat-card-subtitle>feature module</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              This feature module is using @ngrx/store & @ngrx/effects.
+              It operates on posts and makes all CRUD actions on it.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" [routerLink]="['/', 'posts']">Check it out!</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+      <div class="col">
+        <mat-card class="home-card">
+          <mat-card-header>
+            <div mat-card-avatar class="home-card__header-image">
+              <mat-icon color="accent" aria-hidden="false" aria-label="Todos Module" class="home-card__header-icon">
+                done_outline
+              </mat-icon>
+            </div>
+            <mat-card-title>Todos</mat-card-title>
+            <mat-card-subtitle>feature module</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              This feature module is using @ngrx/entity & @ngrx/effects.
+              It operates on todos and make all CRUD actions on it.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" [routerLink]="['/', 'todos']">Check it out!</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
+  </section>
 
-    <div class="col">
-      <mat-card class="home-card">
-        <mat-card-header>
-          <div mat-card-avatar class="home-card__header-image">
-            <mat-icon  color="accent" aria-hidden="false" aria-label="Posts Module" class="home-card__header-icon">
-              notes
-            </mat-icon>
-          </div>
-          <mat-card-title>Posts</mat-card-title>
-          <mat-card-subtitle>feature module</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            This feature module is using @ngrx/store & @ngrx/effects.
-            It operates on posts and makes all CRUD actions on it.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button color="primary" [routerLink]="['/', 'posts']">Check it out!</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-
-    <div class="col">
-      <mat-card class="home-card">
-        <mat-card-header>
-          <div mat-card-avatar class="home-card__header-image">
-            <mat-icon color="accent" aria-hidden="false" aria-label="Todos Module" class="home-card__header-icon">
-              done_outline
-            </mat-icon>
-          </div>
-          <mat-card-title>Todos</mat-card-title>
-          <mat-card-subtitle>feature module</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            This feature module is using @ngrx/entity & @ngrx/effects.
-            It operates on todos and make all CRUD actions on it.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button color="primary" [routerLink]="['/', 'todos']">Check it out!</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+  <div class="home-docs">
+    Want to know more about angular-starter-app read
+    <a href="https://matsta25.gitlab.io/angular-starter-app/docs/">documentation</a>, please.
   </div>
-</section>
-
-<div class="home-docs">
-  Want to know more about angular-starter-app read
-  <a href="https://matsta25.gitlab.io/angular-starter-app/docs/">documentation</a>, please.
-</div>
+</main>
