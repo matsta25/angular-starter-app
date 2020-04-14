@@ -29,3 +29,15 @@ $gutter: 30px;
 .app-content {
   padding: 40px;
 }
+
+
+// page header
+
+.page-header {
+  background-color: $page-header-bg;
+
+  .mat-headline {
+    margin-bottom: 0;
+    margin-left: 2px;
+  }
+}
