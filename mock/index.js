@@ -13,7 +13,7 @@ module.exports = () => {
       id: faker.random.uuid(),
       date: faker.date.past(),
       title: faker.name.title(),
-      body: faker.lorem.paragraph()
+      body: faker.lorem.paragraph(100)
     })
   }
 

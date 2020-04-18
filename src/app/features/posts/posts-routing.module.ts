@@ -7,6 +7,7 @@ import { PostCreateComponent } from './components/post-create/post-create.compon
 import { PostUpdateComponent } from './components/post-update/post-update.component'
 import { LoadingResolver } from '../../shared/services/loading.resolver'
 import { UpdatePostResolver } from './services/update-post.resolver'
+import { PostDetailsComponent } from './components/post-details/post-details.component'
 
 const routes: Routes = [
   {
@@ -28,10 +29,7 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        component: PostUpdateComponent,
-        resolve: {
-          UpdatePostResolver
-        }
+        component: PostDetailsComponent,
       }
     ]
   }

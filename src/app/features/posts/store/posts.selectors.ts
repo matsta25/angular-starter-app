@@ -8,6 +8,11 @@ export const selectPosts = createSelector(
   (state: PostsState) => state.posts
 )
 
+export const selectPostById = (id: string) => createSelector(
+  selectPostsState,
+  (state: PostsState) => state.posts.find(item => item.id === id)
+)
+
 export const selectPost = createSelector(
   selectPostsState,
   (state: PostsState) => state.post
