@@ -11,13 +11,18 @@ import { ReactiveFormsModule } from '@angular/forms'
 
 
 @NgModule({
-  declarations: [PostsComponent, PostsListComponent, PostCreateComponent, PostUpdateComponent],
+  declarations: [
+    PostsComponent,
+    PostsListComponent,
+    PostCreateComponent,
+    PostUpdateComponent,
+  ],
   imports: [
     CommonModule,
     PostsRoutingModule,
     SharedModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
 export class PostsModule {
 }

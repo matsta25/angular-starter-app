@@ -1,0 +1,26 @@
+// Helper classes
+//
+
+
+//.d-flex {
+//  display: flex !important;
+//}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.floating-action {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1010;
+}

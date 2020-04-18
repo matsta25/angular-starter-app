@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatListModule } from '@angular/material/list'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatCardModule } from '@angular/material/card'
+import { MatRippleModule } from '@angular/material/core'
 
 const materialModules = [
   MatButtonModule,
@@ -22,6 +23,7 @@ const materialModules = [
   MatListModule,
   MatMenuModule,
   MatCardModule,
+  MatRippleModule,
 ]
 
 @NgModule({
