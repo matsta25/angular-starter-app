@@ -27,7 +27,7 @@ $gutter: 30px;
 // main content
 
 .app-content {
-  padding: 40px;
+  padding: 25px 25px;
 }
 
 
@@ -35,9 +35,15 @@ $gutter: 30px;
 
 .page-header {
   background-color: $page-header-bg;
+}
 
-  .mat-headline {
-    margin-bottom: 0;
-    margin-left: 2px;
-  }
+.page-header__heading {
+  display: flex;
+  align-items: flex-end;
+}
+
+.page-header__addons {
+  margin-left: 6px;
+  margin-bottom: 3px;
+  opacity: .4;
 }

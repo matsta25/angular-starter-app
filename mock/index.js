@@ -11,6 +11,7 @@ module.exports = () => {
     data.posts.push({
       userId: faker.random.uuid(),
       id: faker.random.uuid(),
+      date: faker.date.past(),
       title: faker.name.title(),
       body: faker.lorem.paragraph()
     })
