@@ -6,7 +6,7 @@ import { select, Store } from '@ngrx/store'
 import { selectLoading } from '../../../shared/store/shared.selectors'
 import { filter, first, last, tap } from 'rxjs/operators'
 import { Observable } from 'rxjs'
-import { selectPost } from '../store/posts.selectors'
+import { selectPostById } from '../store/posts.selectors'
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class UpdatePostResolver implements Resolve<boolean> {
 
     if (id) {
       return this.store.pipe(
-        select(selectPost),
+        select(selectPostById(id)),
         // @ts-ignore
         filter(loaded => loaded),
         first()

@@ -1,12 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Params } from '@angular/router'
 import { Observable, Subscription } from 'rxjs'
 import { PostsState } from '../../store/posts.state'
 import { select, Store } from '@ngrx/store'
-import { updatePost } from '../../store/posts.actions'
+import { readPost, updatePost } from '../../store/posts.actions'
 import { Post } from '../../models/post.model'
-import { selectPost } from '../../store/posts.selectors'
+import { selectPostById } from '../../store/posts.selectors'
 import { FormBuilder, FormGroup } from '@angular/forms'
+import { take } from 'rxjs/operators'
 
 @Component({
   selector: 'app-post-update',
@@ -19,20 +20,25 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
   private post$: Observable<Post>
   private subscriptions: Subscription = new Subscription()
 
-  constructor(private route: ActivatedRoute, private store: Store<PostsState>, private fb: FormBuilder) {
-    this.post$ = this.store.pipe(select(selectPost))
+  constructor(private activatedRoute: ActivatedRoute, private store: Store<PostsState>, private fb: FormBuilder) {
   }
 
   public ngOnInit(): void {
-    this.postUpdateForm = this.createPostUpdateFormGroup()
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.post$ = this.store.pipe(select(selectPostById(params.id)))
 
-    this.subscriptions.add(
-      this.post$.subscribe(post => {
-        if (post) {
-          this.patchPostUpdateFormGroup(post)
-        }
-      })
-    )
+      this.subscriptions.add(
+        this.post$.subscribe(post => {
+          if (post) {
+            this.patchPostUpdateFormGroup(post)
+          } else {
+            this.store.dispatch(readPost({id: params.id}))
+          }
+        })
+      )
+    })
+
+    this.postUpdateForm = this.createPostUpdateFormGroup()
   }
 
   private createPostUpdateFormGroup(): FormGroup {
@@ -53,7 +59,7 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
 
   public onPostUpdateFormSubmit(): void {
     const post: Post = this.postUpdateForm.value
-    this.store.dispatch(updatePost({post}))
+    // this.store.dispatch(updatePost({post}))
   }
 
   public ngOnDestroy(): void {
