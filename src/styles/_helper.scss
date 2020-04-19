@@ -2,9 +2,9 @@
 //
 
 
-//.d-flex {
-//  display: flex !important;
-//}
+.w-100 {
+  width: 100% !important;
+}
 
 .ml-auto {
   margin-left: auto !important;
@@ -18,9 +18,22 @@
   padding-top: 0 !important;
 }
 
+.text-right {
+  text-align: right !important;
+}
+
 .floating-action {
   position: fixed;
   bottom: 25px;
   right: 25px;
   z-index: 1010;
+}
+
+.squeeze {
+  display: flex;
+  justify-content: center;
+
+  > * {
+    max-width: 450px;
+  }
 }
