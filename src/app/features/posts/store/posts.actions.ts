@@ -5,9 +5,9 @@ import { Update } from '@ngrx/entity'
 // CRUD
 
 // Create Post
-export const createPost = createAction('[Posts] Create Post', props<{ post: Partial<Post> }>())
-export const createPostSuccess = createAction('[Posts] Create Create Success', props<{ post: Post }>())
-export const createPostFail = createAction('[Posts] Create Create Fail')
+export const createPostsItem = createAction('[Posts] Create Post', props<{ post: Partial<Post> }>())
+export const createPostsItemSuccess = createAction('[Posts] Create Create Success', props<{ post: Post }>())
+export const createPostsItemFail = createAction('[Posts] Create Create Fail')
 
 // Read Posts
 export const readPosts = createAction('[Posts] Read Posts')
@@ -15,16 +15,16 @@ export const readPostsSuccess = createAction('[Posts] Read Posts Success', props
 export const readPostsFail = createAction('[Posts] Read Posts Fail')
 
 // Read Post
-export const readPost = createAction('[Posts] Read Post', props<{ id: string }>())
-export const readPostSuccess = createAction('[Posts] Read Post Success', props<{ post: Post }>())
-export const readPostFail = createAction('[Posts] Read Post Fail')
+export const readPostsItem = createAction('[Posts] Read Post', props<{ id: string }>())
+export const readPostsItemSuccess = createAction('[Posts] Read Post Success', props<{ post: Post }>())
+export const readPostsItemFail = createAction('[Posts] Read Post Fail')
 
 // Update Post
-export const updatePost = createAction('[Posts] Update Post', props<{ updatePost: Update<Post> }>())
-export const updatePostSuccess = createAction('[Posts] Update Post Success')
-export const updatePostFail = createAction('[Posts] Update Post Fail')
+export const updatePostsItem = createAction('[Posts] Update Post', props<{ updatePost: Update<Post> }>())
+export const updatePostsItemSuccess = createAction('[Posts] Update Post Success')
+export const updatePostsItemFail = createAction('[Posts] Update Post Fail')
 
 // Delete Post
-export const deletePost = createAction('[Posts] Delete Post', props<{ id: string }>())
-export const deletePostSuccess = createAction('[Posts] Delete Post Success')
-export const deletePostFail = createAction('[Posts] Delete Post Fail')
+export const deletePostsItem = createAction('[Posts] Delete Post', props<{ id: string }>())
+export const deletePostsItemSuccess = createAction('[Posts] Delete Post Success')
+export const deletePostsItemFail = createAction('[Posts] Delete Post Fail')

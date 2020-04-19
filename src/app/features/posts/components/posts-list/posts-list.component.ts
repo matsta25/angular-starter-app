@@ -3,7 +3,7 @@ import { Observable } from 'rxjs'
 import { Post } from '../../models/post.model'
 import { select, Store } from '@ngrx/store'
 import { PostsState } from '../../store/posts.state'
-import { deletePost, readPosts } from '../../store/posts.actions'
+import { deletePostsItem, readPosts } from '../../store/posts.actions'
 import { selectPosts } from '../../store/posts.selectors'
 
 @Component({
@@ -21,7 +21,7 @@ export class PostsListComponent {
   }
 
   public onPostDelete(id: string): void {
-    this.store.dispatch(deletePost({id}))
+    this.store.dispatch(deletePostsItem({id}))
   }
 
   public onRefresh(): void {

@@ -2,21 +2,21 @@ import { Injectable } from '@angular/core'
 import { PostsService } from '../services/posts.service'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
 import {
-  createPost,
-  createPostFail,
-  createPostSuccess,
-  deletePost,
-  deletePostFail,
-  deletePostSuccess,
-  readPost,
-  readPostFail,
+  createPostsItem,
+  createPostsItemFail,
+  createPostsItemSuccess,
+  deletePostsItem,
+  deletePostsItemFail,
+  deletePostsItemSuccess,
+  readPostsItem,
+  readPostsItemFail,
   readPosts,
   readPostsFail,
   readPostsSuccess,
-  readPostSuccess,
-  updatePost,
-  updatePostFail,
-  updatePostSuccess
+  readPostsItemSuccess,
+  updatePostsItem,
+  updatePostsItemFail,
+  updatePostsItemSuccess
 } from './posts.actions'
 import { catchError, map, mergeMap, tap } from 'rxjs/operators'
 import { HttpResponseModel } from '../../../shared/models/http-response-model.model'
@@ -34,14 +34,14 @@ export class PostsEffects {
 
   createPost$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(createPost.type),
+      ofType(createPostsItem.type),
       mergeMap(({post}) => this.postsService.createPost(post).pipe(
         map((response: HttpResponseModel<Post>) => ({
-          type: createPostSuccess.type,
+          type: createPostsItemSuccess.type,
           post: response,
         })),
         catchError(() => of({
-          type: createPostFail.type,
+          type: createPostsItemFail.type,
         }))
       ))
     )
@@ -49,7 +49,7 @@ export class PostsEffects {
 
   readPosts$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(readPosts.type, deletePostSuccess.type),
+      ofType(readPosts.type, deletePostsItemSuccess.type),
       mergeMap(() => this.postsService.readPosts().pipe(
         map((response: HttpResponseModel<Post[]>) => ({
           type: readPostsSuccess.type,
@@ -64,14 +64,14 @@ export class PostsEffects {
 
   readPost$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(readPost.type),
+      ofType(readPostsItem.type),
       mergeMap(({id}) => this.postsService.readPost(id).pipe(
         map((response: HttpResponseModel<Post>) => ({
-          type: readPostSuccess.type,
+          type: readPostsItemSuccess.type,
           post: response,
         })),
         catchError(() => of({
-          type: readPostFail.type,
+          type: readPostsItemFail.type,
         }))
       ))
     )
@@ -79,14 +79,14 @@ export class PostsEffects {
 
   updatePost$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(updatePost.type),
+      ofType(updatePostsItem.type),
       mergeMap(({post}) => this.postsService.updatePost(post).pipe(
         map((response: HttpResponseModel<Post>) => ({
-          type: updatePostSuccess.type,
+          type: updatePostsItemSuccess.type,
           post: response,
         })),
         catchError(() => of({
-          type: updatePostFail.type,
+          type: updatePostsItemFail.type,
         }))
       ))
     )
@@ -94,14 +94,14 @@ export class PostsEffects {
 
   deletePost$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(deletePost.type),
+      ofType(deletePostsItem.type),
       mergeMap(({id}) => this.postsService.deletePost(id).pipe(
         map((response: HttpResponseModel<Post>) => ({
-          type: deletePostSuccess.type,
+          type: deletePostsItemSuccess.type,
           post: response,
         })),
         catchError(() => of({
-          type: deletePostFail.type,
+          type: deletePostsItemFail.type,
         }))
       ))
     )
@@ -109,7 +109,7 @@ export class PostsEffects {
 
   navigate$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(createPostSuccess.type, updatePostSuccess.type),
+      ofType(createPostsItemSuccess.type, updatePostsItemSuccess.type),
       tap(({user}) => this.router.navigate(['/', 'posts'])),
     ),
     {dispatch: false},
