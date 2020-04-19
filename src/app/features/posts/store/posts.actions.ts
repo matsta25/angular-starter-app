@@ -1,11 +1,12 @@
 import { createAction, props } from '@ngrx/store'
 import { Post } from '../models/post.model'
+import { Update } from '@ngrx/entity'
 
 // CRUD
 
 // Create Post
-export const createPost = createAction('[Posts] Create Post', props<{ post: Post }>())
-export const createPostSuccess = createAction('[Posts] Create Create Success')
+export const createPost = createAction('[Posts] Create Post', props<{ post: Partial<Post> }>())
+export const createPostSuccess = createAction('[Posts] Create Create Success', props<{ post: Post }>())
 export const createPostFail = createAction('[Posts] Create Create Fail')
 
 // Read Posts
@@ -19,7 +20,7 @@ export const readPostSuccess = createAction('[Posts] Read Post Success', props<{
 export const readPostFail = createAction('[Posts] Read Post Fail')
 
 // Update Post
-export const updatePost = createAction('[Posts] Update Post', props<{ post: Post }>())
+export const updatePost = createAction('[Posts] Update Post', props<{ updatePost: Update<Post> }>())
 export const updatePostSuccess = createAction('[Posts] Update Post Success')
 export const updatePostFail = createAction('[Posts] Update Post Fail')
 
