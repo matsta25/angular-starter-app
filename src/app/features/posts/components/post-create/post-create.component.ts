@@ -13,7 +13,11 @@ import { NotificationService } from '../../../../shared/services/notification.se
 export class PostCreateComponent implements OnInit {
   public postForm: FormGroup
 
-  constructor(private formBuilder: FormBuilder, private store: Store<PostsState>, private notification: NotificationService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private store: Store<PostsState>,
+    private notification: NotificationService,
+  ) {
   }
 
   public ngOnInit(): void {

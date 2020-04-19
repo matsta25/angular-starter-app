@@ -9,7 +9,7 @@
       <span class="page-header__addons">{{post.date | date}}</span>
     </div>
 
-    <button mat-icon-button color="warn" aria-label="Delete Post" class="ml-auto">
+    <button mat-icon-button color="warn" aria-label="Delete Post" class="ml-auto" (click)="delete(post.id)">
       <mat-icon>delete</mat-icon>
     </button>
   </header>

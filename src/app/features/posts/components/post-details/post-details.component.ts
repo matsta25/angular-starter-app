@@ -5,7 +5,7 @@ import { PostsState } from '../../store/posts.state'
 import { select, Store } from '@ngrx/store'
 import { Post } from '../../models/post.model'
 import { selectPostById } from '../../store/posts.selectors'
-import { readPostsItem } from '../../store/posts.actions'
+import { deletePostsItem, readPostsItem } from '../../store/posts.actions'
 import { take } from 'rxjs/operators'
 
 @Component({
@@ -16,14 +16,20 @@ import { take } from 'rxjs/operators'
 export class PostDetailsComponent implements OnInit {
   public post$: Observable<Post>
 
-  constructor(private activatedRoute: ActivatedRoute, private store: Store<PostsState>) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private store: Store<PostsState>,
+  ) {
   }
 
   public ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.post$ = this.store.pipe(select(selectPostById(params.id)))
-
       this.post$.pipe(take(1)).subscribe(post => !post && this.store.dispatch(readPostsItem({id: params.id})))
     })
+  }
+
+  public delete(postId) {
+    this.store.dispatch(deletePostsItem({id: postId}))
   }
 }
