@@ -9,7 +9,7 @@
       <span class="page-header__addons">{{post.date | date}}</span>
     </div>
 
-    <button mat-icon-button color="primary" aria-label="Edit Post" class="ml-auto">
+    <button mat-icon-button color="primary" aria-label="Edit Post" [routerLink]="['/','posts', post.id, 'update']" class="ml-auto">
       <mat-icon>edit</mat-icon>
     </button>
     <button mat-icon-button color="warn" aria-label="Delete Post">

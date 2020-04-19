@@ -6,8 +6,8 @@ import { select, Store } from '@ngrx/store'
 import { readPostsItem, updatePostsItem } from '../../store/posts.actions'
 import { Post } from '../../models/post.model'
 import { selectPostById } from '../../store/posts.selectors'
-import { FormBuilder, FormGroup } from '@angular/forms'
-import { take } from 'rxjs/operators'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { NotificationService } from '../../../../shared/services/notification.service'
 
 @Component({
   selector: 'app-post-update',
@@ -15,13 +15,16 @@ import { take } from 'rxjs/operators'
   styleUrls: ['./post-update.component.scss']
 })
 export class PostUpdateComponent implements OnInit, OnDestroy {
-
-  public postUpdateForm: FormGroup
-  private post$: Observable<Post>
+  public postForm: FormGroup
+  public post$: Observable<Post>
   private subscriptions: Subscription = new Subscription()
 
-  constructor(private activatedRoute: ActivatedRoute, private store: Store<PostsState>, private fb: FormBuilder) {
-  }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private formBuilder: FormBuilder,
+    private store: Store<PostsState>,
+    private notification: NotificationService,
+  ) {}
 
   public ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
@@ -29,37 +32,36 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
 
       this.subscriptions.add(
         this.post$.subscribe(post => {
-          if (post) {
-            this.patchPostUpdateFormGroup(post)
-          } else {
+          this.postForm = this.createPostFormGroup(post)
+          if (!post) {
             this.store.dispatch(readPostsItem({id: params.id}))
           }
         })
       )
     })
-
-    this.postUpdateForm = this.createPostUpdateFormGroup()
   }
 
-  private createPostUpdateFormGroup(): FormGroup {
-    return this.fb.group({
-      id: '',
-      title: '',
-      body: ''
+  public onPostFormSubmit(): void {
+    if (this.postForm.valid) {
+      console.log(this.postForm.controls.id.value)
+      this.store.dispatch(updatePostsItem({
+        updatePost: {
+          id: this.postForm.controls.id.value,
+          changes: this.postForm.value,
+        }
+      }))
+    } else {
+      this.notification.showError('Form contains errors. Fix it and try again.')
+    }
+  }
+
+  private createPostFormGroup(post: Post): FormGroup {
+    return this.formBuilder.group({
+      id: [post ? post.id : null, Validators.required],
+      date: [post ? post.date : new Date(), Validators.required],
+      title: [post ? post.title : '', Validators.required],
+      body: [post ? post.body : '', Validators.required],
     })
-  }
-
-  private patchPostUpdateFormGroup(post: Post): void {
-    this.postUpdateForm.patchValue({
-      id: post.id,
-      title: post.title,
-      body: post.body,
-    })
-  }
-
-  public onPostUpdateFormSubmit(): void {
-    const post: Post = this.postUpdateForm.value
-    // this.store.dispatch(updatePost({post}))
   }
 
   public ngOnDestroy(): void {
