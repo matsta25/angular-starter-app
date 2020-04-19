@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router'
 import { Observable, Subscription } from 'rxjs'
 import { PostsState } from '../../store/posts.state'
 import { select, Store } from '@ngrx/store'
-import { readPost, updatePost } from '../../store/posts.actions'
+import { readPostsItem, updatePostsItem } from '../../store/posts.actions'
 import { Post } from '../../models/post.model'
 import { selectPostById } from '../../store/posts.selectors'
 import { FormBuilder, FormGroup } from '@angular/forms'
@@ -32,7 +32,7 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
           if (post) {
             this.patchPostUpdateFormGroup(post)
           } else {
-            this.store.dispatch(readPost({id: params.id}))
+            this.store.dispatch(readPostsItem({id: params.id}))
           }
         })
       )

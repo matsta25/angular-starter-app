@@ -5,7 +5,7 @@ import { PostsState } from '../../store/posts.state'
 import { select, Store } from '@ngrx/store'
 import { Post } from '../../models/post.model'
 import { selectPostById } from '../../store/posts.selectors'
-import { readPost } from '../../store/posts.actions'
+import { readPostsItem } from '../../store/posts.actions'
 import { take } from 'rxjs/operators'
 
 @Component({
@@ -23,7 +23,7 @@ export class PostDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.post$ = this.store.pipe(select(selectPostById(params.id)))
 
-      this.post$.pipe(take(1)).subscribe(post => !post && this.store.dispatch(readPost({id: params.id})))
+      this.post$.pipe(take(1)).subscribe(post => !post && this.store.dispatch(readPostsItem({id: params.id})))
     })
   }
 }

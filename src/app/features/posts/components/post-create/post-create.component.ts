@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup } from '@angular/forms'
 import { Store } from '@ngrx/store'
 import { PostsState } from '../../store/posts.state'
-import { createPost } from '../../store/posts.actions'
+import { createPostsItem } from '../../store/posts.actions'
 import { Post } from '../../models/post.model'
 
 @Component({
@@ -22,7 +22,7 @@ export class PostCreateComponent implements OnInit {
 
   public onPostFormSubmit(): void {
     const post: Post = this.postCreateForm.value
-    this.store.dispatch(createPost({post}))
+    this.store.dispatch(createPostsItem({post}))
   }
 
   private createPostCreateFormGroup(): FormGroup {
