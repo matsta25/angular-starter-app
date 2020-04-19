@@ -80,15 +80,17 @@ export class PostsEffects {
   updatePost$ = createEffect(() =>
     this.actions$.pipe(
       ofType(updatePostsItem.type),
-      mergeMap(({post}) => this.postsService.updatePost(post).pipe(
-        map((response: HttpResponseModel<Post>) => ({
-          type: updatePostsItemSuccess.type,
-          post: response,
-        })),
-        catchError(() => of({
-          type: updatePostsItemFail.type,
-        }))
-      ))
+      mergeMap((({updatePost}: {updatePost: {id: string, changes: Post}}) =>
+        this.postsService.updatePost(updatePost.id, updatePost.changes).pipe(
+          map((response: HttpResponseModel<Post>) => ({
+            type: updatePostsItemSuccess.type,
+            post: response,
+          })),
+          catchError(() => of({
+            type: updatePostsItemFail.type,
+          }))
+        ))
+      )
     )
   )
 
@@ -108,10 +110,10 @@ export class PostsEffects {
   )
 
   navigate$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(createPostsItemSuccess.type, updatePostsItemSuccess.type),
-      tap(({user}) => this.router.navigate(['/', 'posts'])),
-    ),
+      this.actions$.pipe(
+        ofType(createPostsItemSuccess.type, updatePostsItemSuccess.type),
+        tap(({user}) => this.router.navigate(['/', 'posts'])),
+      ),
     {dispatch: false},
   )
 }

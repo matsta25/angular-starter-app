@@ -23,8 +23,8 @@ export class PostsService {
     return this.http.get(`${environment.baseUrl}/posts/${id}`)
   }
 
-  public updatePost(post: Post): Observable<object> {
-    return this.http.put(`${environment.baseUrl}/posts/${post.id}`, post)
+  public updatePost(id: string, changes: Partial<Post>): Observable<object> {
+    return this.http.put(`${environment.baseUrl}/posts/${id}`, changes)
   }
 
   public deletePost(id: string): Observable<object> {

@@ -5,8 +5,6 @@ import { PostsComponent } from './posts.component'
 import { PostsListComponent } from './components/posts-list/posts-list.component'
 import { PostCreateComponent } from './components/post-create/post-create.component'
 import { PostUpdateComponent } from './components/post-update/post-update.component'
-import { LoadingResolver } from '../../shared/services/loading.resolver'
-import { UpdatePostResolver } from './services/update-post.resolver'
 import { PostDetailsComponent } from './components/post-details/post-details.component'
 
 const routes: Routes = [
@@ -20,12 +18,16 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
+        path: 'list',
+        component: PostsListComponent
+      },
+      {
         path: 'create',
         component: PostCreateComponent
       },
       {
-        path: 'list',
-        component: PostsListComponent
+        path: ':id/update',
+        component: PostUpdateComponent
       },
       {
         path: ':id',

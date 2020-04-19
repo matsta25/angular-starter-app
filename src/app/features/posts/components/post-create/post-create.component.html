@@ -32,7 +32,7 @@
 
           <mat-form-field class="w-100">
             <mat-label>Body</mat-label>
-            <textarea matInput [formControlName]="'body'"></textarea>
+            <textarea matInput [formControlName]="'body'" rows="10"></textarea>
             <mat-error *ngIf="postForm.get('body').hasError('required')">
               Body of Post is required
             </mat-error>
