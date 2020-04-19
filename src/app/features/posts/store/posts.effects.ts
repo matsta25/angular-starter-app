@@ -49,7 +49,7 @@ export class PostsEffects {
 
   readPosts$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(readPosts.type, deletePostsItemSuccess.type),
+      ofType(readPosts.type),
       mergeMap(() => this.postsService.readPosts().pipe(
         map((response: HttpResponseModel<Post[]>) => ({
           type: readPostsSuccess.type,
@@ -111,7 +111,7 @@ export class PostsEffects {
 
   navigate$ = createEffect(() =>
       this.actions$.pipe(
-        ofType(createPostsItemSuccess.type, updatePostsItemSuccess.type),
+        ofType(createPostsItemSuccess.type, updatePostsItemSuccess.type, deletePostsItemSuccess.type),
         tap(({user}) => this.router.navigate(['/', 'posts'])),
       ),
     {dispatch: false},

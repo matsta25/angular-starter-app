@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router'
 import { Observable, Subscription } from 'rxjs'
 import { PostsState } from '../../store/posts.state'
 import { select, Store } from '@ngrx/store'
-import { readPostsItem, updatePostsItem } from '../../store/posts.actions'
+import { deletePostsItem, readPostsItem, updatePostsItem } from '../../store/posts.actions'
 import { Post } from '../../models/post.model'
 import { selectPostById } from '../../store/posts.selectors'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
@@ -24,7 +24,8 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private store: Store<PostsState>,
     private notification: NotificationService,
-  ) {}
+  ) {
+  }
 
   public ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
@@ -53,6 +54,10 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
     } else {
       this.notification.showError('Form contains errors. Fix it and try again.')
     }
+  }
+
+  public delete(postId) {
+    this.store.dispatch(deletePostsItem({id: postId}))
   }
 
   private createPostFormGroup(post: Post): FormGroup {
