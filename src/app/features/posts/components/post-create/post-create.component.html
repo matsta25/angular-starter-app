@@ -9,7 +9,7 @@
 
   <div class="app-content">
     <div class="squeeze">
-      <mat-card class="w-100">
+      <mat-card>
         <form [formGroup]="postForm" (submit)="onPostFormSubmit()">
           <mat-form-field class="w-100">
             <mat-label>Choose a date</mat-label>
@@ -39,7 +39,7 @@
           </mat-form-field>
 
           <div class="text-right">
-            <button mat-button type="submit" [routerLink]="['/','posts']">Cancel</button>
+            <button mat-button [routerLink]="['/','posts']">Cancel</button>
             <button mat-flat-button color="primary" type="submit">Submit</button>
           </div>
         </form>
