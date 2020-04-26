@@ -5,6 +5,7 @@ import { TodosState } from './store/todos.state'
 import { createTodosItem, deleteTodosItem, readTodos, updateTodosItem } from './store/todos.actions'
 import { selectTodos } from './store/todos.selectors'
 import { Todo } from './models/todo'
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-todos',
@@ -23,9 +24,9 @@ export class TodosComponent implements OnInit {
     this.todos$ = this.store.pipe(select(selectTodos))
   }
 
-  public onSubmit(): void {
+  public onSubmit(form: NgForm): void {
     this.store.dispatch(createTodosItem({todo: {name: this.newTodoName}}))
-    this.newTodoName = ''
+    form.resetForm()
   }
 
   public onDelete(item: Todo): void {
