@@ -39,11 +39,10 @@ $gutter: 30px;
 
 .page-header__heading {
   display: flex;
-  align-items: flex-end;
+  align-items: baseline;
 }
 
 .page-header__addons {
   margin-left: 6px;
-  margin-bottom: 3px;
   opacity: .4;
 }
