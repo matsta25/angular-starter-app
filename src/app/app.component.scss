@@ -1,0 +1,17 @@
+.app-wrapper {
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  width: 200px;
+}
+
+.app-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content__main {
+  flex-grow: 1;
+}

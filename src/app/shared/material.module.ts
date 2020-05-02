@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 
+import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatButtonModule } from '@angular/material/button'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatIconModule } from '@angular/material/icon'
@@ -14,6 +15,7 @@ import { MatCardModule } from '@angular/material/card'
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core'
 
 const materialModules = [
+  MatSidenavModule,
   MatButtonModule,
   MatSnackBarModule,
   MatIconModule,
