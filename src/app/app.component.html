@@ -1,5 +1,36 @@
 <ng-progress></ng-progress>
 
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<mat-sidenav-container class="app-wrapper">
+  <mat-sidenav mode="side" #sidenav class="app-sidebar">
+    <aside>
+      <nav>
+        <ul>
+          <li>
+            <a [routerLink]="['link']" [routerLinkActive]="'active'">
+              Link
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['link']" [routerLinkActive]="'active'">
+              Link
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['link']" [routerLinkActive]="'active'">
+              Link
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </mat-sidenav>
+  <mat-sidenav-content class="app-content">
+    <app-header (sidenavIconClick)="sidenav.toggle()"></app-header>
+
+    <main class="app-content__main">
+      <router-outlet></router-outlet>
+    </main>
+
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
