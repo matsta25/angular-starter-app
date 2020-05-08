@@ -25,7 +25,7 @@ export class LocalStorageExampleComponent implements OnInit {
   }
 
   setExampleValue() {
-    this.localStorageService.set(LocalStorageKey.EXAMPLE_KEY, 'EXAMPLE_VALUE')
+    this.localStorageService.set(LocalStorageKey.EXAMPLE_KEY, this.getRandomIntInclusive(1000, 9999))
     this.getExampleValue()
   }
 
@@ -36,5 +36,11 @@ export class LocalStorageExampleComponent implements OnInit {
   delExampleValue() {
     this.localStorageService.del(LocalStorageKey.EXAMPLE_KEY)
     this.getExampleValue()
+  }
+
+  private getRandomIntInclusive(min, max) {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min + 1)) + min
   }
 }
