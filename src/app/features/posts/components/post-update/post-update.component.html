@@ -1,4 +1,4 @@
-<main *ngIf="post$ | async as post">
+<div *ngIf="post$ | async as post">
   <header class="mat-toolbar-single-row page-header">
     <button mat-icon-button color="primary" aria-label="Back to Posts List" [routerLink]="['/','posts']">
       <mat-icon>arrow_back</mat-icon>
@@ -53,4 +53,4 @@
       </mat-card>
     </div>
   </div>
-</main>
+</div>

@@ -1,4 +1,4 @@
-<main *ngIf="todos$ | async as todos">
+<div *ngIf="todos$ | async as todos">
   <header class="mat-toolbar-single-row page-header">
     <button mat-icon-button color="primary" aria-label="Back to homepage" [routerLink]="['/']">
       <mat-icon>arrow_back</mat-icon>
@@ -44,4 +44,4 @@
       </mat-list>
     </div>
   </div>
-</main>
+</div>
