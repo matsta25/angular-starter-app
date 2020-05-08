@@ -5,5 +5,5 @@ export interface SharedState {
 
 export const initialSharedState: SharedState = {
   isOnline: false,
-  loading: []
+  loading: [],
 }

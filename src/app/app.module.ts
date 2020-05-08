@@ -35,10 +35,10 @@ import { FooterComponent } from './core/components/footer/footer.component'
     SharedModule,
 
     // app routing
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 
 export class AppModule {

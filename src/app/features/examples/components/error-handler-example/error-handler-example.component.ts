@@ -8,12 +8,12 @@ import { HttpClient } from '@angular/common/http'
 @Component({
   selector: 'app-error-handler-example',
   templateUrl: './error-handler-example.component.html',
-  styleUrls: ['./error-handler-example.component.scss']
+  styleUrls: ['./error-handler-example.component.scss'],
 })
 export class ErrorHandlerExampleComponent {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) {
   }
 

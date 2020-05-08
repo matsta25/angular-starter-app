@@ -11,19 +11,19 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'list',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'list',
-        component: ExamplesListComponent
+        component: ExamplesListComponent,
       },
-    ]
-  }
+    ],
+  },
 ]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class ExamplesRoutingModule {
 }

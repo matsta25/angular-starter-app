@@ -12,7 +12,7 @@ import { NotificationService } from '../../../../shared/services/notification.se
 @Component({
   selector: 'app-post-update',
   templateUrl: './post-update.component.html',
-  styleUrls: ['./post-update.component.scss']
+  styleUrls: ['./post-update.component.scss'],
 })
 export class PostUpdateComponent implements OnInit, OnDestroy {
   public postForm: FormGroup
@@ -37,7 +37,7 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
           if (!post) {
             this.store.dispatch(readPostsItem({id: params.id}))
           }
-        })
+        }),
       )
     })
   }
@@ -49,7 +49,7 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
         updatePost: {
           id: this.postForm.controls.id.value,
           changes: this.postForm.value,
-        }
+        },
       }))
     } else {
       this.notification.showError('Form contains errors. Fix it and try again.')

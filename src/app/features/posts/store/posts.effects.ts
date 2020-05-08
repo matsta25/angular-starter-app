@@ -16,7 +16,7 @@ import {
   readPostsItemSuccess,
   updatePostsItem,
   updatePostsItemFail,
-  updatePostsItemSuccess
+  updatePostsItemSuccess,
 } from './posts.actions'
 import { catchError, map, mergeMap, tap } from 'rxjs/operators'
 import { HttpResponseModel } from '../../../shared/models/http-response-model.model'
@@ -42,9 +42,9 @@ export class PostsEffects {
         })),
         catchError(() => of({
           type: createPostsItemFail.type,
-        }))
-      ))
-    )
+        })),
+      )),
+    ),
   )
 
   readPosts$ = createEffect(() =>
@@ -57,9 +57,9 @@ export class PostsEffects {
         })),
         catchError(() => of({
           type: readPostsFail.type,
-        }))
-      ))
-    )
+        })),
+      )),
+    ),
   )
 
   readPost$ = createEffect(() =>
@@ -72,9 +72,9 @@ export class PostsEffects {
         })),
         catchError(() => of({
           type: readPostsItemFail.type,
-        }))
-      ))
-    )
+        })),
+      )),
+    ),
   )
 
   updatePost$ = createEffect(() =>
@@ -88,10 +88,10 @@ export class PostsEffects {
           })),
           catchError(() => of({
             type: updatePostsItemFail.type,
-          }))
-        ))
-      )
-    )
+          })),
+        )),
+      ),
+    ),
   )
 
   deletePost$ = createEffect(() =>
@@ -104,9 +104,9 @@ export class PostsEffects {
         })),
         catchError(() => of({
           type: deletePostsItemFail.type,
-        }))
-      ))
-    )
+        })),
+      )),
+    ),
   )
 
   navigate$ = createEffect(() =>

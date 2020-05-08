@@ -9,21 +9,21 @@ import { BackButtonDirective } from './directives/back-button.directive'
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
   ],
   declarations: [
     NotificationComponent,
-    BackButtonDirective
+    BackButtonDirective,
   ],
   entryComponents: [
     NotificationComponent,
   ],
   providers: [
-    ...sharedInterceptorProviders
+    ...sharedInterceptorProviders,
   ],
   exports: [
     MaterialModule,
-    BackButtonDirective
+    BackButtonDirective,
   ],
 })
 

@@ -19,7 +19,7 @@ export class LoadingInterceptor implements HttpInterceptor {
       finalize(() => {
         this.store.dispatch(loadingOff({url: request.url}))
         // add more action if needed like hide notification
-      })
+      }),
     )
   }
 }

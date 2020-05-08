@@ -8,12 +8,12 @@ import { NotificationService } from '../../../../shared/services/notification.se
 @Component({
   selector: 'app-notification-example',
   templateUrl: './notification-example.component.html',
-  styleUrls: ['./notification-example.component.scss']
+  styleUrls: ['./notification-example.component.scss'],
 })
 export class NotificationExampleComponent {
 
   constructor(
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
   ) {
   }
 

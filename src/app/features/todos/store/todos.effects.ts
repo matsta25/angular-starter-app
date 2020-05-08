@@ -8,7 +8,7 @@ import {
   readTodosSuccess,
   updateTodosItem,
   updateTodosItemFail,
-  updateTodosItemSuccess
+  updateTodosItemSuccess,
 } from './todos.actions'
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators'
 import { of } from 'rxjs'
@@ -54,7 +54,7 @@ export class TodosEffects {
         this.todosService.updateItem(updateTodo.id, updateTodo.changes).pipe(
           map(() => ({type: updateTodosItemSuccess.type})),
           catchError(() => of({type: updateTodosItemFail.type})),
-        )
+        ),
       ),
     ),
   )

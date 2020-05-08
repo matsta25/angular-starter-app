@@ -2,7 +2,7 @@ import { Directive, HostListener } from '@angular/core'
 import { Location } from '@angular/common'
 
 @Directive({
-  selector: '[appBackButton]'
+  selector: '[appBackButton]',
 })
 export class BackButtonDirective {
 

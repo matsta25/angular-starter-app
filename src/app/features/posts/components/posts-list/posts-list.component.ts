@@ -9,7 +9,7 @@ import { selectPosts } from '../../store/posts.selectors'
 @Component({
   selector: 'app-posts-list',
   templateUrl: './posts-list.component.html',
-  styleUrls: ['./posts-list.component.scss']
+  styleUrls: ['./posts-list.component.scss'],
 })
 export class PostsListComponent {
   public posts$: Observable<Post[]>

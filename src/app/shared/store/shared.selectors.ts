@@ -5,10 +5,10 @@ export const selectSharedState = createFeatureSelector<SharedState>('shared')
 
 export const selectIsOnline = createSelector(
   selectSharedState,
-  (state: SharedState) => state.isOnline
+  (state: SharedState) => state.isOnline,
 )
 
 export const selectLoading = createSelector(
   selectSharedState,
-  (state: SharedState) => state.loading.length > 0
+  (state: SharedState) => state.loading.length > 0,
 )
