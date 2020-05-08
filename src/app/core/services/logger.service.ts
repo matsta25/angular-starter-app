@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 import { environment } from '../../../environments/environment'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoggerService {
 
@@ -23,7 +23,7 @@ export class LoggerService {
         date,
         type: 'HTTP ERR',
         message: error.message,
-        status: error.status
+        status: error.status,
       }
     } else if (error instanceof TypeError) {
       return {

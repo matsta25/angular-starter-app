@@ -9,7 +9,7 @@
     "build": "ng build",
     "build:prod": "ng build --prod",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint --fix=true",
     "e2e": "ng e2e",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "docs:start": "./node_modules/docsify-cli/bin/docsify serve docs --port 3001",

@@ -21,7 +21,7 @@ export class SharedEffects {
         return merge(
           of(navigator.onLine),
           fromEvent(window, 'online').pipe(mapTo(true)),
-          fromEvent(window, 'offline').pipe(mapTo(false))
+          fromEvent(window, 'offline').pipe(mapTo(false)),
         )
       }),
       map(isOnline => {
@@ -30,8 +30,8 @@ export class SharedEffects {
           isOnline,
           type: setIsOnline.type,
         }
-      })
-    )
+      }),
+    ),
   )
 
   private showHideNotification(isOnline: boolean): void {

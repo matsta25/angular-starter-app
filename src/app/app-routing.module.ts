@@ -9,11 +9,11 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'posts',
-    loadChildren: () => import('./features/posts/posts.module').then(m => m.PostsModule)
+    loadChildren: () => import('./features/posts/posts.module').then(m => m.PostsModule),
   },
   {
     path: 'todos',
@@ -21,19 +21,19 @@ const routes: Routes = [
   },
   {
     path: 'examples',
-    loadChildren: () => import('./features/examples/examples.module').then(m => m.ExamplesModule)
+    loadChildren: () => import('./features/examples/examples.module').then(m => m.ExamplesModule),
   },
   {
     path: '**',
     component: PageNotFoundComponent,
-  }
+  },
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
+    preloadingStrategy: PreloadAllModules,
   })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {
 }

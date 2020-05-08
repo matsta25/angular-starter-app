@@ -4,7 +4,7 @@ import { NotificationComponent } from '../components/notification/notification.c
 import { defaultSnackBarConfig, errorSnackBarConfig, successSnackBarConfig } from '../models/snackbar.model'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NotificationService {
 
@@ -17,7 +17,7 @@ export class NotificationService {
     if (message) {
       this.zone.run(() => ref = this.snackBar.openFromComponent(NotificationComponent, {
         ...defaultSnackBarConfig, ...{duration},
-        data: {text: message}
+        data: {text: message},
       }))
     }
 
@@ -30,7 +30,7 @@ export class NotificationService {
     if (message) {
       this.zone.run(() => ref = this.snackBar.openFromComponent(NotificationComponent, {
         ...successSnackBarConfig, ...{duration},
-        data: {text: message}
+        data: {text: message},
       }))
     }
 
@@ -43,7 +43,7 @@ export class NotificationService {
     if (message) {
       this.zone.run(() => ref = this.snackBar.openFromComponent(NotificationComponent, {
         ...errorSnackBarConfig, ...{duration},
-        data: {text: message}
+        data: {text: message},
       }))
     }
 

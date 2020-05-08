@@ -5,7 +5,7 @@ import { Post } from '../models/post.model'
 import { Observable } from 'rxjs'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostsService {
   constructor(private http: HttpClient) {

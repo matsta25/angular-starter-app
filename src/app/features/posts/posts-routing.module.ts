@@ -15,31 +15,31 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'list',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'list',
-        component: PostsListComponent
+        component: PostsListComponent,
       },
       {
         path: 'create',
-        component: PostCreateComponent
+        component: PostCreateComponent,
       },
       {
         path: ':id/update',
-        component: PostUpdateComponent
+        component: PostUpdateComponent,
       },
       {
         path: ':id',
         component: PostDetailsComponent,
-      }
-    ]
-  }
+      },
+    ],
+  },
 ]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class PostsRoutingModule {
 }

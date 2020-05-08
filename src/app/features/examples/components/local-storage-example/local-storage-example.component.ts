@@ -9,7 +9,7 @@ import { LocalStorageKey } from '../../../../shared/models/local-storage-key.mod
 @Component({
   selector: 'app-local-storage-example',
   templateUrl: './local-storage-example.component.html',
-  styleUrls: ['./local-storage-example.component.scss']
+  styleUrls: ['./local-storage-example.component.scss'],
 })
 export class LocalStorageExampleComponent implements OnInit {
 

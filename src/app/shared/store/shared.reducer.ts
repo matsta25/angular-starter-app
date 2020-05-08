@@ -6,20 +6,20 @@ export const sharedReducer = createReducer(
   initialSharedState,
   on(checkIsOnline, (state) => ({
     ...state,
-    isOnline: false
+    isOnline: false,
   })),
   on(setIsOnline, (state, {isOnline}) => ({
     ...state,
-    isOnline
+    isOnline,
   })),
   on(loadingOn, (state, {url}) => ({
     ...state,
-    loading: pushUnique(state.loading, url)
+    loading: pushUnique(state.loading, url),
   })),
   on(loadingOff, (state, {url}) => ({
     ...state,
-    loading: removeItem(state.loading, url)
-  }))
+    loading: removeItem(state.loading, url),
+  })),
 )
 
 function pushUnique(input: string[], newItem: string) {

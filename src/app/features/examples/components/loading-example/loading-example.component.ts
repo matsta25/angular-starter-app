@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http'
 @Component({
   selector: 'app-loading-example',
   templateUrl: './loading-example.component.html',
-  styleUrls: ['./loading-example.component.scss']
+  styleUrls: ['./loading-example.component.scss'],
 })
 export class LoadingExampleComponent {
 

@@ -22,13 +22,13 @@ import { LoadingExampleComponent } from './components/loading-example/loading-ex
     ErrorHandlerExampleComponent,
     OfflineExampleComponent,
     ExamplesListComponent,
-    LoadingExampleComponent
+    LoadingExampleComponent,
   ],
   imports: [
     CommonModule,
     ExamplesRoutingModule,
-    SharedModule
-  ]
+    SharedModule,
+  ],
 })
 export class ExamplesModule {
 }
