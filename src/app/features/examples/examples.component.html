@@ -1,5 +1,17 @@
-<button appBackButton mat-icon-button color="primary" aria-label="Go back">
-  <mat-icon>keyboard_arrow_left</mat-icon>
-</button>
+<header class="mat-toolbar-single-row page-header">
+  <button mat-icon-button color="primary" aria-label="Back to homepage" [routerLink]="['/']">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
 
-<router-outlet></router-outlet>
+  <div class="page-header__heading">
+    <h1 class="mat-headline mb-0">Features lists</h1>
+  </div>
+</header>
+
+<div class="page-content">
+  <app-notification-example></app-notification-example>
+  <app-local-storage-example></app-local-storage-example>
+  <app-offline-example></app-offline-example>
+  <app-error-handler-example></app-error-handler-example>
+  <app-loading-example></app-loading-example>
+</div>
