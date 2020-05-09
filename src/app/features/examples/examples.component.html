@@ -9,56 +9,68 @@
 </header>
 
 <div class="page-content">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>Notifications</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          service
+        </mat-panel-description>
+      </mat-expansion-panel-header>
 
-  <mat-card class="mb-4">
-    <mat-card-header class="example-card__header">
-      <mat-card-title>Notifications</mat-card-title>
-      <mat-card-subtitle>service</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
       <p>For displaying snack-bar notifications.</p>
       <app-notification-example></app-notification-example>
-    </mat-card-content>
-  </mat-card>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>Local Storage</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          service
+        </mat-panel-description>
+      </mat-expansion-panel-header>
 
-  <mat-card class="mb-4">
-    <mat-card-header class="example-card__header">
-      <mat-card-title>Local Storage</mat-card-title>
-      <mat-card-subtitle>service</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
       <app-local-storage-example></app-local-storage-example>
-    </mat-card-content>
-  </mat-card>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>Offline Indicator</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          event handling
+        </mat-panel-description>
+      </mat-expansion-panel-header>
 
-  <mat-card class="mb-4">
-    <mat-card-header class="example-card__header">
-      <mat-card-title>Offline Indicator</mat-card-title>
-      <mat-card-subtitle>event handling</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
       Disable your internet connection or go to <strong>Network</strong> - chrome developer tab, and set it to <em>Offline</em>.
-    </mat-card-content>
-  </mat-card>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>HTTP Error Handler</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          event handling
+        </mat-panel-description>
+      </mat-expansion-panel-header>
 
-  <mat-card class="mb-4">
-    <mat-card-header class="example-card__header">
-      <mat-card-title>HTTP Error Handler</mat-card-title>
-      <mat-card-subtitle>event handling</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
       <p>For running errors.</p>
       <app-error-handler-example></app-error-handler-example>
-    </mat-card-content>
-  </mat-card>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>Loading</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          event handling
+        </mat-panel-description>
+      </mat-expansion-panel-header>
 
-  <mat-card>
-    <mat-card-header class="example-card__header">
-      <mat-card-title>Loading</mat-card-title>
-      <mat-card-subtitle>event handling</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
       <app-loading-example></app-loading-example>
-    </mat-card-content>
-  </mat-card>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
