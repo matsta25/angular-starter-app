@@ -7,7 +7,7 @@ import { selectLoading } from '../store/shared.selectors'
 import { filter, first } from 'rxjs/operators'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoadingResolver implements Resolve<boolean> {
 
@@ -18,7 +18,7 @@ export class LoadingResolver implements Resolve<boolean> {
     return this.store.pipe(
       select(selectLoading),
       filter(loading => !loading),
-      first()
+      first(),
     )
   }
 }

@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core'
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router'
-import { readPostsItem, readPostsItemSuccess } from '../store/posts.actions'
+import { readPostsItem } from '../store/posts.actions'
 import { PostsState } from '../store/posts.state'
 import { select, Store } from '@ngrx/store'
-import { selectLoading } from '../../../shared/store/shared.selectors'
-import { filter, first, last, tap } from 'rxjs/operators'
+import { filter, first } from 'rxjs/operators'
 import { Observable } from 'rxjs'
 import { selectPostById } from '../store/posts.selectors'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UpdatePostResolver implements Resolve<boolean> {
 
@@ -26,7 +25,7 @@ export class UpdatePostResolver implements Resolve<boolean> {
         select(selectPostById(id)),
         // @ts-ignore
         filter(loaded => loaded),
-        first()
+        first(),
       )
     }
   }

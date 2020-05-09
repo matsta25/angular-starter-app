@@ -1,9 +1,9 @@
 export interface SharedState {
   isOnline: boolean
-  loading: string[]
+  loading: boolean
 }
 
 export const initialSharedState: SharedState = {
   isOnline: false,
-  loading: [],
+  loading: false,
 }

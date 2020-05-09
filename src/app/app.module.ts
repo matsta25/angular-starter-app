@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { NgProgressModule } from 'ngx-progressbar'
-import { NgProgressHttpModule } from 'ngx-progressbar/http'
 import { AppRoutingModule } from './app-routing.module'
 import { CoreModule } from './core/core.module'
 import { SharedModule } from './shared/shared.module'
@@ -24,10 +22,6 @@ import { NotificationPageComponent } from './core/components/notification-page/n
   imports: [
     // angular
     BrowserModule,
-
-    // ngProgess
-    NgProgressModule.withConfig({spinner: false}),
-    NgProgressHttpModule,
 
     // material design
     BrowserAnimationsModule,

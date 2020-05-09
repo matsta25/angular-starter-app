@@ -44,7 +44,6 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
 
   public onPostFormSubmit(): void {
     if (this.postForm.valid) {
-      console.log(this.postForm.controls.id.value)
       this.store.dispatch(updatePostsItem({
         updatePost: {
           id: this.postForm.controls.id.value,
