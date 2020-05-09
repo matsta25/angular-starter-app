@@ -9,14 +9,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { appReducers } from './app-store/app-store.reducers'
 import { appEffects } from './app-store/app-store.effects'
 
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
 import { ErrorHandlerService } from './services/error-handler.service'
 import { httpInterceptorProviders } from './interceptors'
 
 @NgModule({
-  declarations: [
-    PageNotFoundComponent,
-  ],
   imports: [
     CommonModule,
     HttpClientModule,
