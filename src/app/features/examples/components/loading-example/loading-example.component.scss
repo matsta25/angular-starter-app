@@ -1,15 +1,31 @@
-@-webkit-keyframes NAME-YOUR-ANIMATION {
+.loading-example__wrap {
+  margin-bottom: 16px;
+  line-height: 24px;
+
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.loading-example__icon-wrap {
+  height: 24px;
+  position: relative;
+}
+
+.loading-example__icon-animated {
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: opacity-animation 1s infinite;
+}
+
+
+@keyframes opacity-animation {
   0%, 100% {
     opacity: 0;
   }
   50% {
     opacity: 1;
   }
-}
-
-.loader-example {
-  -webkit-animation: NAME-YOUR-ANIMATION 1s infinite; /* Safari 4+ */
-  -moz-animation:    NAME-YOUR-ANIMATION 1s infinite; /* Fx 5+ */
-  -o-animation:      NAME-YOUR-ANIMATION 1s infinite; /* Opera 12+ */
-  animation:         NAME-YOUR-ANIMATION 1s infinite; /* IE 10+, Fx 29+ */
 }

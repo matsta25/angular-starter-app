@@ -1,5 +1,76 @@
-<button appBackButton mat-icon-button color="primary" aria-label="Go back">
-  <mat-icon>keyboard_arrow_left</mat-icon>
-</button>
+<header class="mat-toolbar-single-row page-header">
+  <button mat-icon-button color="primary" aria-label="Back to homepage" [routerLink]="['/']">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
 
-<router-outlet></router-outlet>
+  <div class="page-header__heading">
+    <h1 class="mat-headline mb-0">Features lists</h1>
+  </div>
+</header>
+
+<div class="page-content">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>Notifications</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          service
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>For displaying snack-bar notifications.</p>
+      <app-notification-example></app-notification-example>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>Local Storage</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          service
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <app-local-storage-example></app-local-storage-example>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>Offline Indicator</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          event handling
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      Disable your internet connection or go to <strong>Network</strong> - chrome developer tab, and set it to <em>Offline</em>.
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>HTTP Error Handler</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          event handling
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>For running errors.</p>
+      <app-error-handler-example></app-error-handler-example>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex-basis">
+          <strong>Loading</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          event handling
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <app-loading-example></app-loading-example>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

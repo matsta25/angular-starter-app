@@ -6,6 +6,7 @@
 
 $typography-config: mat-typography-config(
   $font-family: $font-family-base,
+  $display-2: mat-typography-level($display2-font-size, $display2-line-height, $display2-font-weight),
   $display-1: mat-typography-level($display1-font-size, $display1-line-height, $display1-font-weight),
   $headline: mat-typography-level($h1-font-size, $h1-line-height, $h1-font-weight),
   $title: mat-typography-level($h2-font-size, $h2-line-height, $h2-font-weight),

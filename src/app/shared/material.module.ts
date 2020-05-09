@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatListModule } from '@angular/material/list'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatCardModule } from '@angular/material/card'
+import { MatExpansionModule } from '@angular/material/expansion'
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core'
 
 const materialModules = [
@@ -29,6 +30,7 @@ const materialModules = [
   MatMenuModule,
   MatCardModule,
   MatRippleModule,
+  MatExpansionModule,
 ]
 
 @NgModule({

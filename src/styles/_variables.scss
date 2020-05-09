@@ -30,6 +30,10 @@ $display1-font-size: 34px;
 $display1-font-weight: 400;
 $display1-line-height: 40px;
 
+$display2-font-size: 45px;
+$display2-font-weight: 400;
+$display2-line-height: 48px;
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -41,6 +45,9 @@ $app-accent:  mat-palette($mat-pink, A200, A100, A400);
 // The warn palette is optional (defaults to red).
 $app-warn:    mat-palette($mat-red);
 
+$color-primary: map-get($app-primary, 500);
+$color-success: map-get(mat-palette($mat-green), 500);
+$color-danger: map-get($app-warn, 500);
 
 $link-color: map-get($app-primary, 500);
 $link-decoration: underline;

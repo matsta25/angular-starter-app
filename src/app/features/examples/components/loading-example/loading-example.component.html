@@ -1,7 +1,14 @@
-<h5>Loading interceptor:</h5>
-
-<div>
-  <span class="loader-example" *ngIf="(loading | async)">...</span>
+<div class="loading-example__wrap">
+  <span>Watch the icon:</span>
+  <div class="loading-example__icon-wrap">
+    <mat-icon>hourglass_empty</mat-icon>
+    <mat-icon *ngIf="(loading$ | async)" class="loading-example__icon-animated" [color]="'primary'">
+      hourglass_full
+    </mat-icon>
+  </div>
+  <span>after clicked the button.</span>
 </div>
 
-<button mat-raised-button (click)="makeHttpRequest()" color="primary">Make Http Request</button>
+<button mat-stroked-button (click)="makeHttpRequest()" [color]="'primary'">
+  Make HTTP Request
+</button>
