@@ -11,8 +11,14 @@ import { appEffects } from './app-store/app-store.effects'
 
 import { ErrorHandlerService } from './services/error-handler.service'
 import { httpInterceptorProviders } from './interceptors'
+import { ProgressComponent } from './components/progress/progress.component'
+import { NgProgressModule } from 'ngx-progressbar'
+import { NgProgressHttpModule } from 'ngx-progressbar/http'
 
 @NgModule({
+  declarations: [
+    ProgressComponent,
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -21,12 +27,18 @@ import { httpInterceptorProviders } from './interceptors'
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot(appEffects),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+
+    // ngProgess
+    NgProgressModule.withConfig({spinner: false}),
+    NgProgressHttpModule,
   ],
   providers: [
     ...httpInterceptorProviders,
     {provide: ErrorHandler, useClass: ErrorHandlerService},
   ],
-  exports: [],
+  exports: [
+    ProgressComponent,
+  ],
 })
 
 export class CoreModule {
