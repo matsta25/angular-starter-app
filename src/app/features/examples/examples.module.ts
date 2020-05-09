@@ -10,7 +10,6 @@ import { ExamplesComponent } from './examples.component'
 import { NotificationExampleComponent } from './components/notification-example/notification-example.component'
 import { LocalStorageExampleComponent } from './components/local-storage-example/local-storage-example.component'
 import { ErrorHandlerExampleComponent } from './components/error-handler-example/error-handler-example.component'
-import { OfflineExampleComponent } from './components/offline-example/offline-example.component'
 import { LoadingExampleComponent } from './components/loading-example/loading-example.component'
 
 @NgModule({
@@ -19,7 +18,6 @@ import { LoadingExampleComponent } from './components/loading-example/loading-ex
     NotificationExampleComponent,
     LocalStorageExampleComponent,
     ErrorHandlerExampleComponent,
-    OfflineExampleComponent,
     LoadingExampleComponent,
   ],
   imports: [
