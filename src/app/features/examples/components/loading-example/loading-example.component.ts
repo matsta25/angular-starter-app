@@ -12,10 +12,10 @@ import { HttpClient } from '@angular/common/http'
 })
 export class LoadingExampleComponent {
 
-  public loading: Observable<boolean>
+  public loading$: Observable<boolean>
 
   constructor(private store: Store<SharedState>, private http: HttpClient) {
-    this.loading = store.pipe(select(selectLoading))
+    this.loading$ = store.pipe(select(selectLoading))
   }
 
   makeHttpRequest() {
