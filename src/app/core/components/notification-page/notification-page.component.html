@@ -1,0 +1,15 @@
+<header class="mat-toolbar-single-row page-header">
+  <button mat-icon-button color="primary" aria-label="Back to homepage" [routerLink]="['/']">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <div class="page-header__heading">
+    <h1 class="mat-headline mb-0">{{ data.title }}</h1>
+  </div>
+</header>
+
+<div class="page-content notification-page__content">
+  <mat-icon class="notification-page__icon" [ngClass]="textCssClass">{{ data.icon }}</mat-icon>
+  <h2 class="mat-display-2 notification-page__heading">{{ data.heading }}</h2>
+  <p>{{ data.description }}</p>
+</div>
