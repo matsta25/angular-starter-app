@@ -10,7 +10,7 @@ export class ErrorHandlerService extends ErrorHandler {
 
   public handleError(error: any) {
     if (environment.production) {
-    this.loggerService.logError(error)
+      this.loggerService.logError(error)
     }
 
     super.handleError(error)
