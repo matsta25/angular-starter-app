@@ -57,3 +57,9 @@ $link-hover-decoration: underline;
 $body-bg: map-get($mat-gray, 50);
 
 $page-header-bg: map-get($app-primary, 50);
+
+
+// ng-progress
+
+$progress-bar-height: 3px;
+$progress-bar-color: map-get(mat-palette($mat-red), 600);

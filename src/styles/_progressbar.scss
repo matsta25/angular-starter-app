@@ -1,0 +1,19 @@
+// Angular Progressbar
+// https://github.com/MurhafSousli/ngx-progressbar/wiki/Styling
+
+.ng-bar-placeholder {
+  height: $progress-bar-height !important;
+}
+
+.ng-bar {
+  background: $progress-bar-color !important;
+}
+
+.ng-spinner-icon {
+  border-top-color: $progress-bar-color !important;
+  border-left-color: $progress-bar-color !important;
+}
+
+.ng-meteor {
+  box-shadow: $progress-bar-color 0 0 10px, $progress-bar-color 0 0 5px !important;
+}
