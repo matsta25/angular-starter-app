@@ -18,14 +18,14 @@ export class NotificationExampleComponent {
   }
 
   showSuccessNotification() {
-    this.notificationService.showSuccess('Example success notification.')
+    this.notificationService.showSuccess('Example success notification.', 3500)
   }
 
   showErrorNotification() {
-    this.notificationService.showError('Example error notification.')
+    this.notificationService.showError('Example error notification.', 3500)
   }
 
   showInfoNotification() {
-    this.notificationService.showInfo('Example info notification.')
+    this.notificationService.showInfo('Example info notification.', 3500)
   }
 }
