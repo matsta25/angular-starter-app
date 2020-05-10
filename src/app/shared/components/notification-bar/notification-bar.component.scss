@@ -1,12 +1,13 @@
 .notification {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+
+.notification__text {
+  flex-grow: 1;
 }
 
 .notification__action {
-  flex-shrink: 0;
-  margin: -8px -8px -8px 8px;
+  margin: -2px -4px -2px 8px;
 }
 
 .notification__action-button {
@@ -17,4 +18,5 @@
 
 .notification__action-icon {
   font-size: 16px;
+  opacity: .65;
 }

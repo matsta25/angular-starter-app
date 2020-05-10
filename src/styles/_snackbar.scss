@@ -1,0 +1,13 @@
+// Custom styles for Snackbar
+// https://material.angular.io/components/snack-bar/overview
+
+.app-snack-bar {
+}
+
+.app-snack-bar_error {
+  background-color: $color-danger;
+}
+
+.app-snack-bar_success {
+  background-color: $color-success;
+}
