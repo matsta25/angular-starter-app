@@ -11,12 +11,13 @@ export class NotificationBarService {
   constructor(public snackBar: MatSnackBar, private zone: NgZone) {
   }
 
-  public showInfo(message: string, duration: number = 2000): MatSnackBarRef<SimpleSnackBar> {
+  public showInfo(message: string, duration?: number): MatSnackBarRef<SimpleSnackBar> {
+    const snackBarConfig = duration ? {...defaultSnackBarConfig, duration} : defaultSnackBarConfig
     let ref
 
     if (message) {
       this.zone.run(() => ref = this.snackBar.openFromComponent(NotificationBarComponent, {
-        ...defaultSnackBarConfig, ...{duration},
+        ...snackBarConfig,
         data: {text: message},
       }))
     }
@@ -24,12 +25,13 @@ export class NotificationBarService {
     return ref
   }
 
-  public showSuccess(message: string, duration: number = 2000): MatSnackBarRef<SimpleSnackBar> {
+  public showSuccess(message: string, duration?: number): MatSnackBarRef<SimpleSnackBar> {
+    const snackBarConfig = duration ? {...successSnackBarConfig, duration} : successSnackBarConfig
     let ref
 
     if (message) {
       this.zone.run(() => ref = this.snackBar.openFromComponent(NotificationBarComponent, {
-        ...successSnackBarConfig, ...{duration},
+        ...snackBarConfig,
         data: {text: message},
       }))
     }
@@ -37,12 +39,13 @@ export class NotificationBarService {
     return ref
   }
 
-  public showError(message: string, duration: number = 10000): MatSnackBarRef<SimpleSnackBar> {
+  public showError(message: string, duration?: number): MatSnackBarRef<SimpleSnackBar> {
+    const snackBarConfig = duration ? {...errorSnackBarConfig, duration} : errorSnackBarConfig
     let ref
 
     if (message) {
       this.zone.run(() => ref = this.snackBar.openFromComponent(NotificationBarComponent, {
-        ...errorSnackBarConfig, ...{duration},
+        ...snackBarConfig,
         data: {text: message},
       }))
     }
