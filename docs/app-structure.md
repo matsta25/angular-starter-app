@@ -48,7 +48,7 @@
 │   │       │   └── notification
 │   │       │       ├── notification.component.html
 │   │       │       ├── notification.component.scss
-│   │       │       └── notification.component.ts
+│   │       │       └── notification-bar.component.ts
 │   │       ├── interceptors
 │   │       │   ├── index.ts
 │   │       │   └── message.interceptor.ts
@@ -62,7 +62,7 @@
 │   │       │   ├── error.service.ts
 │   │       │   ├── local-storage.service.ts
 │   │       │   ├── logger.service.ts
-│   │       │   └── notification.service.ts
+│   │       │   └── notification-bar.service.ts
 │   │       ├── shared.module.ts
 │   │       └── store
 │   │           ├── shared.actions.ts

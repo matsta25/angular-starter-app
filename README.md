@@ -122,7 +122,7 @@ App demo is available - [HERE](https://matsta25.github.io/angular-starter-app) :
 │   │       │   ├── error.service.ts
 │   │       │   ├── local-storage.service.ts
 │   │       │   ├── logger.service.ts
-│   │       │   └── notification.service.ts
+│   │       │   └── notification-bar.service.ts
 │   │       ├── shared.module.ts
 │   │       └── store
 │   │           ├── shared.actions.ts

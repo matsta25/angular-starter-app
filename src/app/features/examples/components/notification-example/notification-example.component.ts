@@ -3,7 +3,7 @@
 */
 
 import { Component } from '@angular/core'
-import { NotificationService } from '../../../../shared/services/notification.service'
+import { NotificationBarService } from '../../../../shared/services/notification-bar.service'
 
 @Component({
   selector: 'app-notification-example',
@@ -13,7 +13,7 @@ import { NotificationService } from '../../../../shared/services/notification.se
 export class NotificationExampleComponent {
 
   constructor(
-    private notificationService: NotificationService,
+    private notificationService: NotificationBarService,
   ) {
   }
 
