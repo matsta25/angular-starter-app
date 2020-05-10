@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { MaterialModule } from './material.module'
 
-import { NotificationComponent } from './components/notification/notification.component'
+import { NotificationBarComponent } from './components/notification-bar/notification-bar.component'
 import { sharedInterceptorProviders } from './interceptors'
 import { BackButtonDirective } from './directives/back-button.directive'
 
@@ -12,11 +12,11 @@ import { BackButtonDirective } from './directives/back-button.directive'
     MaterialModule,
   ],
   declarations: [
-    NotificationComponent,
+    NotificationBarComponent,
     BackButtonDirective,
   ],
   entryComponents: [
-    NotificationComponent,
+    NotificationBarComponent,
   ],
   providers: [
     ...sharedInterceptorProviders,

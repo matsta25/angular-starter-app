@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core'
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs'
 import { ErrorService } from '../services/error.service'
-import { NotificationService } from '../../shared/services/notification.service'
+import { NotificationBarService } from '../../shared/services/notification-bar.service'
 import { catchError, tap } from 'rxjs/operators'
 import { HttpResponseModel } from '../../shared/models/http-response-model.model'
 
 @Injectable()
 export class MessageInterceptor implements HttpInterceptor {
 
-  constructor(private errorService: ErrorService, private notificationService: NotificationService) {
+  constructor(private errorService: ErrorService, private notificationService: NotificationBarService) {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

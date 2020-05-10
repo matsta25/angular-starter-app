@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Store } from '@ngrx/store'
 import { PostsState } from '../../store/posts.state'
 import { createPostsItem } from '../../store/posts.actions'
-import { NotificationService } from '../../../../shared/services/notification.service'
+import { NotificationBarService } from '../../../../shared/services/notification-bar.service'
 
 @Component({
   selector: 'app-post-create',
@@ -16,7 +16,7 @@ export class PostCreateComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<PostsState>,
-    private notification: NotificationService,
+    private notification: NotificationBarService,
   ) {
   }
 

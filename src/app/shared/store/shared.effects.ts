@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects'
 import { map, mapTo, switchMap } from 'rxjs/operators'
 import { fromEvent, merge, of } from 'rxjs'
 import { checkIsOnline, setIsOnline } from './shared.actions'
-import { NotificationService } from '../services/notification.service'
+import { NotificationBarService } from '../services/notification-bar.service'
 import { MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar'
 
 @Injectable()
@@ -11,7 +11,7 @@ export class SharedEffects {
 
   private ref: MatSnackBarRef<SimpleSnackBar> = null
 
-  constructor(private actions$: Actions, private notificationService: NotificationService) {
+  constructor(private actions$: Actions, private notificationService: NotificationBarService) {
   }
 
   checkIsOnline$ = createEffect(() =>

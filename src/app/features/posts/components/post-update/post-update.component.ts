@@ -7,7 +7,7 @@ import { deletePostsItem, readPostsItem, updatePostsItem } from '../../store/pos
 import { Post } from '../../models/post.model'
 import { selectPostById } from '../../store/posts.selectors'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { NotificationService } from '../../../../shared/services/notification.service'
+import { NotificationBarService } from '../../../../shared/services/notification-bar.service'
 
 @Component({
   selector: 'app-post-update',
@@ -23,7 +23,7 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
     private store: Store<PostsState>,
-    private notification: NotificationService,
+    private notification: NotificationBarService,
   ) {
   }
 

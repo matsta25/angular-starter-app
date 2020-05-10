@@ -16,7 +16,7 @@ Project notifications has been created with [Angular Material Snackbar](https://
 **`app-notification-example.component.ts`**
 ```typescript
 import { Component } from '@angular/core'
-import { NotificationService } from '../../../shared/services/notification.service'
+import { NotificationBarService } from '../../../shared/services/notification.service'
 
 @Component({
   selector: 'app-notification-example',
@@ -26,7 +26,7 @@ import { NotificationService } from '../../../shared/services/notification.servi
 export class NotificationExampleComponent {
 
   constructor(
-    private notificationService: NotificationService
+    private notificationService: NotificationBarService
   ) {
   }
 
