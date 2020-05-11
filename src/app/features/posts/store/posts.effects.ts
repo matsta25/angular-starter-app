@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { PostsService } from '../services/posts.service'
+import { PostsApiService } from '../services/posts-api.service'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
 import {
   createPostsItem,
@@ -27,7 +27,7 @@ import { Router } from '@angular/router'
 @Injectable()
 export class PostsEffects {
 
-  constructor(private postsService: PostsService, private actions$: Actions, private router: Router) {
+  constructor(private postsService: PostsApiService, private actions$: Actions, private router: Router) {
   }
 
   // CRUD
@@ -35,7 +35,7 @@ export class PostsEffects {
   createPost$ = createEffect(() =>
     this.actions$.pipe(
       ofType(createPostsItem.type),
-      mergeMap(({post}) => this.postsService.createPost(post).pipe(
+      mergeMap(({post}) => this.postsService.createItem(post).pipe(
         map((response: HttpResponseModel<Post>) => ({
           type: createPostsItemSuccess.type,
           post: response,
@@ -50,7 +50,7 @@ export class PostsEffects {
   readPosts$ = createEffect(() =>
     this.actions$.pipe(
       ofType(readPosts.type),
-      mergeMap(() => this.postsService.readPosts().pipe(
+      mergeMap(() => this.postsService.readItems().pipe(
         map((response: HttpResponseModel<Post[]>) => ({
           type: readPostsSuccess.type,
           posts: response,
@@ -65,7 +65,7 @@ export class PostsEffects {
   readPost$ = createEffect(() =>
     this.actions$.pipe(
       ofType(readPostsItem.type),
-      mergeMap(({id}) => this.postsService.readPost(id).pipe(
+      mergeMap(({id}) => this.postsService.readItem(id).pipe(
         map((response: HttpResponseModel<Post>) => ({
           type: readPostsItemSuccess.type,
           post: response,
@@ -81,7 +81,7 @@ export class PostsEffects {
     this.actions$.pipe(
       ofType(updatePostsItem.type),
       mergeMap((({updatePost}: {updatePost: {id: string, changes: Post}}) =>
-        this.postsService.updatePost(updatePost.id, updatePost.changes).pipe(
+        this.postsService.updateItem(updatePost.id, updatePost.changes).pipe(
           map((response: HttpResponseModel<Post>) => ({
             type: updatePostsItemSuccess.type,
             post: response,
@@ -97,7 +97,7 @@ export class PostsEffects {
   deletePost$ = createEffect(() =>
     this.actions$.pipe(
       ofType(deletePostsItem.type),
-      mergeMap(({id}) => this.postsService.deletePost(id).pipe(
+      mergeMap(({id}) => this.postsService.deleteItem(id).pipe(
         map((response: HttpResponseModel<Post>) => ({
           type: deletePostsItemSuccess.type,
           post: response,

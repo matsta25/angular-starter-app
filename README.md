@@ -99,7 +99,7 @@ App demo is available - [HERE](https://matsta25.github.io/angular-starter-app) :
 │   │   │       ├── posts.module.ts
 │   │   │       ├── posts-routing.module.ts
 │   │   │       ├── services
-│   │   │       │   └── posts.service.ts
+│   │   │       │   └── posts-api.service.ts
 │   │   │       └── store
 │   │   │           ├── posts.actions.ts
 │   │   │           ├── posts.effects.ts
