@@ -20,7 +20,7 @@ Feature directory structure:
     ├── posts.module.ts
     ├── posts-routing.module.ts
     ├── services
-    │   └── posts-todos-api.service.ts
+    │   └── posts-api.service.ts
     └── store
         ├── posts.actions.ts
         ├── posts.effects.ts
@@ -81,7 +81,7 @@ export interface Post {
 }
 ```
 
-**`posts-todos-api.service.ts`**
+**`posts-api.service.ts`**
 ```typescript
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
