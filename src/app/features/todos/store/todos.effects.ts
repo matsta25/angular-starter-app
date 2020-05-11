@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
-import { ApiService } from '../services/api.service'
+import { TodosApiService } from '../services/todos-api.service'
 import {
   createTodosItem, createTodosItemFail, createTodosItemSuccess, deleteTodosItem, deleteTodosItemFail, deleteTodosItemSuccess,
   readTodos,
@@ -16,14 +16,14 @@ import { Todo } from '../models/todo'
 
 @Injectable()
 export class TodosEffects {
-  constructor(private readonly actions: Actions, private todosService: ApiService) {
+  constructor(private readonly actions: Actions, private todosService: TodosApiService) {
   }
 
   createTodosItem$ = createEffect(() =>
     this.actions.pipe(
       ofType(createTodosItem.type),
       mergeMap(({todo}: {todo: Todo}) =>
-        this.todosService.addItem(todo).pipe(
+        this.todosService.createItem(todo).pipe(
           map((response: Todo) => ({
             type: createTodosItemSuccess.type,
             todo: response,
@@ -37,7 +37,7 @@ export class TodosEffects {
   readTodosItems$ = createEffect(() =>
     this.actions.pipe(
       ofType(readTodos.type),
-      switchMap(() => this.todosService.fetchAll().pipe(
+      switchMap(() => this.todosService.readItems().pipe(
         map((response: Todo[]) => ({
           type: readTodosSuccess.type,
           todos: response,
@@ -63,7 +63,7 @@ export class TodosEffects {
     this.actions.pipe(
       ofType(deleteTodosItem.type),
       mergeMap(({todoId}: {todoId: string}) =>
-        this.todosService.daleteItem(todoId).pipe(
+        this.todosService.deleteItem(todoId).pipe(
           map(() => ({type: deleteTodosItemSuccess.type})),
           catchError(() => of({type: deleteTodosItemFail.type})),
         ),

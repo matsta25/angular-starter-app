@@ -8,7 +8,7 @@ import { ApiServiceModel } from '../../../shared/models/api-service.model'
 @Injectable({
   providedIn: 'root',
 })
-export class PostsApiService implements ApiServiceModel {
+export class PostsApiService implements ApiServiceModel<Post> {
   constructor(private http: HttpClient) {
   }
 

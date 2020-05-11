@@ -36,7 +36,7 @@
 │   │   │       ├── posts.module.ts
 │   │   │       ├── posts-routing.module.ts
 │   │   │       ├── services
-│   │   │       │   └── posts-api.service.ts
+│   │   │       │   └── posts-todos-api.service.ts
 │   │   │       └── store
 │   │   │           ├── posts.actions.ts
 │   │   │           ├── posts.effects.ts
