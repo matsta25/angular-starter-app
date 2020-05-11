@@ -20,7 +20,7 @@ Feature directory structure:
     ├── posts.module.ts
     ├── posts-routing.module.ts
     ├── services
-    │   └── posts.service.ts
+    │   └── posts-api.service.ts
     └── store
         ├── posts.actions.ts
         ├── posts.effects.ts
@@ -81,7 +81,7 @@ export interface Post {
 }
 ```
 
-**`posts.service.ts`**
+**`posts-api.service.ts`**
 ```typescript
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
@@ -90,7 +90,7 @@ import { environment } from '../../../../environments/environment'
 @Injectable({
   providedIn: 'root'
 })
-export class PostsService {
+export class PostsApiService {
   constructor(private http: HttpClient) {
   }
 
@@ -115,7 +115,7 @@ export const readPostsFail = createAction('[Posts] Read Posts Fail')
 **`posts.effects.ts`**
 ```typescript
 import { Injectable } from '@angular/core'
-import { PostsService } from '../services/posts.service'
+import { PostsApiService } from '../services/posts.service'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
 import { readPosts, readPostsFail, readPostsSuccess } from './posts.actions'
 import { catchError, map, mergeMap } from 'rxjs/operators'
@@ -126,7 +126,7 @@ import { of } from 'rxjs'
 @Injectable()
 export class PostsEffects {
 
-  constructor(private postsService: PostsService, private actions$: Actions) {
+  constructor(private postsService: PostsApiService, private actions$: Actions) {
   }
 
   readPosts$ = createEffect(() =>

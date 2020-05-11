@@ -3,31 +3,32 @@ import { HttpClient } from '@angular/common/http'
 import { environment } from '../../../../environments/environment'
 import { Post } from '../models/post.model'
 import { Observable } from 'rxjs'
+import { ApiServiceModel } from '../../../shared/models/api-service.model'
 
 @Injectable({
   providedIn: 'root',
 })
-export class PostsService {
+export class PostsApiService implements ApiServiceModel {
   constructor(private http: HttpClient) {
   }
 
-  public createPost(post: Post): Observable<object> {
+  public createItem(post: Post): Observable<object> {
     return this.http.post(`${environment.baseUrl}/posts`, post)
   }
 
-  public readPosts(): Observable<object> {
+  public readItems(): Observable<object> {
     return this.http.get(`${environment.baseUrl}/posts`)
   }
 
-  public readPost(id: string): Observable<object> {
+  public readItem(id: string): Observable<object> {
     return this.http.get(`${environment.baseUrl}/posts/${id}`)
   }
 
-  public updatePost(id: string, changes: Partial<Post>): Observable<object> {
+  public updateItem(id: string, changes: Partial<Post>): Observable<object> {
     return this.http.put(`${environment.baseUrl}/posts/${id}`, changes)
   }
 
-  public deletePost(id: string): Observable<object> {
+  public deleteItem(id: string): Observable<object> {
     return this.http.delete(`${environment.baseUrl}/posts/${id}`)
   }
 }
