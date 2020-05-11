@@ -1,12 +1,11 @@
 {
+  "extends": ["stylelint-config-sass-guidelines"],
   "rules": {
-    "property-blacklist": [
-      "border-radius",
-      "border-top-left-radius",
-      "border-top-right-radius",
-      "border-bottom-right-radius",
-      "border-bottom-left-radius",
-      "block-no-empty"
-    ]
+    "block-no-empty": null,
+    "function-parentheses-space-inside": null,
+    "number-leading-zero": "never",
+    "order/properties-alphabetical-order": null,
+    "selector-class-pattern":"^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-z0-9]+(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:_[a-z0-9]+(?:-[a-z0-9]+)*)?(?:\\[.+\\])?$",
+    "string-quotes": "double"
   }
 }
