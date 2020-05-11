@@ -37,13 +37,13 @@ $display2-line-height: 48px;
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 
 $app-primary: mat-palette($mat-blue);
-$app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$app-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$app-warn:    mat-palette($mat-red);
+$app-warn: mat-palette($mat-red);
 
 $color-primary: map-get($app-primary, 500);
 $color-success: map-get(mat-palette($mat-green), 500);
