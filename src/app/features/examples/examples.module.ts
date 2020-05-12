@@ -11,6 +11,7 @@ import { NotificationExampleComponent } from './components/notification-example/
 import { LocalStorageExampleComponent } from './components/local-storage-example/local-storage-example.component'
 import { ErrorHandlerExampleComponent } from './components/error-handler-example/error-handler-example.component'
 import { LoadingExampleComponent } from './components/loading-example/loading-example.component'
+import { InputDebounceComponent } from './components/input-debounce/input-debounce.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LoadingExampleComponent } from './components/loading-example/loading-ex
     LocalStorageExampleComponent,
     ErrorHandlerExampleComponent,
     LoadingExampleComponent,
+    InputDebounceComponent,
   ],
   imports: [
     CommonModule,
