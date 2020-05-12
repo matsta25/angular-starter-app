@@ -10,7 +10,7 @@
     "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "npm run lint:ts && npm run lint:scss",
-    "lint:ts": "ng lint",
+    "lint:ts": "ng lint --fix=true",
     "lint:scss": "stylelint \"./src/**/*.scss\"",
     "e2e": "ng e2e",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
