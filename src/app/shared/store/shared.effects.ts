@@ -6,6 +6,7 @@ import { checkIsOnline, setIsOnline } from './shared.actions'
 import { NotificationBarService } from '../services/notification-bar.service'
 import { MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar'
 
+
 @Injectable()
 export class SharedEffects {
 

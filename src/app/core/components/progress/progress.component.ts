@@ -4,6 +4,7 @@ import { NgProgress, NgProgressRef } from 'ngx-progressbar'
 import { loadingOff, loadingOn } from '../../../shared/store/shared.actions'
 import { SharedState } from '../../../shared/store/shared.state'
 
+
 @Component({
   selector: 'app-progress',
   templateUrl: './progress.component.html',

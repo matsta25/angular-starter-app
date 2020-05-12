@@ -15,6 +15,7 @@ import { ProgressComponent } from './components/progress/progress.component'
 import { NgProgressModule } from 'ngx-progressbar'
 import { NgProgressHttpModule } from 'ngx-progressbar/http'
 
+
 @NgModule({
   declarations: [
     ProgressComponent,

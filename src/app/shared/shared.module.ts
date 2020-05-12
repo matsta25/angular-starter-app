@@ -6,6 +6,7 @@ import { NotificationBarComponent } from './components/notification-bar/notifica
 import { sharedInterceptorProviders } from './interceptors'
 import { BackButtonDirective } from './directives/back-button.directive'
 
+
 @NgModule({
   imports: [
     CommonModule,
