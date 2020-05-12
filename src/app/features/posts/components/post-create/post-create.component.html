@@ -1,11 +1,8 @@
 <div>
-  <header class="mat-toolbar-single-row page-header">
-    <button mat-icon-button color="primary" aria-label="Back to Posts List" [routerLink]="['/','posts']">
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-
-    <h1 class="mat-headline mb-0">Post Create</h1>
-  </header>
+  <app-page-header>
+    <app-page-header-back [link]="'/posts'" ariaLabel="Back to Posts List"></app-page-header-back>
+    <app-page-header-title>Post Create</app-page-header-title>
+  </app-page-header>
 
   <div class="page-content">
     <div class="squeeze">
