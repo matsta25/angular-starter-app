@@ -4,6 +4,7 @@ import { MaterialModule } from './material.module'
 
 import { sharedInterceptorProviders } from './interceptors'
 import { BackButtonDirective } from './directives/back-button.directive'
+import { InputDebounceDirective } from './directives/input-debounce.directive'
 import { UnsavedChangesGuard } from './services/unsaved-changes.guard'
 import { NotificationBarComponent } from './components/notification-bar/notification-bar.component'
 import { PageHeaderComponent } from './components/page-header/page-header.component'
@@ -17,8 +18,9 @@ import { PageHeaderTitleComponent } from './components/page-header-title/page-he
     MaterialModule,
   ],
   declarations: [
-    NotificationBarComponent,
     BackButtonDirective,
+    InputDebounceDirective,
+    NotificationBarComponent,
     PageHeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
@@ -33,6 +35,7 @@ import { PageHeaderTitleComponent } from './components/page-header-title/page-he
   exports: [
     MaterialModule,
     BackButtonDirective,
+    InputDebounceDirective,
     PageHeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
