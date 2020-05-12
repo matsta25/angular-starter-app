@@ -37,12 +37,7 @@ $gutter: 30px;
   background-color: $page-header-bg;
 }
 
-.page-header__heading {
-  display: flex;
-  align-items: baseline;
-}
-
 .page-header__addons {
-  margin-left: 6px;
   opacity: .4;
+  white-space: nowrap;
 }
