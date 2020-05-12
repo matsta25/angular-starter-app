@@ -14,6 +14,9 @@ import { MatMenuModule } from '@angular/material/menu'
 import { MatCardModule } from '@angular/material/card'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core'
+import { MatTableModule } from '@angular/material/table'
+import { MatSortModule } from '@angular/material/sort'
+import { MatPaginatorModule } from '@angular/material/paginator'
 
 const materialModules = [
   MatSidenavModule,
@@ -31,6 +34,9 @@ const materialModules = [
   MatCardModule,
   MatRippleModule,
   MatExpansionModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
 ]
 
 @NgModule({
