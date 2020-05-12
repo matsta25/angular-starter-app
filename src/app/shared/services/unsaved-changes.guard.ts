@@ -1,16 +1,12 @@
 import { CanDeactivate } from '@angular/router'
 import { Injectable } from '@angular/core'
-import { FormComponentModel } from '../models/form-component.model'
+import { CanDeactivateComponentModel } from '../models/can-deactivate-component.model'
 
 
 @Injectable()
-export class UnsavedChangesGuard implements CanDeactivate<FormComponentModel> {
+export class UnsavedChangesGuard implements CanDeactivate<CanDeactivateComponentModel> {
 
-  canDeactivate(component: FormComponentModel) {
-    if (component.form.dirty) {
-      return window.confirm('You have unsaved changes. Are you sure you want to leave this page?')
-    } else {
-      return true
-    }
+  canDeactivate(component: CanDeactivateComponentModel): boolean {
+    return component.canDeactivate() || window.confirm('You have unsaved changes. Are you sure you want to leave this page?')
   }
 }
