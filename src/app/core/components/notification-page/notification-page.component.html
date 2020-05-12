@@ -1,12 +1,7 @@
-<header class="mat-toolbar-single-row page-header">
-  <button mat-icon-button color="primary" aria-label="Back to homepage" [routerLink]="['/']">
-    <mat-icon>arrow_back</mat-icon>
-  </button>
-
-  <div class="page-header__heading">
-    <h1 class="mat-headline mb-0">{{ data.title }}</h1>
-  </div>
-</header>
+<app-page-header>
+  <app-page-header-back [link]="'/'" ariaLabel="Back to homepage"></app-page-header-back>
+  <app-page-header-title>{{ data.title }}</app-page-header-title>
+</app-page-header>
 
 <div class="page-content notification-page__content">
   <mat-icon class="notification-page__icon" [ngClass]="textCssClass">{{ data.icon }}</mat-icon>
