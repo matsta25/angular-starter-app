@@ -2,6 +2,7 @@ import { createReducer, on } from '@ngrx/store'
 import { initialSharedState } from './shared.state'
 import { checkIsOnline, loadingOff, loadingOn, setIsOnline } from './shared.actions'
 
+
 export const sharedReducer = createReducer(
   initialSharedState,
   on(checkIsOnline, (state) => ({...state, isOnline: false})),
