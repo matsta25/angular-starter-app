@@ -1,5 +1,4 @@
 import { HttpParams } from '@angular/common/http'
-import { Params } from '@angular/router'
 
 export class Filter {
     [key: string]: any
@@ -43,5 +42,4 @@ export class CollectionParams {
 
         return params
     }
-
 }
