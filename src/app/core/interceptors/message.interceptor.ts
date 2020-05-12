@@ -6,6 +6,7 @@ import { NotificationBarService } from '../../shared/services/notification-bar.s
 import { catchError, tap } from 'rxjs/operators'
 import { HttpResponseModel } from '../../shared/models/http-response-model.model'
 
+
 @Injectable()
 export class MessageInterceptor implements HttpInterceptor {
 

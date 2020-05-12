@@ -11,6 +11,7 @@ import { HeaderComponent } from './core/components/header/header.component'
 import { FooterComponent } from './core/components/footer/footer.component'
 import { NotificationPageComponent } from './core/components/notification-page/notification-page.component'
 
+
 @NgModule({
   declarations: [
     AppComponent,

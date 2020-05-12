@@ -3,6 +3,7 @@ import { MatSnackBar, MatSnackBarRef, SimpleSnackBar, MatSnackBarConfig } from '
 import { NotificationBarComponent } from '../components/notification-bar/notification-bar.component'
 import { defaultSnackBarConfig, errorSnackBarConfig, successSnackBarConfig } from '../models/snackbar.model'
 
+
 @Injectable({
   providedIn: 'root',
 })
