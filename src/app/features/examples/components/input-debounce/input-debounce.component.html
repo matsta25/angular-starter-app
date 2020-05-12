@@ -1,0 +1,8 @@
+<div>
+  <mat-form-field>
+    <mat-label>Text field</mat-label>
+    <input matInput appInput (delayedInput)="val=$event">
+  </mat-form-field>
+</div>
+
+delayed emit: <code><strong>{{ val }}</strong></code>
