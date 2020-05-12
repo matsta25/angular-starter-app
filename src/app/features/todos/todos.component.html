@@ -1,18 +1,11 @@
 <div *ngIf="todos$ | async as todos">
-  <header class="mat-toolbar-single-row page-header">
-    <button mat-icon-button color="primary" aria-label="Back to homepage" [routerLink]="['/']">
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-
-    <div class="page-header__heading">
-      <h1 class="mat-headline mb-0">To-do list</h1>
-      <span class="page-header__addons">{{ todos.length }}</span>
-    </div>
-
+  <app-page-header>
+    <app-page-header-back [link]="'/'" ariaLabel="Back to homepage"></app-page-header-back>
+    <app-page-header-title [addons]="todos.length">To-do list</app-page-header-title>
     <button mat-icon-button color="primary" aria-label="Reload" class="ml-auto">
       <mat-icon>refresh</mat-icon>
     </button>
-  </header>
+  </app-page-header>
 
   <div class="page-content">
     <div class="squeeze">
