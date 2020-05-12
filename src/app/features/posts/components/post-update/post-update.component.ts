@@ -1,21 +1,23 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Observable, Subscription } from 'rxjs'
-import { PostsState } from '../../store/posts.state'
 import { select, Store } from '@ngrx/store'
+import { FormComponentModel } from '../../../../shared/models/form-component.model'
+import { PostsState } from '../../store/posts.state'
 import { deletePostsItem, readPostsItem, updatePostsItem } from '../../store/posts.actions'
 import { Post } from '../../models/post.model'
 import { selectPostById } from '../../store/posts.selectors'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { NotificationBarService } from '../../../../shared/services/notification-bar.service'
+
 
 @Component({
   selector: 'app-post-update',
   templateUrl: './post-update.component.html',
   styleUrls: ['./post-update.component.scss'],
 })
-export class PostUpdateComponent implements OnInit, OnDestroy {
-  public postForm: FormGroup
+export class PostUpdateComponent implements FormComponentModel, OnInit, OnDestroy {
+  public form: FormGroup
   public post$: Observable<Post>
   private subscriptions: Subscription = new Subscription()
 
@@ -33,7 +35,7 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
 
       this.subscriptions.add(
         this.post$.subscribe(post => {
-          this.postForm = this.createPostFormGroup(post)
+          this.form = this.createPostFormGroup(post)
           if (!post) {
             this.store.dispatch(readPostsItem({id: params.id}))
           }
@@ -42,12 +44,16 @@ export class PostUpdateComponent implements OnInit, OnDestroy {
     })
   }
 
+  public debug() {
+    console.log(this.form)
+  }
+
   public onPostFormSubmit(): void {
-    if (this.postForm.valid) {
+    if (this.form.valid) {
       this.store.dispatch(updatePostsItem({
         updatePost: {
-          id: this.postForm.controls.id.value,
-          changes: this.postForm.value,
+          id: this.form.controls.id.value,
+          changes: this.form.value,
         },
       }))
     } else {
