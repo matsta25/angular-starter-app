@@ -7,11 +7,10 @@ import { readUsers } from '../../store/users.actions'
 import { CollectionParams } from '../../../../shared/models/collection-params.model'
 import { selectUsers } from '../../store/users.selectors'
 import { selectLoading } from '../../../../shared/store/shared.selectors'
-import { merge, Observable, Subject, Subscription } from 'rxjs'
+import { Observable } from 'rxjs'
 import { MatSort, Sort } from '@angular/material/sort'
 import { MatPaginator } from '@angular/material/paginator'
 import { ActivatedRoute, Router } from '@angular/router'
-import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-users-list',
