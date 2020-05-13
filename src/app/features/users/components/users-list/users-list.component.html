@@ -1,11 +1,9 @@
-<input matInput placeholder="Search User" (keyup)="filterSubject.next($event.target.value)">
-
 <button mat-icon-button (click)="onRefresh()">
     <mat-icon>refresh</mat-icon>
 </button>
 
 <table mat-table matSort class="w-100" [dataSource]="dataSourceForTable"
-       [matSortActive]="defaultSort.active" [matSortDirection]="defaultSort.direction" matSortDisableClear>
+       [matSortActive]="currentSort.active" [matSortDirection]="currentSort.direction" matSortDisableClear>
 
     <ng-container matColumnDef="id">
         <th mat-header-cell  *matHeaderCellDef mat-sort-header>Id</th>
@@ -28,18 +26,18 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns, sticky: true"></tr>
-    <ng-container *ngIf="dataSourceForTable.data.length > 0 && !loading">
+    <ng-container *ngIf="dataSourceForTable.data.length > 0 && !(loading$ | async)">
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-            [ngClass]="{'row-info--hide': !(dataSourceForTable.data.length > 0 && !loading ) && !isOnRefreshOrEmptyResponse}"
+            [ngClass]="{'row-info--hide': !(dataSourceForTable.data.length > 0 && !(loading$ | async) ) && !isOnRefreshOrEmptyResponse}"
         ></tr>
     </ng-container>
 </table>
 
-<div [ngClass]="!(dataSourceForTable.data.length === 0 && !loading) ? 'row-info--hide' : 'row-info--show'">
+<div [ngClass]="!(dataSourceForTable.data.length === 0 && !(loading$ | async)) ? 'row-info--hide' : 'row-info--show'">
     No users found.
 </div>
 
-<div [ngClass]="!(dataSourceForTable.data.length === 0 && loading) ? 'row-info--hide' : 'row-info--show'">
+<div [ngClass]="!(dataSourceForTable.data.length === 0 && (loading$ | async)) ? 'row-info--hide' : 'row-info--show'">
     Loading users...
 </div>
 

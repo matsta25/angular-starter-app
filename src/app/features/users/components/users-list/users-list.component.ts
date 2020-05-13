@@ -20,26 +20,17 @@ import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators'
 })
 export class UsersListComponent implements OnInit, AfterViewInit {
 
-  public loading: boolean
-  public users$: Observable<User[]>
-
-  public displayedColumns: string[] = []
-  public dataSourceForTable: MatTableDataSource<User>
-
-  public defaultSort: Sort
-
   @ViewChild(MatSort) sort: MatSort
   @ViewChild(MatPaginator) paginator: MatPaginator
 
-  public isOnRefreshOrEmptyResponse = false
+  public loading$: Observable<boolean>
+  public users$: Observable<User[]>
+
+  public dataSourceForTable: MatTableDataSource<User>
+  public displayedColumns: string[] = []
+  public currentSort: Sort
   private collectionParams: CollectionParams
-
-
-  public filterSubject = new Subject<string>()
-
-  private filter = ''
-  private subscription: Subscription = new Subscription()
-
+  public isOnRefreshOrEmptyResponse = false
 
   constructor(
       private store: Store<UsersState>,
@@ -50,35 +41,39 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.users$ = this.store.pipe(select(selectUsers))
-    this.store.pipe(select(selectLoading)).subscribe( loading => {
+    this.loading$ = this.store.pipe(select(selectLoading))
+
+    this.loading$.subscribe( loading => {
       if (loading && !this.isOnRefreshOrEmptyResponse) {
         this.dataSourceForTable = new MatTableDataSource([])
       }
-      this.loading = loading
     })
-    this.users$.subscribe(users => this.initializeData(users))
+
+    this.users$.subscribe(users => {
+      this.dataSourceForTable = new MatTableDataSource(users)
+      this.isOnRefreshOrEmptyResponse = false
+    })
+
     this.setDisplayedColumns()
-    this.setDefaultSort()
+    this.setCurrentSort()
     this.getCollectionParamsFromUrl()
     this.loadUsers()
   }
 
   ngAfterViewInit(): void {
     this.setCollectionParamsToComponents()
-    this.setCollectionParamsToUrl()
   }
 
   private loadUsers() {
     this.store.dispatch(readUsers({collectionParams: this.collectionParams}))
   }
 
-  private initializeData(users: User[]): void {
-    this.dataSourceForTable = new MatTableDataSource(users)
-    this.isOnRefreshOrEmptyResponse = false
-  }
-
   private setDisplayedColumns() {
     this.displayedColumns = ['id', 'firstName', 'lastName', 'email']
+  }
+
+  private setCurrentSort(): void {
+    this.currentSort = { active: 'id', direction: 'asc' }
   }
 
   public onRefresh(): void {
@@ -99,28 +94,8 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   }
 
   private setCollectionParamsToComponents() {
-    console.log(this.collectionParams)
-    const filter$ = this.filterSubject.pipe(
-        debounceTime(150),
-        distinctUntilChanged(),
-        tap((value: string) => {
-          this.paginator.pageIndex = 0
-          this.filter = value
-        }),
-    )
-
-    const sort$ = this.sort.sortChange.pipe(tap(() => this.paginator.pageIndex = 0))
-
-    this.subscription.add(merge(filter$, sort$, this.paginator.page).pipe(
-        tap(() => {
-          this.isOnRefreshOrEmptyResponse = true
-          this.loadUsers()
-        }),
-    ).subscribe())
-  }
-
-  private setDefaultSort(): void {
-     this.defaultSort = { active: 'id', direction: 'asc' }
+    console.log('setCollectionParamsToComponents', this.collectionParams)
+    // console.log(this.collectionParams)
   }
 
   private setCollectionParamsToUrl() {
