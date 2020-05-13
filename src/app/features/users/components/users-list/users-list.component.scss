@@ -1,3 +1,11 @@
-.hide {
+.row-info--hide {
   display: none;
+}
+
+.row-info--show {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
 }

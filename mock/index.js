@@ -26,7 +26,7 @@ module.exports = () => {
     })
   }
 
-  for (let i = 0; i < 0; i++) {
+  for (let i = 0; i < 3; i++) {
     data.users.push({
       id: faker.random.uuid(),
       firstName: faker.name.firstName(),
