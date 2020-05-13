@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatCardModule } from '@angular/material/card'
 import { MatExpansionModule } from '@angular/material/expansion'
+import { MatDialogModule } from '@angular/material/dialog'
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core'
 
 
@@ -23,15 +24,16 @@ const materialModules = [
   MatIconModule,
   MatToolbarModule,
   MatInputModule,
-  MatNativeDateModule,
   MatDatepickerModule,
   MatCheckboxModule,
   MatFormFieldModule,
   MatListModule,
   MatMenuModule,
   MatCardModule,
-  MatRippleModule,
   MatExpansionModule,
+  MatDialogModule,
+  MatNativeDateModule,
+  MatRippleModule,
 ]
 
 @NgModule({
