@@ -28,8 +28,7 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   public dataSourceForTable: MatTableDataSource<User>
   public displayedColumns: string[] = []
-  public currentSort: Sort
-  private collectionParams: CollectionParams
+  public currentSort: Sort = {active: 'id', direction: 'desc'}
 
   constructor(
     private store: Store<UsersState>,
@@ -47,53 +46,67 @@ export class UsersListComponent implements OnInit, AfterViewInit {
       this.dataSourceForTable = new MatTableDataSource(users)
     })
 
+    this.activatedRoute.queryParams.subscribe((paramsFromUrl: CollectionParams) => {
+      console.log(paramsFromUrl)
+      if (paramsFromUrl?.sortField && paramsFromUrl?.sortDirection) {
+        this.setCurrentSort({
+          direction: paramsFromUrl?.sortDirection,
+          active: paramsFromUrl?.sortField,
+        })
+      }
+    })
+
     this.setDisplayedColumns()
-    this.setCurrentSort()
-    this.getCollectionParamsFromUrl()
+    this.setCurrentSort(this.currentSort)
     this.loadUsers()
   }
 
   ngAfterViewInit(): void {
-    this.setCollectionParamsToComponents()
   }
 
   public onRefresh(): void {
     this.loadUsers()
   }
 
+  public onMatSortChange($event: Sort): void {
+    this.setCurrentSort($event)
+  }
+
   private loadUsers() {
-    this.store.dispatch(readUsers({collectionParams: this.collectionParams}))
+    this.store.dispatch(readUsers({
+      collectionParams: {
+        sortDirection: this.currentSort.direction,
+        sortField: this.currentSort.active,
+      },
+    }))
   }
 
   private setDisplayedColumns() {
     this.displayedColumns = ['id', 'firstName', 'lastName', 'email']
   }
 
-  private setCurrentSort(): void {
-    this.currentSort = {active: 'id', direction: 'asc'}
+  private setCurrentSort(sort: Sort): void {
+    this.currentSort = sort
+    this.addQueryParamToUrl('sortField', sort.active).then(
+      () => this.addQueryParamToUrl('sortDirection', sort.direction),
+    )
   }
 
-  private getCollectionParamsFromUrl() {
-    this.activatedRoute.params.subscribe(params => {
-      this.collectionParams = new CollectionParams(
-        params.filters,
-        params.sortDirection,
-        params.sortField,
-        params.pageIndex,
-        params.pageSize,
-      )
-    })
-  }
-
-  private setCollectionParamsToComponents() {
-    console.log('ok')
-  }
-
-  private setCollectionParamsToUrl() {
-    this.router.navigate([], {
-      queryParams: this.collectionParams,
+  private addQueryParamToUrl(key: string, value: string) {
+    return this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: {
+        [key]: value,
+      },
       queryParamsHandling: 'merge',
-      replaceUrl: true,
     })
+  }
+
+  onClear() {
+    this.setCurrentSort({active: 'id', direction: 'desc'})
+    const sortHeader = this.sort.sortables.get('id')
+    // @ts-ignore https://github.com/angular/components/issues/15715#issuecomment-493074168
+    sortHeader._handleClick()
+    this.loadUsers()
   }
 }
