@@ -10,6 +10,7 @@ import { NotificationBarComponent } from './components/notification-bar/notifica
 import { PageHeaderComponent } from './components/page-header/page-header.component'
 import { PageHeaderBackComponent } from './components/page-header-back/page-header-back.component'
 import { PageHeaderTitleComponent } from './components/page-header-title/page-header-title.component'
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component'
 
 
 @NgModule({
@@ -21,12 +22,14 @@ import { PageHeaderTitleComponent } from './components/page-header-title/page-he
     BackButtonDirective,
     InputDebounceDirective,
     NotificationBarComponent,
+    ConfirmDialogComponent,
     PageHeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
   ],
   entryComponents: [
     NotificationBarComponent,
+    ConfirmDialogComponent,
   ],
   providers: [
     ...sharedInterceptorProviders,
