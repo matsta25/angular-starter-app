@@ -25,6 +25,7 @@ const routes: Routes = [
       {
         path: 'create',
         component: PostCreateComponent,
+        canDeactivate: [UnsavedChangesGuard],
       },
       {
         path: ':id/update',
