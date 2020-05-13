@@ -17,9 +17,7 @@ export class UsersApiService implements ApiServiceModel<User> {
   }
 
   public readItems(collectionParams: CollectionParams): Observable<object> {
-    console.log(collectionParams)
     const params = collectionParams.getCollectionHttpParams()
-    console.log(params)
     return this.http.get(`${environment.baseUrl}${USERS_API_ENDPOINT}`, { params })
   }
 }

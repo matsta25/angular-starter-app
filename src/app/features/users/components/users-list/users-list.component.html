@@ -1,9 +1,11 @@
+<input matInput placeholder="Search User" (keyup)="filterSubject.next($event.target.value)">
+
 <button mat-icon-button (click)="onRefresh()">
     <mat-icon>refresh</mat-icon>
 </button>
 
-<table mat-table class="w-100" [dataSource]="dataSourceForTable" matSort matSortDisableClear="true"
-       [matSortActive]="defaultSort.active" [matSortDirection]="defaultSort.direction">
+<table mat-table matSort class="w-100" [dataSource]="dataSourceForTable"
+       [matSortActive]="defaultSort.active" [matSortDirection]="defaultSort.direction" matSortDisableClear>
 
     <ng-container matColumnDef="id">
         <th mat-header-cell  *matHeaderCellDef mat-sort-header>Id</th>
