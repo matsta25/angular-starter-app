@@ -20,7 +20,6 @@ import { MatSortModule } from '@angular/material/sort'
 import { MatPaginatorModule } from '@angular/material/paginator'
 
 
-
 const materialModules = [
   MatSidenavModule,
   MatButtonModule,

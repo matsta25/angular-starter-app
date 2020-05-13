@@ -5,7 +5,6 @@ import { of } from 'rxjs'
 import { UsersApiService } from '../services/users-api.service'
 import { readUsers, readUsersFail, readUsersSuccess } from './users.actions'
 import { User } from '../models/user.model'
-import { CollectionParams } from '../../../shared/models/collection-params.model'
 
 @Injectable()
 export class UsersEffects {

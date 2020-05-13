@@ -5,7 +5,6 @@ import { TodosEffects } from '../../features/todos/store/todos.effects'
 import { UsersEffects } from '../../features/users/store/users.effects'
 
 
-
 export const appEffects: Type<any>[] = [
   SharedEffects,
   PostsEffects,

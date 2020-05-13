@@ -31,9 +31,9 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   private collectionParams: CollectionParams
 
   constructor(
-      private store: Store<UsersState>,
-      private activatedRoute: ActivatedRoute,
-      private router: Router,
+    private store: Store<UsersState>,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {
   }
 
@@ -55,6 +55,10 @@ export class UsersListComponent implements OnInit, AfterViewInit {
     this.setCollectionParamsToComponents()
   }
 
+  public onRefresh(): void {
+    this.loadUsers()
+  }
+
   private loadUsers() {
     this.store.dispatch(readUsers({collectionParams: this.collectionParams}))
   }
@@ -64,21 +68,17 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   }
 
   private setCurrentSort(): void {
-    this.currentSort = { active: 'id', direction: 'asc' }
-  }
-
-  public onRefresh(): void {
-    this.loadUsers()
+    this.currentSort = {active: 'id', direction: 'asc'}
   }
 
   private getCollectionParamsFromUrl() {
-    this.activatedRoute.params.subscribe(params  => {
+    this.activatedRoute.params.subscribe(params => {
       this.collectionParams = new CollectionParams(
-          params.filters,
-          params.sortDirection,
-          params.sortField,
-          params.pageIndex,
-          params.pageSize,
+        params.filters,
+        params.sortDirection,
+        params.sortField,
+        params.pageIndex,
+        params.pageSize,
       )
     })
   }
