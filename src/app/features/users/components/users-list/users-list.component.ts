@@ -5,7 +5,7 @@ import { UsersState } from '../../store/users.state'
 import { select, Store } from '@ngrx/store'
 import { readUsers } from '../../store/users.actions'
 import { CollectionParams } from '../../../../shared/models/collection-params.model'
-import { selectUsers } from '../../store/users.selectors'
+import { selectTotalCount, selectUsers } from '../../store/users.selectors'
 import { selectLoading } from '../../../../shared/store/shared.selectors'
 import { Observable } from 'rxjs'
 import { MatSort, Sort } from '@angular/material/sort'
@@ -24,6 +24,7 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   public loading$: Observable<boolean>
   public users$: Observable<User[]>
+  public totalCount$: Observable<number>
 
   public dataSourceForTable: MatTableDataSource<User>
   public displayedColumns: string[] = []
@@ -40,6 +41,7 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.users$ = this.store.pipe(select(selectUsers))
     this.loading$ = this.store.pipe(select(selectLoading))
+    this.totalCount$ = this.store.pipe(select(selectTotalCount))
 
     this.users$.subscribe(users => {
       this.dataSourceForTable = new MatTableDataSource(users)

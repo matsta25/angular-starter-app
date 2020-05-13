@@ -4,7 +4,10 @@ module.exports = () => {
   const data = {
     posts: [],
     todos: [],
-    users: [],
+    users: {
+      data: [],
+      totalCount: null
+    },
     'err-logs': []
   };
 
@@ -26,8 +29,9 @@ module.exports = () => {
     })
   }
 
-  for (let i = 0; i < 3; i++) {
-    data.users.push({
+  data.users.totalCount = 20;
+  for (let i = 0; i < data.users.totalCount; i++) {
+    data.users.data.push({
       id: faker.random.uuid(),
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName(),
