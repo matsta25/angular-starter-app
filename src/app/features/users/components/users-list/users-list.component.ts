@@ -29,7 +29,7 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort, { static: false }) sort: MatSort
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator
-  public isOnRefresh = false
+  public isOnRefreshOrEmptyResponse = false
 
   constructor(
       private store: Store<UsersState>,
@@ -39,7 +39,7 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.users$ = this.store.pipe(select(selectUsers))
     this.store.pipe(select(selectLoading)).subscribe( loading => {
-      if (loading && !this.isOnRefresh) {
+      if (loading && !this.isOnRefreshOrEmptyResponse) {
         this.dataSourceForTable = new MatTableDataSource([])
       }
       this.loading = loading
@@ -62,6 +62,7 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   private initializeData(users: User[]): void {
     this.dataSourceForTable = new MatTableDataSource(users)
+    this.isOnRefreshOrEmptyResponse = false
   }
 
   private setDisplayedColumns() {
@@ -69,7 +70,7 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   }
 
   public onRefresh(): void {
-    this.isOnRefresh = true
+    this.isOnRefreshOrEmptyResponse = true
     this.loadUsers()
   }
 }

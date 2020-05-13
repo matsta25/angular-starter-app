@@ -25,20 +25,20 @@
         <td mat-cell *matCellDef="let element">{{element.email}} </td>
     </ng-container>
 
+    <tr mat-header-row *matHeaderRowDef="displayedColumns, sticky: true"></tr>
+
+    <ng-container *ngIf="dataSourceForTable.data.length > 0 && !loading">
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="customer-row"
+            [ngClass]="{'hide': !(dataSourceForTable.data.length > 0 && !loading ) && !isOnRefreshOrEmptyResponse}"
+        ></tr>
+    </ng-container>
+
     <ng-container matColumnDef="noUsers">
         <td mat-footer-cell *matFooterCellDef [attr.colspan]="displayedColumns.length">No users found.</td>
     </ng-container>
 
     <ng-container matColumnDef="loadingUsers">
         <td mat-footer-cell *matFooterCellDef [attr.colspan]="displayedColumns.length">Loading users...</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns, sticky: true"></tr>
-
-    <ng-container *ngIf="dataSourceForTable.data.length > 0 && !loading">
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="customer-row"
-            [ngClass]="{'hide': !(dataSourceForTable.data.length > 0 && !loading ) && !isOnRefresh}"
-        ></tr>
     </ng-container>
 
     <mat-footer-row *matFooterRowDef="['loadingUsers']" [ngClass]="{'hide': !(dataSourceForTable.data.length === 0 && loading)}">
@@ -49,3 +49,6 @@
 </table>
 
 <mat-paginator [pageSize]="10"  [pageSizeOptions]="[10, 20, 50]"></mat-paginator>
+normal: {{ (dataSourceForTable.data.length > 0 && !loading ) && !isOnRefreshOrEmptyResponse }} <br>
+loadingUsers: {{ (dataSourceForTable.data.length === 0 && loading) }} <br>
+noUsers: {{ (dataSourceForTable.data.length === 0 && !loading) }}
