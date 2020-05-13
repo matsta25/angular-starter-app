@@ -3,7 +3,6 @@
 */
 
 import { Component, OnInit } from '@angular/core'
-import { NotificationBarService } from '../../../../shared/services/notification-bar.service'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { ConfirmDialogComponent } from '../../../../shared/components/confirm-dialog/confirm-dialog.component'
 import { DialogDataModel } from '../../../../shared/models/dialog-data.model'
