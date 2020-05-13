@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatCardModule } from '@angular/material/card'
 import { MatExpansionModule } from '@angular/material/expansion'
+import { MatDialogModule } from '@angular/material/dialog'
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core'
 import { MatTableModule } from '@angular/material/table'
 import { MatSortModule } from '@angular/material/sort'
@@ -26,18 +27,19 @@ const materialModules = [
   MatIconModule,
   MatToolbarModule,
   MatInputModule,
-  MatNativeDateModule,
   MatDatepickerModule,
   MatCheckboxModule,
   MatFormFieldModule,
   MatListModule,
   MatMenuModule,
   MatCardModule,
-  MatRippleModule,
   MatExpansionModule,
   MatTableModule,
   MatSortModule,
   MatPaginatorModule,
+  MatDialogModule,
+  MatNativeDateModule,
+  MatRippleModule,
 ]
 
 @NgModule({
