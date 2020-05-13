@@ -1,0 +1,40 @@
+<button mat-icon-button (click)="onRefresh()">
+  <mat-icon>refresh</mat-icon>
+</button>
+
+<table mat-table matSort class="w-100" [dataSource]="dataSourceForTable"
+       [matSortActive]="currentSort.active" [matSortDirection]="currentSort.direction" matSortDisableClear>
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+    <td mat-cell *matCellDef="let element">{{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
+    <td mat-cell *matCellDef="let element"> {{ element.firstName }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+    <td mat-cell *matCellDef="let element">{{element.lastName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+    <td mat-cell *matCellDef="let element">{{element.email}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns, sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<div *ngIf="dataSourceForTable.data.length === 0 && !(loading$ | async)" class="row-info">
+  No users found.
+</div>
+
+<div *ngIf="dataSourceForTable.data.length === 0 && (loading$ | async)" class="row-info">
+  Loading users...
+</div>
+
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 50]"></mat-paginator>

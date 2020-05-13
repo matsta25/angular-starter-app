@@ -15,6 +15,10 @@ import { MatCardModule } from '@angular/material/card'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core'
+import { MatTableModule } from '@angular/material/table'
+import { MatSortModule } from '@angular/material/sort'
+import { MatPaginatorModule } from '@angular/material/paginator'
+
 
 
 const materialModules = [
@@ -31,6 +35,9 @@ const materialModules = [
   MatMenuModule,
   MatCardModule,
   MatExpansionModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
   MatDialogModule,
   MatNativeDateModule,
   MatRippleModule,
