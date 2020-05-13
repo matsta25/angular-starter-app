@@ -27,17 +27,15 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns, sticky: true"></tr>
     <ng-container>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-            [ngClass]="{'row-info--hide': !(dataSourceForTable.data.length > 0 && !(loading$ | async) ) && !isOnRefreshOrEmptyResponse}"
-        ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </ng-container>
 </table>
 
-<div [ngClass]="!(dataSourceForTable.data.length === 0 && !(loading$ | async)) ? 'row-info_hide' : 'row-info_show'">
+<div *ngIf="dataSourceForTable.data.length === 0 && !(loading$ | async)" class="row-info">
     No users found.
 </div>
 
-<div [ngClass]="!(dataSourceForTable.data.length === 0 && (loading$ | async)) ? 'row-info_hide' : 'row-info_show'">
+<div *ngIf="dataSourceForTable.data.length === 0 && (loading$ | async)" class="row-info">
     Loading users...
 </div>
 

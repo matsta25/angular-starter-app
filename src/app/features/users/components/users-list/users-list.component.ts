@@ -30,7 +30,6 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   public displayedColumns: string[] = []
   public currentSort: Sort
   private collectionParams: CollectionParams
-  public isOnRefreshOrEmptyResponse = false
 
   constructor(
       private store: Store<UsersState>,
@@ -45,7 +44,6 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
     this.users$.subscribe(users => {
       this.dataSourceForTable = new MatTableDataSource(users)
-      this.isOnRefreshOrEmptyResponse = false
     })
 
     this.setDisplayedColumns()
@@ -71,7 +69,6 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   }
 
   public onRefresh(): void {
-    this.isOnRefreshOrEmptyResponse = true
     this.loadUsers()
   }
 
