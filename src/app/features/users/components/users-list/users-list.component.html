@@ -26,18 +26,18 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns, sticky: true"></tr>
-    <ng-container *ngIf="dataSourceForTable.data.length > 0 && !(loading$ | async)">
+    <ng-container>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"
             [ngClass]="{'row-info--hide': !(dataSourceForTable.data.length > 0 && !(loading$ | async) ) && !isOnRefreshOrEmptyResponse}"
         ></tr>
     </ng-container>
 </table>
 
-<div [ngClass]="!(dataSourceForTable.data.length === 0 && !(loading$ | async)) ? 'row-info--hide' : 'row-info--show'">
+<div [ngClass]="!(dataSourceForTable.data.length === 0 && !(loading$ | async)) ? 'row-info_hide' : 'row-info_show'">
     No users found.
 </div>
 
-<div [ngClass]="!(dataSourceForTable.data.length === 0 && (loading$ | async)) ? 'row-info--hide' : 'row-info--show'">
+<div [ngClass]="!(dataSourceForTable.data.length === 0 && (loading$ | async)) ? 'row-info_hide' : 'row-info_show'">
     Loading users...
 </div>
 

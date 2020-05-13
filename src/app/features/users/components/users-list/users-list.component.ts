@@ -43,12 +43,6 @@ export class UsersListComponent implements OnInit, AfterViewInit {
     this.users$ = this.store.pipe(select(selectUsers))
     this.loading$ = this.store.pipe(select(selectLoading))
 
-    this.loading$.subscribe( loading => {
-      if (loading && !this.isOnRefreshOrEmptyResponse) {
-        this.dataSourceForTable = new MatTableDataSource([])
-      }
-    })
-
     this.users$.subscribe(users => {
       this.dataSourceForTable = new MatTableDataSource(users)
       this.isOnRefreshOrEmptyResponse = false
