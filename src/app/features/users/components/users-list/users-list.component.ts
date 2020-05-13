@@ -94,8 +94,6 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   }
 
   private setCollectionParamsToComponents() {
-    console.log('setCollectionParamsToComponents', this.collectionParams)
-    // console.log(this.collectionParams)
   }
 
   private setCollectionParamsToUrl() {
