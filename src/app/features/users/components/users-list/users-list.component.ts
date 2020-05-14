@@ -37,6 +37,8 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   public currentPageIndex
   public currentPageSize
 
+  public currentFilter = null
+
   constructor(
     private store: Store<UsersState>,
     private activatedRoute: ActivatedRoute,
@@ -69,6 +71,12 @@ export class UsersListComponent implements OnInit, AfterViewInit {
       } else {
         this.setCurrentPageIndexAndSize(this.defaultPageIndex, this.defaultPageSize)
       }
+
+      if (paramsFromUrl?.filter) {
+        this.currentFilter = paramsFromUrl.filter
+      }
+
+      this.loadUsers()
     })
 
     this.setDisplayedColumns()
@@ -94,8 +102,11 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   private loadUsers() {
     this.store.dispatch(readUsers({
       collectionParams: {
+        filter: this.currentFilter,
         sortDirection: this.currentSort.direction,
         sortField: this.currentSort.active,
+        pageIndex: this.currentPageIndex,
+        pageSize: this.currentPageSize,
       },
     }))
   }
@@ -106,10 +117,10 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   private setCurrentSort(sort: Sort): void {
     this.currentSort = sort
-    this.addQueryParamToUrl({sortField: sort.active, sortDirection: sort.direction})
+    this.updateQueryParamToUrl({sortField: sort.active, sortDirection: sort.direction})
   }
 
-  private addQueryParamToUrl(params: Params) {
+  private updateQueryParamToUrl(params: Params) {
     this.router.navigate([], {
       relativeTo: this.activatedRoute,
       queryParams: params,
@@ -120,10 +131,19 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   private setCurrentPageIndexAndSize(pageIndex: number, pageSize: number): void {
     this.currentPageIndex = pageIndex
     this.currentPageSize= pageSize
-    this.addQueryParamToUrl({pageIndex, pageSize})
+    this.updateQueryParamToUrl({pageIndex, pageSize})
   }
 
   onPageChange($event: PageEvent) {
     this.setCurrentPageIndexAndSize($event.pageIndex, $event.pageSize)
+  }
+
+  onFilterChange($event: string) {
+    this.currentFilter = $event
+    if($event === '') {
+      this.updateQueryParamToUrl({filter: null})
+    } else {
+      this.updateQueryParamToUrl({filter: $event})
+    }
   }
 }

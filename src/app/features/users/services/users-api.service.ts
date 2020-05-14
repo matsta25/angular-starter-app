@@ -17,22 +17,24 @@ export class UsersApiService implements ApiServiceModel<User> {
   }
 
   public readItems(collectionParams: CollectionParams): Observable<object> {
-    const params = new HttpParams()
+    let params = new HttpParams()
+    console.log(collectionParams)
+    //
+    // if (collectionParams?.filters) {
+    //   Object.entries(collectionParams?.filters).forEach(
+    //     ([key, value]) => {
+    //       params.append(key, value.toString())
+    //     },
+    //   )
+    // }
 
-    if (collectionParams?.filters) {
-      Object.entries(collectionParams?.filters).forEach(
-        ([key, value]) => {
-          params.append(key, value.toString())
-        },
-      )
-    }
+    params = params.set('filter', collectionParams?.filter)
+    params = params.set('sortDirection', collectionParams?.sortDirection)
+    params = params.set('sortField', collectionParams?.sortField)
+    params = params.set('pageIndex', collectionParams?.pageIndex?.toString())
+    params = params.set('pageSize', collectionParams?.pageSize?.toString())
 
-    params
-      .set('sortDirection', collectionParams?.sortDirection)
-      .set('sortField', collectionParams?.sortField)
-      .set('pageIndex', collectionParams?.pageIndex?.toString())
-      .set('pageSize', collectionParams?.pageSize?.toString())
-
+    console.log(params)
     return this.http.get(`${environment.baseUrl}${USERS_API_ENDPOINT}`, {params})
   }
 }

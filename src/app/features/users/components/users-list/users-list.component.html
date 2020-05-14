@@ -2,6 +2,8 @@
   <mat-icon>refresh</mat-icon>
 </button>
 
+<input matInput placeholder="Search..." [value]="currentFilter" appInput (delayedInput)="onFilterChange($event)">
+
 <button mat-icon-button (click)="onClear()">
   <mat-icon>clear</mat-icon>
 </button>
@@ -43,6 +45,6 @@ Users ({{ (totalCount$ | async) }})
   Loading users...
 </div>
 
-<mat-paginator [length]="(totalCount$ | async)"  [pageIndex]="this.currentPageIndex"
-               (page)="onPageChange($event)" [pageSize]="this.currentPageSize"
+<mat-paginator [length]="(totalCount$ | async)"  [pageIndex]="currentPageIndex"
+               (page)="onPageChange($event)" [pageSize]="currentPageSize"
                [pageSizeOptions]="[10, 20, 50]"></mat-paginator>
