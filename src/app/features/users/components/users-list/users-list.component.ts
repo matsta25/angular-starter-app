@@ -10,7 +10,7 @@ import { selectLoading } from '../../../../shared/store/shared.selectors'
 import { Observable } from 'rxjs'
 import { MatSort, Sort } from '@angular/material/sort'
 import { MatPaginator } from '@angular/material/paginator'
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute, Params, Router } from '@angular/router'
 
 @Component({
   selector: 'app-users-list',
@@ -28,7 +28,8 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   public dataSourceForTable: MatTableDataSource<User>
   public displayedColumns: string[] = []
-  public currentSort: Sort = {active: 'id', direction: 'desc'}
+  private readonly defaultSort: Sort = {active: 'id', direction: 'desc'}
+  public currentSort: Sort
 
   constructor(
     private store: Store<UsersState>,
@@ -47,17 +48,17 @@ export class UsersListComponent implements OnInit, AfterViewInit {
     })
 
     this.activatedRoute.queryParams.subscribe((paramsFromUrl: CollectionParams) => {
-      console.log(paramsFromUrl)
       if (paramsFromUrl?.sortField && paramsFromUrl?.sortDirection) {
-        this.setCurrentSort({
-          direction: paramsFromUrl?.sortDirection,
-          active: paramsFromUrl?.sortField,
-        })
+        this.currentSort = {
+          active: paramsFromUrl.sortField,
+          direction: paramsFromUrl.sortDirection,
+        }
+      } else {
+        this.setCurrentSort(this.defaultSort)
       }
     })
 
     this.setDisplayedColumns()
-    this.setCurrentSort(this.currentSort)
     this.loadUsers()
   }
 
@@ -87,26 +88,19 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   private setCurrentSort(sort: Sort): void {
     this.currentSort = sort
-    this.addQueryParamToUrl('sortField', sort.active).then(
-      () => this.addQueryParamToUrl('sortDirection', sort.direction),
-    )
+    this.addQueryParamToUrl({sortField: sort.active, sortDirection: sort.direction})
   }
 
-  private addQueryParamToUrl(key: string, value: string) {
-    return this.router.navigate([], {
+  private addQueryParamToUrl(params: Params) {
+    this.router.navigate([], {
       relativeTo: this.activatedRoute,
-      queryParams: {
-        [key]: value,
-      },
+      queryParams: params,
       queryParamsHandling: 'merge',
     })
   }
 
   onClear() {
-    this.setCurrentSort({active: 'id', direction: 'desc'})
-    const sortHeader = this.sort.sortables.get('id')
-    // @ts-ignore https://github.com/angular/components/issues/15715#issuecomment-493074168
-    sortHeader._handleClick()
+    // TODO: clear "search" not sorting
     this.loadUsers()
   }
 }

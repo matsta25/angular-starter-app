@@ -1,4 +1,5 @@
 import { HttpParams } from '@angular/common/http'
+import { SortDirection } from '@angular/material/sort'
 
 export class Filter {
     [key: string]: any
@@ -6,7 +7,7 @@ export class Filter {
 
 export interface CollectionParams {
   filters?: Filter
-  sortDirection?: 'asc' | 'desc' | ''
+  sortDirection?: SortDirection
   sortField?: string
   pageIndex?: number
   pageSize?: number
