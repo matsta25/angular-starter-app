@@ -43,4 +43,6 @@ Users ({{ (totalCount$ | async) }})
   Loading users...
 </div>
 
-<mat-paginator [length]="(totalCount$ | async)"  [pageSize]="10" [pageSizeOptions]="[10, 20, 50]"></mat-paginator>
+<mat-paginator [length]="(totalCount$ | async)"  [pageIndex]="this.currentPageIndex"
+               (page)="onPageChange($event)" [pageSize]="this.currentPageSize"
+               [pageSizeOptions]="[10, 20, 50]"></mat-paginator>

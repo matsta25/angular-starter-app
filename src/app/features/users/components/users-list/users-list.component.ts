@@ -9,7 +9,7 @@ import { selectTotalCount, selectUsers } from '../../store/users.selectors'
 import { selectLoading } from '../../../../shared/store/shared.selectors'
 import { Observable } from 'rxjs'
 import { MatSort, Sort } from '@angular/material/sort'
-import { MatPaginator } from '@angular/material/paginator'
+import { MatPaginator, PageEvent } from '@angular/material/paginator'
 import { ActivatedRoute, Params, Router } from '@angular/router'
 
 @Component({
@@ -20,7 +20,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router'
 export class UsersListComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort: MatSort
-  @ViewChild(MatPaginator) paginator: MatPaginator
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator
 
   public loading$: Observable<boolean>
   public users$: Observable<User[]>
@@ -28,8 +28,14 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   public dataSourceForTable: MatTableDataSource<User>
   public displayedColumns: string[] = []
-  private readonly defaultSort: Sort = {active: 'id', direction: 'desc'}
+
   public currentSort: Sort
+  private readonly defaultSort: Sort = {active: 'id', direction: 'desc'}
+
+  private readonly defaultPageIndex: number = 0
+  private readonly defaultPageSize: number = 10
+  public currentPageIndex
+  public currentPageSize
 
   constructor(
     private store: Store<UsersState>,
@@ -56,6 +62,13 @@ export class UsersListComponent implements OnInit, AfterViewInit {
       } else {
         this.setCurrentSort(this.defaultSort)
       }
+
+      if (paramsFromUrl?.pageIndex && paramsFromUrl?.pageSize) {
+        this.currentPageIndex = paramsFromUrl.pageIndex
+        this.currentPageSize= paramsFromUrl.pageSize
+      } else {
+        this.setCurrentPageIndexAndSize(this.defaultPageIndex, this.defaultPageSize)
+      }
     })
 
     this.setDisplayedColumns()
@@ -71,6 +84,11 @@ export class UsersListComponent implements OnInit, AfterViewInit {
 
   public onMatSortChange($event: Sort): void {
     this.setCurrentSort($event)
+  }
+
+  onClear() {
+    // TODO: clear "search" not sorting
+    this.loadUsers()
   }
 
   private loadUsers() {
@@ -99,8 +117,13 @@ export class UsersListComponent implements OnInit, AfterViewInit {
     })
   }
 
-  onClear() {
-    // TODO: clear "search" not sorting
-    this.loadUsers()
+  private setCurrentPageIndexAndSize(pageIndex: number, pageSize: number): void {
+    this.currentPageIndex = pageIndex
+    this.currentPageSize= pageSize
+    this.addQueryParamToUrl({pageIndex, pageSize})
+  }
+
+  onPageChange($event: PageEvent) {
+    this.setCurrentPageIndexAndSize($event.pageIndex, $event.pageSize)
   }
 }
