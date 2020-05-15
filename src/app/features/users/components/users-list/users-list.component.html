@@ -1,14 +1,18 @@
-<button mat-icon-button (click)="onRefresh()">
-  <mat-icon>refresh</mat-icon>
-</button>
+Users ({{ (totalCount$ | async) }})
 
-<input matInput placeholder="Search..." [value]="currentFilter" appInput (delayedInput)="onFilterChange($event)">
+<mat-form-field>
+  <mat-label>Search</mat-label>
+  <input matInput [value]="currentFilter" appInput (delayedInput)="onFilterChange($event)">
+</mat-form-field>
 
 <button mat-icon-button (click)="onClear()" [disabled]="!currentFilter">
   <mat-icon>clear</mat-icon>
 </button>
 
-Users ({{ (totalCount$ | async) }})
+<button mat-icon-button (click)="onRefresh()">
+  <mat-icon>refresh</mat-icon>
+</button>
+
 <table mat-table matSort class="w-100" [dataSource]="dataSourceForTable"
        [matSortActive]="currentSort.active" [matSortDirection]="currentSort.direction"
        (matSortChange)="onMatSortChange($event)" matSortDisableClear>

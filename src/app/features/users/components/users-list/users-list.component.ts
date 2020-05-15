@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core'
 import { MatTableDataSource } from '@angular/material/table'
 import { User } from '../../models/user.model'
 import { UsersState } from '../../store/users.state'
@@ -30,14 +30,12 @@ export class UsersListComponent implements OnInit {
   public displayedColumns: string[] = []
 
   public currentSort: Sort
-  private readonly defaultSort: Sort = {active: 'id', direction: 'asc'}
-
-  private readonly defaultPageIndex: number = 0
-  private readonly defaultPageSize: number = 10
   public currentPageIndex: number
   public currentPageSize: number
-
   public currentFilter = ''
+  private readonly defaultSort: Sort = {active: 'id', direction: 'asc'}
+  private readonly defaultPageIndex: number = 0
+  private readonly defaultPageSize: number = 10
 
   constructor(
     private store: Store<UsersState>,
@@ -67,7 +65,7 @@ export class UsersListComponent implements OnInit {
 
       if (paramsFromUrl?.pageIndex && paramsFromUrl?.pageSize) {
         this.currentPageIndex = paramsFromUrl.pageIndex
-        this.currentPageSize= paramsFromUrl.pageSize
+        this.currentPageSize = paramsFromUrl.pageSize
       } else {
         this.setCurrentPageIndexAndSize(this.defaultPageIndex, this.defaultPageSize)
       }
@@ -75,8 +73,13 @@ export class UsersListComponent implements OnInit {
       if (paramsFromUrl?.filter) {
         this.currentFilter = paramsFromUrl.filter
       }
-      console.log(paramsFromUrl)
-      this.loadUsers()
+
+      if (
+        paramsFromUrl?.sortField && paramsFromUrl?.sortDirection &&
+        paramsFromUrl?.pageIndex && paramsFromUrl?.pageSize
+      ) {
+        this.loadUsers()
+      }
     })
 
     this.setDisplayedColumns()
@@ -92,6 +95,19 @@ export class UsersListComponent implements OnInit {
 
   public onClear(): void {
     this.onFilterChange('')
+  }
+
+  public onPageChange($event: PageEvent): void {
+    this.setCurrentPageIndexAndSize($event.pageIndex, $event.pageSize)
+  }
+
+  public onFilterChange($event: string): void {
+    this.currentFilter = $event
+    this.updateQueryParamToUrl({filter: $event === '' ? null : $event})
+  }
+
+  public onEdit(user: User): void {
+    console.log('Clicked: ', user)
   }
 
   private loadUsers(): void {
@@ -125,20 +141,7 @@ export class UsersListComponent implements OnInit {
 
   private setCurrentPageIndexAndSize(pageIndex: number, pageSize: number): void {
     this.currentPageIndex = pageIndex
-    this.currentPageSize= pageSize
+    this.currentPageSize = pageSize
     this.updateQueryParamToUrl({pageIndex, pageSize})
-  }
-
-  public onPageChange($event: PageEvent): void {
-    this.setCurrentPageIndexAndSize($event.pageIndex, $event.pageSize)
-  }
-
-  public onFilterChange($event: string): void {
-    this.currentFilter = $event
-    this.updateQueryParamToUrl({filter: $event === '' ? null : $event})
-  }
-
-  public onEdit(user: User): void {
-    console.log('Clicked: ', user)
   }
 }
