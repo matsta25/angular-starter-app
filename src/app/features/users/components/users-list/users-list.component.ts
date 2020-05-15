@@ -29,15 +29,20 @@ export class UsersListComponent implements OnInit {
   public dataSourceForTable: MatTableDataSource<User>
   public displayedColumns: string[] = []
 
-  public currentSort: Sort
-  private readonly defaultSort: Sort = {active: 'id', direction: 'asc'}
+  private defaultSort: Sort = {active: 'id', direction: 'asc'}
 
-  private readonly defaultPageIndex: number = 0
-  private readonly defaultPageSize: number = 10
-  public currentPageIndex: number
-  public currentPageSize: number
+  private defaultPageIndex = 0
+  private defaultPageSize = 10
 
-  public currentFilter = ''
+  public collectionParams: CollectionParams = {
+    filter: '',
+    ...{
+      sortDirection: this.defaultSort.direction,
+      sortField: this.defaultSort.active,
+    },
+    ...{pageIndex: this.defaultPageIndex},
+    ...{pageSize: this.defaultPageSize},
+  }
 
   constructor(
     private store: Store<UsersState>,
@@ -55,29 +60,13 @@ export class UsersListComponent implements OnInit {
       this.dataSourceForTable = new MatTableDataSource(users)
     })
 
-    this.activatedRoute.queryParams.subscribe((paramsFromUrl: CollectionParams) => {
-      if (paramsFromUrl?.sortField && paramsFromUrl?.sortDirection) {
-        this.currentSort = {
-          active: paramsFromUrl.sortField,
-          direction: paramsFromUrl.sortDirection,
-        }
-      } else {
-        this.setCurrentSort(this.defaultSort)
-      }
-
-      if (paramsFromUrl?.pageIndex && paramsFromUrl?.pageSize) {
-        this.currentPageIndex = paramsFromUrl.pageIndex
-        this.currentPageSize= paramsFromUrl.pageSize
-      } else {
-        this.setCurrentPageIndexAndSize(this.defaultPageIndex, this.defaultPageSize)
-      }
-
-      if (paramsFromUrl?.filter) {
-        this.currentFilter = paramsFromUrl.filter
-      }
-      console.log(paramsFromUrl)
-      this.loadUsers()
-    })
+    this.updateCollectionParams(this.activatedRoute.snapshot.queryParams)
+    this.updateQueryParamToUrl(this.collectionParams).then(() =>
+      this.activatedRoute.queryParams.subscribe((paramsFromUrl: CollectionParams) => {
+        this.updateCollectionParams(paramsFromUrl)
+        this.loadUsers()
+      }),
+    )
 
     this.setDisplayedColumns()
   }
@@ -87,7 +76,11 @@ export class UsersListComponent implements OnInit {
   }
 
   public onMatSortChange($event: Sort): void {
-    this.setCurrentSort($event)
+    this.updateCollectionParams({
+      sortDirection: $event.direction,
+      sortField: $event.active,
+    })
+    this.updateQueryParamToUrl(this.collectionParams)
   }
 
   public onClear(): void {
@@ -96,13 +89,7 @@ export class UsersListComponent implements OnInit {
 
   private loadUsers(): void {
     this.store.dispatch(readUsers({
-      collectionParams: {
-        filter: this.currentFilter,
-        sortDirection: this.currentSort.direction,
-        sortField: this.currentSort.active,
-        pageIndex: this.currentPageIndex,
-        pageSize: this.currentPageSize,
-      },
+      collectionParams: {...this.collectionParams},
     }))
   }
 
@@ -110,31 +97,28 @@ export class UsersListComponent implements OnInit {
     this.displayedColumns = ['id', 'firstName', 'lastName', 'email', 'actions']
   }
 
-  private setCurrentSort(sort: Sort): void {
-    this.currentSort = sort
-    this.updateQueryParamToUrl({sortField: sort.active, sortDirection: sort.direction})
+  public updateCollectionParams(newCollectionParams: CollectionParams) {
+    Object.assign(this.collectionParams, newCollectionParams)
   }
 
-  private updateQueryParamToUrl(params: Params) {
-    this.router.navigate([], {
+  private updateQueryParamToUrl(params: Params): Promise<boolean> {
+    return this.router.navigate([], {
       relativeTo: this.activatedRoute,
       queryParams: params,
       queryParamsHandling: 'merge',
     })
   }
 
-  private setCurrentPageIndexAndSize(pageIndex: number, pageSize: number): void {
-    this.currentPageIndex = pageIndex
-    this.currentPageSize= pageSize
-    this.updateQueryParamToUrl({pageIndex, pageSize})
-  }
-
   public onPageChange($event: PageEvent): void {
-    this.setCurrentPageIndexAndSize($event.pageIndex, $event.pageSize)
+    this.updateCollectionParams({
+      pageIndex: $event.pageIndex,
+      pageSize: $event.pageSize,
+    })
+    this.updateQueryParamToUrl(this.collectionParams)
   }
 
   public onFilterChange($event: string): void {
-    this.currentFilter = $event
+    this.updateCollectionParams({filter: $event})
     this.updateQueryParamToUrl({filter: $event === '' ? null : $event})
   }
 

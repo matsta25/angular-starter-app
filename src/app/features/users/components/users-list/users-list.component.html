@@ -2,15 +2,15 @@
   <mat-icon>refresh</mat-icon>
 </button>
 
-<input matInput placeholder="Search..." [value]="currentFilter" appInput (delayedInput)="onFilterChange($event)">
+<input matInput placeholder="Search..." [value]="collectionParams.filter" appInput (delayedInput)="onFilterChange($event)">
 
-<button mat-icon-button (click)="onClear()" [disabled]="!currentFilter">
+<button mat-icon-button (click)="onClear()" [disabled]="!collectionParams.filter">
   <mat-icon>clear</mat-icon>
 </button>
 
 Users ({{ (totalCount$ | async) }})
 <table mat-table matSort class="w-100" [dataSource]="dataSourceForTable"
-       [matSortActive]="currentSort.active" [matSortDirection]="currentSort.direction"
+       [matSortActive]="collectionParams.sortField" [matSortDirection]="collectionParams.sortDirection"
        (matSortChange)="onMatSortChange($event)" matSortDisableClear>
 
   <ng-container matColumnDef="id">
@@ -54,6 +54,6 @@ Users ({{ (totalCount$ | async) }})
   Loading users...
 </div>
 
-<mat-paginator [length]="(totalCount$ | async)"  [pageIndex]="currentPageIndex"
-               (page)="onPageChange($event)" [pageSize]="currentPageSize"
+<mat-paginator [length]="(totalCount$ | async)"  [pageIndex]="collectionParams.pageIndex"
+               (page)="onPageChange($event)" [pageSize]="collectionParams.pageSize"
                [pageSizeOptions]="[10, 20, 50]"></mat-paginator>
