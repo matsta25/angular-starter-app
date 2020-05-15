@@ -29,7 +29,7 @@ module.exports = () => {
     })
   }
 
-  data.users.totalCount = 20;
+  data.users.totalCount = 10;
   for (let i = 0; i < data.users.totalCount; i++) {
     data.users.data.push({
       id: faker.random.uuid(),

@@ -30,12 +30,12 @@ export class UsersListComponent implements OnInit {
   public displayedColumns: string[] = []
 
   public currentSort: Sort
-  private readonly defaultSort: Sort = {active: 'id', direction: 'desc'}
+  private readonly defaultSort: Sort = {active: 'id', direction: 'asc'}
 
   private readonly defaultPageIndex: number = 0
   private readonly defaultPageSize: number = 10
-  public currentPageIndex
-  public currentPageSize
+  public currentPageIndex: number
+  public currentPageSize: number
 
   public currentFilter = ''
 
@@ -90,12 +90,11 @@ export class UsersListComponent implements OnInit {
     this.setCurrentSort($event)
   }
 
-  onClear() {
+  public onClear(): void {
     this.onFilterChange('')
-    this.loadUsers()
   }
 
-  private loadUsers() {
+  private loadUsers(): void {
     this.store.dispatch(readUsers({
       collectionParams: {
         filter: this.currentFilter,
@@ -107,7 +106,7 @@ export class UsersListComponent implements OnInit {
     }))
   }
 
-  private setDisplayedColumns() {
+  private setDisplayedColumns(): void {
     this.displayedColumns = ['id', 'firstName', 'lastName', 'email', 'actions']
   }
 
@@ -130,16 +129,16 @@ export class UsersListComponent implements OnInit {
     this.updateQueryParamToUrl({pageIndex, pageSize})
   }
 
-  onPageChange($event: PageEvent) {
+  public onPageChange($event: PageEvent): void {
     this.setCurrentPageIndexAndSize($event.pageIndex, $event.pageSize)
   }
 
-  onFilterChange($event: string) {
+  public onFilterChange($event: string): void {
     this.currentFilter = $event
     this.updateQueryParamToUrl({filter: $event === '' ? null : $event})
   }
 
-  onEdit(user: User) {
+  public onEdit(user: User): void {
     console.log('Clicked: ', user)
   }
 }
