@@ -108,7 +108,7 @@ export class UsersListComponent implements OnInit {
   }
 
   private setDisplayedColumns() {
-    this.displayedColumns = ['id', 'firstName', 'lastName', 'email']
+    this.displayedColumns = ['id', 'firstName', 'lastName', 'email', 'actions']
   }
 
   private setCurrentSort(sort: Sort): void {
@@ -137,5 +137,9 @@ export class UsersListComponent implements OnInit {
   onFilterChange($event: string) {
     this.currentFilter = $event
     this.updateQueryParamToUrl({filter: $event === '' ? null : $event})
+  }
+
+  onEdit(user: User) {
+    console.log('Clicked: ', user)
   }
 }
