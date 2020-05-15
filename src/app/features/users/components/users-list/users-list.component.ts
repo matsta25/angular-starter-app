@@ -37,7 +37,7 @@ export class UsersListComponent implements OnInit {
   public currentPageIndex
   public currentPageSize
 
-  public currentFilter = null
+  public currentFilter = ''
 
   constructor(
     private store: Store<UsersState>,
@@ -136,10 +136,6 @@ export class UsersListComponent implements OnInit {
 
   onFilterChange($event: string) {
     this.currentFilter = $event
-    if($event === '') {
-      this.updateQueryParamToUrl({filter: null})
-    } else {
-      this.updateQueryParamToUrl({filter: $event})
-    }
+    this.updateQueryParamToUrl({filter: $event === '' ? null : $event})
   }
 }

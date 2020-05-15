@@ -19,7 +19,9 @@ export class UsersApiService implements ApiServiceModel<User> {
   public readItems(collectionParams: CollectionParams): Observable<object> {
     let params = new HttpParams()
 
-    params = params.set('filter', collectionParams?.filter)
+    if (collectionParams?.filter !== '') {
+      params = params.set('filter', collectionParams?.filter)
+    }
     params = params.set('sortDirection', collectionParams?.sortDirection)
     params = params.set('sortField', collectionParams?.sortField)
     params = params.set('pageIndex', collectionParams?.pageIndex?.toString())
