@@ -17,7 +17,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router'
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.scss'],
 })
-export class UsersListComponent implements OnInit, AfterViewInit {
+export class UsersListComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator
@@ -75,15 +75,11 @@ export class UsersListComponent implements OnInit, AfterViewInit {
       if (paramsFromUrl?.filter) {
         this.currentFilter = paramsFromUrl.filter
       }
-
+      console.log(paramsFromUrl)
       this.loadUsers()
     })
 
     this.setDisplayedColumns()
-    this.loadUsers()
-  }
-
-  ngAfterViewInit(): void {
   }
 
   public onRefresh(): void {
