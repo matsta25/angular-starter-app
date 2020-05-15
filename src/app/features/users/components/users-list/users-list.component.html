@@ -4,7 +4,7 @@
 
 <input matInput placeholder="Search..." [value]="currentFilter" appInput (delayedInput)="onFilterChange($event)">
 
-<button mat-icon-button (click)="onClear()">
+<button mat-icon-button (click)="onClear()" [disabled]="!currentFilter">
   <mat-icon>clear</mat-icon>
 </button>
 

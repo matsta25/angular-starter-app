@@ -95,7 +95,7 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   }
 
   onClear() {
-    // TODO: clear "search" not sorting
+    this.onFilterChange('')
     this.loadUsers()
   }
 
