@@ -15,9 +15,10 @@ export class UsersEffects {
         this.actions.pipe(
             ofType(readUsers.type),
             switchMap(({collectionParams}) => this.usersApiService.readItems(collectionParams).pipe(
-                map((response: User[]) => ({
+                map((response: { data: User[], totalCount: number}) => ({
                     type: readUsersSuccess.type,
-                    users: response,
+                    users: response.data,
+                    totalCount: response.totalCount,
                 })),
                 catchError(() => of({type: readUsersFail.type})),
             )),

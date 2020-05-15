@@ -1,34 +1,41 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core'
 import { MatTableDataSource } from '@angular/material/table'
 import { User } from '../../models/user.model'
 import { UsersState } from '../../store/users.state'
 import { select, Store } from '@ngrx/store'
 import { readUsers } from '../../store/users.actions'
 import { CollectionParams } from '../../../../shared/models/collection-params.model'
-import { selectUsers } from '../../store/users.selectors'
+import { selectTotalCount, selectUsers } from '../../store/users.selectors'
 import { selectLoading } from '../../../../shared/store/shared.selectors'
 import { Observable } from 'rxjs'
 import { MatSort, Sort } from '@angular/material/sort'
-import { MatPaginator } from '@angular/material/paginator'
-import { ActivatedRoute, Router } from '@angular/router'
+import { MatPaginator, PageEvent } from '@angular/material/paginator'
+import { ActivatedRoute, Params, Router } from '@angular/router'
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.scss'],
 })
-export class UsersListComponent implements OnInit, AfterViewInit {
+export class UsersListComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort
-  @ViewChild(MatPaginator) paginator: MatPaginator
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator
 
   public loading$: Observable<boolean>
   public users$: Observable<User[]>
+  public totalCount$: Observable<number>
 
   public dataSourceForTable: MatTableDataSource<User>
   public displayedColumns: string[] = []
+
   public currentSort: Sort
-  private collectionParams: CollectionParams
+  public currentPageIndex: number
+  public currentPageSize: number
+  public currentFilter = ''
+  private readonly defaultSort: Sort = {active: 'id', direction: 'asc'}
+  private readonly defaultPageIndex: number = 0
+  private readonly defaultPageSize: number = 10
 
   constructor(
     private store: Store<UsersState>,
@@ -40,58 +47,101 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.users$ = this.store.pipe(select(selectUsers))
     this.loading$ = this.store.pipe(select(selectLoading))
+    this.totalCount$ = this.store.pipe(select(selectTotalCount))
 
     this.users$.subscribe(users => {
       this.dataSourceForTable = new MatTableDataSource(users)
     })
 
-    this.setDisplayedColumns()
-    this.setCurrentSort()
-    this.getCollectionParamsFromUrl()
-    this.loadUsers()
-  }
+    this.activatedRoute.queryParams.subscribe((paramsFromUrl: CollectionParams) => {
+      if (paramsFromUrl?.sortField && paramsFromUrl?.sortDirection) {
+        this.currentSort = {
+          active: paramsFromUrl.sortField,
+          direction: paramsFromUrl.sortDirection,
+        }
+      } else {
+        this.setCurrentSort(this.defaultSort)
+      }
 
-  ngAfterViewInit(): void {
-    this.setCollectionParamsToComponents()
+      if (paramsFromUrl?.pageIndex && paramsFromUrl?.pageSize) {
+        this.currentPageIndex = paramsFromUrl.pageIndex
+        this.currentPageSize = paramsFromUrl.pageSize
+      } else {
+        this.setCurrentPageIndexAndSize(this.defaultPageIndex, this.defaultPageSize)
+      }
+
+      if (paramsFromUrl?.filter) {
+        this.currentFilter = paramsFromUrl.filter
+      }
+
+      if (
+        paramsFromUrl?.sortField && paramsFromUrl?.sortDirection &&
+        paramsFromUrl?.pageIndex && paramsFromUrl?.pageSize
+      ) {
+        this.loadUsers()
+      }
+    })
+
+    this.setDisplayedColumns()
   }
 
   public onRefresh(): void {
     this.loadUsers()
   }
 
-  private loadUsers() {
-    this.store.dispatch(readUsers({collectionParams: this.collectionParams}))
+  public onMatSortChange($event: Sort): void {
+    this.setCurrentSort($event)
   }
 
-  private setDisplayedColumns() {
-    this.displayedColumns = ['id', 'firstName', 'lastName', 'email']
+  public onClear(): void {
+    this.onFilterChange('')
   }
 
-  private setCurrentSort(): void {
-    this.currentSort = {active: 'id', direction: 'asc'}
+  public onPageChange($event: PageEvent): void {
+    this.setCurrentPageIndexAndSize($event.pageIndex, $event.pageSize)
   }
 
-  private getCollectionParamsFromUrl() {
-    this.activatedRoute.params.subscribe(params => {
-      this.collectionParams = new CollectionParams(
-        params.filters,
-        params.sortDirection,
-        params.sortField,
-        params.pageIndex,
-        params.pageSize,
-      )
-    })
+  public onFilterChange($event: string): void {
+    this.currentFilter = $event
+    this.updateQueryParamToUrl({filter: $event === '' ? null : $event})
   }
 
-  private setCollectionParamsToComponents() {
-    console.log('ok')
+  public onEdit(user: User): void {
+    console.log('Clicked: ', user)
   }
 
-  private setCollectionParamsToUrl() {
+  private loadUsers(): void {
+    this.store.dispatch(readUsers({
+      collectionParams: {
+        filter: this.currentFilter,
+        sortDirection: this.currentSort.direction,
+        sortField: this.currentSort.active,
+        pageIndex: this.currentPageIndex,
+        pageSize: this.currentPageSize,
+      },
+    }))
+  }
+
+  private setDisplayedColumns(): void {
+    this.displayedColumns = ['id', 'firstName', 'lastName', 'email', 'actions']
+  }
+
+  private setCurrentSort(sort: Sort): void {
+    this.currentSort = sort
+    this.updateQueryParamToUrl({sortField: sort.active, sortDirection: sort.direction})
+  }
+
+  private updateQueryParamToUrl(params: Params) {
     this.router.navigate([], {
-      queryParams: this.collectionParams,
+      relativeTo: this.activatedRoute,
+      queryParams: params,
       queryParamsHandling: 'merge',
-      replaceUrl: true,
     })
+  }
+
+  private setCurrentPageIndexAndSize(pageIndex: number, pageSize: number): void {
+    this.currentPageIndex = pageIndex
+    this.currentPageSize = pageSize
+    this.updateQueryParamToUrl({pageIndex, pageSize})
   }
 }
