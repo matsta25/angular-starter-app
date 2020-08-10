@@ -20,34 +20,27 @@ import { MatSortModule } from '@angular/material/sort'
 import { MatPaginatorModule } from '@angular/material/paginator'
 
 
-const materialModules = [
-  MatSidenavModule,
-  MatButtonModule,
-  MatSnackBarModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatInputModule,
-  MatDatepickerModule,
-  MatCheckboxModule,
-  MatFormFieldModule,
-  MatListModule,
-  MatMenuModule,
-  MatCardModule,
-  MatExpansionModule,
-  MatTableModule,
-  MatSortModule,
-  MatPaginatorModule,
-  MatDialogModule,
-  MatNativeDateModule,
-  MatRippleModule,
-]
-
 @NgModule({
-  imports: [
-    ...materialModules,
-  ],
   exports: [
-    ...materialModules,
+    MatSidenavModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatMenuModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    MatNativeDateModule,
+    MatRippleModule,
   ],
 })
 export class MaterialModule {
